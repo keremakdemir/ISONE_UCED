@@ -1,0 +1,1124 @@
+set Zone1Generators :=
+BridgeportStation3 CT_hydro AlgonquinWindsorLocksGTG AlgonquinWindsorLocksGTG2 BridgeportEnergyProjectGEN1 BridgeportEnergyProjectGEN2 CapitalDistrictEnergyCenterGTG CPVTowanticEnergyCenterCTG1 CPVTowanticEnergyCenterCTG2 FoxwoodsCoGenCT1 FoxwoodsCoGenCT2 HartfordHospitalCogenerationGEN3 KillinglyEnergyCenterKEC KimberlyClarkUnit123GT100 KleenEnergySystemsProjectU1 KleenEnergySystemsProjectU2 LakeRoadGeneratingPlantU1 LakeRoadGeneratingPlantU2 LakeRoadGeneratingPlantU3 MilfordPowerProjectCA01 MilfordPowerProjectCA02 UCONNCogenFacilityCGT1 UCONNCogenFacilityCGT2 UCONNCogenFacilityCGT3 ALPierce4 BridgeportFuelCellPark1 BristolMyersSquibbWallingfordSOL CCSUCoGenSTBYGenEC1 CCSUCoGenSTBYGenEC2 DanburyHospitalCogenPlantGEN1 FairfieldUniversityCHPPlantCHP1 FritoLayIncorporatedCOGEN HartfordHospitalCogenerationGEN4 HSCoCHP1 KimberlyClarkUnit123GT200 PepperidgeFarmBloomfieldFCB PepperidgeFarmBloomfieldFCC PfizerGrotonFuelCellMM24 PfizerGrotonFuelCellMM25 PfizerGrotonPlantGT1 PrattWhitneyFT8 RandWhitneyCHPPlantTG1 TRSFuelCellMMH1 UDRGlastonburyFuelCellUDRFC UIRCPBridgeportSeasideBPFC UIRCPNewHavenFuelCellNHFC UIRCPWoodbridgeFCWBFC WallingfordEnergyCTG1 WallingfordEnergyCTG2 WallingfordEnergyCTG3 WallingfordEnergyCTG4 WallingfordEnergyCTG5 WallingfordEnergyCTG6 WallingfordEnergyCTG7 WaterburyGeneration10 WesleyanUniversityCogen11 AlgonquinWindsorLocksSTG ALPierce1 ALPierce2 ALPierce3 BradleyEnergyCenterUNIT1 BradleyEnergyCenterUNIT2 BradleyEnergyCenterUNIT3 BradleyEnergyCenterUNIT4 BridgeportEnergyProjectGEN3 CapitalDistrictEnergyCenterSTG CCSUFuelCellProjectCCSU CelluTissueGEN1 CJTSEnergyCenterUNIT1 CJTSEnergyCenterUNIT2 CJTSEnergyCenterUNIT3 CJTSEnergyCenterUNIT4 CJTSEnergyCenterUNIT5 CJTSEnergyCenterUNIT6 CJTSEnergyCenterUNIT7 CPVTowanticEnergyCenterSTG FoxwoodsCoGenSTG1 HartfordHospitalCogenerationGEN2 IBMSouthburyIBM00 KimberlyClarkUnit123GT300 KleenEnergySystemsProjectST Middletown2 Middletown3 PfizerGrotonPlantTG1 PfizerGrotonPlantTG2 PfizerGrotonPlantTG3 PfizerGrotonPlantTG4 PfizerGrotonPlantTG5 UCONNCogenFacilitySTG1 UncasvilleMillGEN1 BackusMicrogridProjectBMP1 BackusMicrogridProjectBMP2 BackusMicrogridProjectBMP3 BackusMicrogridProjectBMP4 BranfordUN10 BridgeportStation2 BridgeportStation4 BridgeStreet12BS1 BridgeStreet12BS2 BristolMyersSquibbWallingfordDG12 BristolMyersSquibbWallingfordDG3 CCSUCoGenSTBYGenGRND CCSUCoGenSTBYGenMEMH CosCobUN10 CosCobUN11 CosCobUN12 CosCobUN13 CosCobun14 DevonStation10 DevonStation11 DevonStation12 DevonStation13 DevonStation14 DevonStation7 DevonStation8 FortHill1234FH1 FortHill1234FH2 FortHill1234FH3 FortHill1234FH4 FranklinDriveUN19 GaryCourt12GC1 GaryCourt12GC2 GenConnDevonLLC15 GenConnDevonLLC16 GenConnDevonLLC17 GenConnDevonLLC18 JewettCity1JC1 JohnStreet1345JS1 JohnStreet1345JS3 JohnStreet1345JS4 JohnStreet1345JS5 LebanonPines12LP1 LebanonPines12LP2 LNG12LNG1 LNG12LNG2 Middletown1 Middletown10 Middletown12 Middletown13 Middletown14 Middletown15 Middletown4 MontvilleStation10 MontvilleStation11 MontvilleStation5 MontvilleStation6 NewHavenHarbor1 NewHavenHarbor2 NewHavenHarbor3 NewHavenHarbor4 Norden43103NORD1 Norden43103NORD2 Norden43103NORD3 NorthMainStreet5 NorwichWWTP1 Shepaug2 SouthMeadow11 SouthMeadow12 SouthMeadow13 SouthMeadow14 SubaseMicrogridProjectSMP1 SubaseMicrogridProjectSMP2 SubaseMicrogridProjectSMP3 SubaseMicrogridProjectSMP4 TorringtonTerminalUN10 Tunnel10 WatersidePowerLLC1 WatersidePowerLLC2 WatersidePowerLLC4 WatersidePowerLLC5 WatersidePowerLLC6 WatersidePowerLLC7 WaterTreatment12WT1 WaterTreatment12WT2 SLACK1 ;
+
+set Zone2Generators :=
+ME_hydro MaineIndependenceStationGEN1 MaineIndependenceStationGEN2 RumfordPowerIncUNT1 WestbrookEnergyCenterPowerPlantGTG1 WestbrookEnergyCenterPowerPlantGTG2 AndroscogginEnergyCenterCT01 AndroscogginEnergyCenterCT02 AndroscogginEnergyCenterCT03 AndroscogginMillGEN1 AndroscogginMillGEN2 AndroscogginMillGEN3 AnsonAbenakiHydrosSTG1 BucksportGenerationLLCGEN4 DomtarWoodlandMillTG10 DomtarWoodlandMillTG11 EasternMaineMedicalCenterCOGE MeadRumfordCogen3STG RedShieldEnvirOldTownFacilityTG4 RedShieldEnvirOldTownFacilityTG5 RumfordCogenerationGEN1 SomersetPlantGEN1 SomersetPlantGEN2 MaineIndependenceStationGEN3 RumfordPowerIncUNT2 WestbrookEnergyCenterPowerPlantSTG3 BarHarbor1 BarHarbor2 BarHarbor3 BarHarbor4 CapeGasTurbineGT4 CapeGasTurbineGT5 CaribouGenerationStation1 CaribouGenerationStationCD2 CaribouGenerationStationCD3 CaribouGenerationStationCD4 CaribouGenerationStationCD5 CaribouGenerationStationST2 Eastport1 Eastport2 Eastport3 FlosInnDieselFID1 FlosInnDieselFID2 FlosInnDieselFID3 MedwayIC1 MedwayIC2 MedwayIC3 MedwayIC4 MillinocketMillM1S1 MillinocketMillM1S2 MillinocketMillM1S3 MillinocketMillM1S4 RedShieldEnvirOldTownFacilityTG1 RedShieldEnvirOldTownFacilityTG2 RobbinsLumberCAT WilliamFWyman1 WilliamFWyman2 WilliamFWyman3 WilliamFWyman4 SLACK2 ;
+
+set Zone3Generators :=
+BraytonPoint1 BraytonPoint2 BraytonPoint3 NEMA_hydro KendallSquareStationGEN4 MysticGeneratingStationGT81 MysticGeneratingStationGT82 MysticGeneratingStationGT93 MysticGeneratingStationGT94 PotterStation2CC2 TannerStreetGenerationTRENT TannerStreetGenerationV643 BostonMedicalCenterCHPPlantCOGEN DeerIslandTreatmentPlant6ENT DeerIslandTreatmentPlant7ENT DeerIslandTreatmentPlantF101 ExelonWestMedwayIILLC4 ExelonWestMedwayIILLC5 FraminghamStateUniversityPlantMSC GeneralElectricAircraftEnginesGEN5 GeneralElectricAircraftEnginesGEN6 GeneralElectricAircraftEnginesGEN7 GeneralElectricAircraftEnginesGEN8 GilletteSBMCCTG3 GilletteSBMCTG1 GilletteSBMCTG2 HighStreetStation1 HighStreetStation10 HighStreetStation11 HighStreetStation12 HighStreetStation2 HighStreetStation6 HighStreetStation9 MassInstTechCntrlUtilitiesCogenPltCTG1 MedicalAreaTotalEnergyPlantCT1 MedicalAreaTotalEnergyPlantCT2 MedicalAreaTotalEnergyPlantCT3 MedicalAreaTotalEnergyPlantSTG2 MedicalAreaTotalEnergyPlantSTG3 MysticGeneratingStation7 MysticGeneratingStationGT1 NECCOCoGenerationGEN1 NECCOCoGenerationGEN2 NewBostonGeneratingStation1 NewBostonGeneratingStation2 PotterStation2WAT1 PotterStation2WAT2 RousselotIncGEN1 RousselotIncGEN2 RousselotIncGEN3 UnivofMassachusettsMedicalCenterGEN1 UnivofMassachusettsMedicalCenterGEN2 UnivofMassachusettsMedicalCenterGEN3 UnivofMassachusettsMedicalCenterGEN4 WatersRiver1 WatersRiver2 WellesleyCollegeCentralUtilityPlant1118 WellesleyCollegeCentralUtilityPlant1119 WellesleyCollegeCentralUtilityPlant1120 WellesleyCollegeCentralUtilityPlant1121 WellesleyCollegeCentralUtilityPlant8187 WestGrotonCHPG1 DeerIslandTreatmentPlantS101 KendallSquareStation1 KendallSquareStation2 KendallSquareStation3 MysticGeneratingStationST85 MysticGeneratingStationST96 PotterStation2CC3 TannerStreetGenerationVAX BraytonPoint4 BraytonPointIC1 BraytonPointIC2 BraytonPointIC3 BraytonPointIC4 CommercialStreet2 DeerIslandTreatmentPlantG101 DeerIslandTreatmentPlantG201 ExelonEdgarLLCGT1 ExelonEdgarLLCGT2 ExelonFraminghamLLCGT1 ExelonFraminghamLLCGT2 ExelonFraminghamLLCGT3 ExelonLStreetGT1 ExelonMedwayLLCGT1 ExelonMedwayLLCGT2 ExelonMedwayLLCGT3 FraminghamStateUniversityPlantHA FraminghamStateUniversityPlantLIB FraminghamStateUniversityPlantMSC2 FraminghamStateUniversityPlantNORTH FraminghamStateUniversityPlantOC FraminghamStateUniversityPlantPP FraminghamStateUniversityPlantTOW1 FraminghamStateUniversityPlantTOW2 FraminghamStateUniversityPlantWEST GilletteSBMCDG GilletteSBMCDG2 GilletteSBMCDG3 HighStreetStation3 HighStreetStation4 HighStreetStation7 HighStreetStation8 KendallSquareStationJET1 KendallSquareStationJET2 MedicalAreaTotalEnergyPlantDEG1 MedicalAreaTotalEnergyPlantDEG2 MedicalAreaTotalEnergyPlantDEG3 MedicalAreaTotalEnergyPlantDEG4 MedicalAreaTotalEnergyPlantDEG5 MedicalAreaTotalEnergyPlantDEG6 MStreetJetNO6 MysticGeneratingStation4 MysticGeneratingStation5 MysticGeneratingStation6 PotterStation2IC1 PotterStation2IC2 WellesleyCollegeCentralUtilityPlantSB1 WilkinsStation1 WilkinsStation2 SLACK3 ;
+
+set Zone4Generators :=
+Merrimack1 Merrimack2 Schiller4 Schiller6 NH_hydro EssentialPowerNewingtonLLCGT1 EssentialPowerNewingtonLLCGT2 GraniteRidgeCT11 GraniteRidgeCT12 HamptonFacilityGEN8 Newington1 EssentialPowerNewingtonLLCST GraniteRidgeSTG CrotchedMountainRehabilitationCenterGEN1 CrotchedMountainRehabilitationCenterGEN2 CrotchedMountainRehabilitationCenterGEN3 DartmouthCollegeHeatingPlantGEN1 DartmouthCollegeHeatingPlantGEN2 DartmouthCollegeHeatingPlantGEN3 HamptonFacilityGEN1 HamptonFacilityGEN2 HamptonFacilityGEN3 HamptonFacilityGEN4 HamptonFacilityGEN5 HamptonFacilityGEN6 LostNationGT1 MerrimackGT1 MerrimackGT2 PlymouthStateCollegeCogenerationA PlymouthStateCollegeCogenerationB SchillerGT1 WhiteLakeGT1 SLACK4 ;
+
+set Zone5Generators :=
+RI_hydro ManchesterStreetG10A ManchesterStreetG11A ManchesterStreetGE9A OceanStatePowerGEN1 OceanStatePowerGEN2 OceanStatePowerIIGEN1 OceanStatePowerIIGEN2 PawtucketPowerAssociatesGEN1 RhodeIslandStateEnergyCenterCTG1 RhodeIslandStateEnergyCenterCTG2 TivertonPowerPlantUNT1 TivertonPowerPlantUNT3 CentralPowerPlantGEN7 OrbitEnergyRI1 RhodeIslandHospitalGEN2 RhodeIslandHospitalGEN4 RhodeIslandHospitalNEW1 RhodeIslandHospitalNEW3 ManchesterStreetGE10 ManchesterStreetGE11 ManchesterStreetGEN9 OceanStatePowerGEN3 OceanStatePowerIIGEN3 PawtucketPowerAssociatesGEN2 RhodeIslandStateEnergyCenterSTG1 TivertonPowerPlantUNT2 TivertonPowerPlantUNT4 BlockIsland11 BlockIsland19 BlockIsland21 BlockIsland22 BlockIsland23 BlockIsland24 BlockIsland25 BlockIsland26 CentralPowerPlantGEN1 CentralPowerPlantGEN3 CentralPowerPlantGEN4 CentralPowerPlantGEN5 CentralPowerPlantGEN6 SLACK5 ;
+
+set Zone6Generators :=
+SalemHarbor1 SalemHarbor2 SalemHarbor3 BellinghamCogenerationFacilityCT1 BellinghamCogenerationFacilityCT2 ClearyFlood9A DartmouthPowerAssociatesLPGEN1 DightonPowerPlantUNT1 ForeRiverGeneratingStationGT11 ForeRiverGeneratingStationGT12 MilfordPowerLPGT1 SalemHarborStationNGCC3 SalemHarborStationNGCC4 Canal3 CanalUN2R DartmouthPowerAssociatesLPGEN3 MansfieldGEN1 MansfieldGEN2 MansfieldGEN3 BellinghamCogenerationFacilityST1 ClearyFloodCA9 DartmouthPowerAssociatesLPGEN2 ForeRiverGeneratingStationST15 MilfordPowerLPST1 SalemHarborStationNGCC1 SalemHarborStationNGCC2 Canal1 Canal2 CherryStreet10 CherryStreet11 CherryStreet12 CherryStreet7 CherryStreet8 CherryStreet9 ClearyFlood8 FrontStreet1 FrontStreet2 FrontStreet3 Nantucket10 Nantucket11 Nantucket12 Nantucket13 Nantucket14 Nantucket15 Nantucket16 Nantucket17 OakBluffsDieselGeneratingFacilityUN1 OakBluffsDieselGeneratingFacilityUN2 OakBluffsDieselGeneratingFacilityUN3 SalemHarbor4 WestTisburyGeneratingFacilityUN1 WestTisburyGeneratingFacilityUN2 SLACK6 ;
+
+set Zone7Generators :=
+VT_hydro AscutneyGT4 Berlin5GT1 BurlingtonGTGT1 Colchester16GT1 EssexJunction19IC5a EssexJunction19IC5 EssexJunction19IC6a EssexJunction19IC6 EssexJunction19IC7a EssexJunction19IC7 EssexJunction19IC8a EssexJunction19IC8 Florence1 Florence2 NewportDiesels10 NewportDiesels4 NewportDiesels5 NewportDiesels6 NewportDiesels7 NewportDiesels8 NewportDiesels9 RutlandGT5 Vergennes95 Vergennes96 WestCharlestonIC3 WestCharlestonIC4 SLACK7 ;
+
+set Zone8Generators :=
+MountTom1 WCMA_hydro ANPBellinghamEnergyProjectU1 ANPBellinghamEnergyProjectU2 ANPBlackstoneEnergyProjectU1 ANPBlackstoneEnergyProjectU2 BerkshirePowerGEN2 MasspowerGEN1 MasspowerGEN2 MillenniumPowerCT01 PittsfieldGeneratingLPGEN1 PittsfieldGeneratingLPGEN2 PittsfieldGeneratingLPGEN3 StonyBrook3A AmherstCollegeCoGenCTG ClarkUniversityGEN1 ClarkUniversityGEN2 ErvingPaperMills2 ErvingPaperMills3 EssentialPowerMassachusettsLLC3 EssentialPowerMassachusettsLLCGT1 EssentialPowerMassachusettsLLCGT2 IndianOrchardPlant1TG NewarkAmericaMill1 NortonPowerhouseGEN1 NortonPowerhouseGEN2 SimondsGEN1 SimondsGEN2 SimondsGEN3 SmithCollegeCentralHeatingPlantGT1 WilliamsCollegeCampusCHPGEN2 WilliamsCollegeCampusCHPGEN3 AmherstCollegeCoGenSTG CabotHolyoke6 CabotHolyoke8 CabotHolyoke9 MasspowerGEN3 MillenniumPowerST01 PittsfieldGeneratingLPGEN4 AndersonPowerProductsDivision3622 AndersonPowerProductsDivision6033 AndersonPowerProductsDivision6035 AndersonPowerProductsDivision6046 ErvingPaperMills1 EssentialPowerMassachusettsLLCWS1 EssentialPowerMassachusettsLLCWS10 EssentialPowerMassachusettsLLCWS2 Shrewsbury1 Shrewsbury2 Shrewsbury3 Shrewsbury4 Shrewsbury5 StonyBrook1 StonyBrook2 StonyBrookBS1 StonyBrookBS2 StonyBrookCA1 StonyBrookCT1 StonyBrookCT2 StonyBrookCT3 StonyBrookCT4 StonyBrookEDSI WilliamsCollegeCampusCHPGEN4 WilliamsCollegeCampusCHPGEN5 WilliamsCollegeCampusCHPGEN6 WoodlandRoadWOOD SLACK8 ;
+
+set NY_Imports_CT :=
+NYCTI ;
+
+set NY_Imports_WCMA :=
+NYWCMAI ;
+
+set NY_Imports_VT :=
+NYVTI ;
+
+set HQ_Imports_VT :=
+HQVTI ;
+
+set HQ_Imports_WCMA :=
+HQWCMAI ;
+
+set NB_Imports_ME :=
+NBMEI ;
+
+set Coal :=
+BridgeportStation3 BraytonPoint1 BraytonPoint2 BraytonPoint3 Merrimack1 Merrimack2 Schiller4 Schiller6 SalemHarbor1 SalemHarbor2 SalemHarbor3 MountTom1 ;
+
+set Oil :=
+BackusMicrogridProjectBMP1 BackusMicrogridProjectBMP2 BackusMicrogridProjectBMP3 BackusMicrogridProjectBMP4 BranfordUN10 BridgeportStation2 BridgeportStation4 BridgeStreet12BS1 BridgeStreet12BS2 BristolMyersSquibbWallingfordDG12 BristolMyersSquibbWallingfordDG3 CCSUCoGenSTBYGenGRND CCSUCoGenSTBYGenMEMH CosCobUN10 CosCobUN11 CosCobUN12 CosCobUN13 CosCobun14 DevonStation10 DevonStation11 DevonStation12 DevonStation13 DevonStation14 DevonStation7 DevonStation8 FortHill1234FH1 FortHill1234FH2 FortHill1234FH3 FortHill1234FH4 FranklinDriveUN19 GaryCourt12GC1 GaryCourt12GC2 GenConnDevonLLC15 GenConnDevonLLC16 GenConnDevonLLC17 GenConnDevonLLC18 JewettCity1JC1 JohnStreet1345JS1 JohnStreet1345JS3 JohnStreet1345JS4 JohnStreet1345JS5 LebanonPines12LP1 LebanonPines12LP2 LNG12LNG1 LNG12LNG2 Middletown1 Middletown10 Middletown12 Middletown13 Middletown14 Middletown15 Middletown4 MontvilleStation10 MontvilleStation11 MontvilleStation5 MontvilleStation6 NewHavenHarbor1 NewHavenHarbor2 NewHavenHarbor3 NewHavenHarbor4 Norden43103NORD1 Norden43103NORD2 Norden43103NORD3 NorthMainStreet5 NorwichWWTP1 Shepaug2 SouthMeadow11 SouthMeadow12 SouthMeadow13 SouthMeadow14 SubaseMicrogridProjectSMP1 SubaseMicrogridProjectSMP2 SubaseMicrogridProjectSMP3 SubaseMicrogridProjectSMP4 TorringtonTerminalUN10 Tunnel10 WatersidePowerLLC1 WatersidePowerLLC2 WatersidePowerLLC4 WatersidePowerLLC5 WatersidePowerLLC6 WatersidePowerLLC7 WaterTreatment12WT1 WaterTreatment12WT2 BarHarbor1 BarHarbor2 BarHarbor3 BarHarbor4 CapeGasTurbineGT4 CapeGasTurbineGT5 CaribouGenerationStation1 CaribouGenerationStationCD2 CaribouGenerationStationCD3 CaribouGenerationStationCD4 CaribouGenerationStationCD5 CaribouGenerationStationST2 Eastport1 Eastport2 Eastport3 FlosInnDieselFID1 FlosInnDieselFID2 FlosInnDieselFID3 MedwayIC1 MedwayIC2 MedwayIC3 MedwayIC4 MillinocketMillM1S1 MillinocketMillM1S2 MillinocketMillM1S3 MillinocketMillM1S4 RedShieldEnvirOldTownFacilityTG1 RedShieldEnvirOldTownFacilityTG2 RobbinsLumberCAT WilliamFWyman1 WilliamFWyman2 WilliamFWyman3 WilliamFWyman4 BraytonPoint4 BraytonPointIC1 BraytonPointIC2 BraytonPointIC3 BraytonPointIC4 CommercialStreet2 DeerIslandTreatmentPlantG101 DeerIslandTreatmentPlantG201 ExelonEdgarLLCGT1 ExelonEdgarLLCGT2 ExelonFraminghamLLCGT1 ExelonFraminghamLLCGT2 ExelonFraminghamLLCGT3 ExelonLStreetGT1 ExelonMedwayLLCGT1 ExelonMedwayLLCGT2 ExelonMedwayLLCGT3 FraminghamStateUniversityPlantHA FraminghamStateUniversityPlantLIB FraminghamStateUniversityPlantMSC2 FraminghamStateUniversityPlantNORTH FraminghamStateUniversityPlantOC FraminghamStateUniversityPlantPP FraminghamStateUniversityPlantTOW1 FraminghamStateUniversityPlantTOW2 FraminghamStateUniversityPlantWEST GilletteSBMCDG GilletteSBMCDG2 GilletteSBMCDG3 HighStreetStation3 HighStreetStation4 HighStreetStation7 HighStreetStation8 KendallSquareStationJET1 KendallSquareStationJET2 MedicalAreaTotalEnergyPlantDEG1 MedicalAreaTotalEnergyPlantDEG2 MedicalAreaTotalEnergyPlantDEG3 MedicalAreaTotalEnergyPlantDEG4 MedicalAreaTotalEnergyPlantDEG5 MedicalAreaTotalEnergyPlantDEG6 MStreetJetNO6 MysticGeneratingStation4 MysticGeneratingStation5 MysticGeneratingStation6 PotterStation2IC1 PotterStation2IC2 WellesleyCollegeCentralUtilityPlantSB1 WilkinsStation1 WilkinsStation2 CrotchedMountainRehabilitationCenterGEN1 CrotchedMountainRehabilitationCenterGEN2 CrotchedMountainRehabilitationCenterGEN3 DartmouthCollegeHeatingPlantGEN1 DartmouthCollegeHeatingPlantGEN2 DartmouthCollegeHeatingPlantGEN3 HamptonFacilityGEN1 HamptonFacilityGEN2 HamptonFacilityGEN3 HamptonFacilityGEN4 HamptonFacilityGEN5 HamptonFacilityGEN6 LostNationGT1 MerrimackGT1 MerrimackGT2 PlymouthStateCollegeCogenerationA PlymouthStateCollegeCogenerationB SchillerGT1 WhiteLakeGT1 BlockIsland11 BlockIsland19 BlockIsland21 BlockIsland22 BlockIsland23 BlockIsland24 BlockIsland25 BlockIsland26 CentralPowerPlantGEN1 CentralPowerPlantGEN3 CentralPowerPlantGEN4 CentralPowerPlantGEN5 CentralPowerPlantGEN6 Canal1 Canal2 CherryStreet10 CherryStreet11 CherryStreet12 CherryStreet7 CherryStreet8 CherryStreet9 ClearyFlood8 FrontStreet1 FrontStreet2 FrontStreet3 Nantucket10 Nantucket11 Nantucket12 Nantucket13 Nantucket14 Nantucket15 Nantucket16 Nantucket17 OakBluffsDieselGeneratingFacilityUN1 OakBluffsDieselGeneratingFacilityUN2 OakBluffsDieselGeneratingFacilityUN3 SalemHarbor4 WestTisburyGeneratingFacilityUN1 WestTisburyGeneratingFacilityUN2 AscutneyGT4 Berlin5GT1 BurlingtonGTGT1 Colchester16GT1 EssexJunction19IC5a EssexJunction19IC5 EssexJunction19IC6a EssexJunction19IC6 EssexJunction19IC7a EssexJunction19IC7 EssexJunction19IC8a EssexJunction19IC8 Florence1 Florence2 NewportDiesels10 NewportDiesels4 NewportDiesels5 NewportDiesels6 NewportDiesels7 NewportDiesels8 NewportDiesels9 RutlandGT5 Vergennes95 Vergennes96 WestCharlestonIC3 WestCharlestonIC4 AndersonPowerProductsDivision3622 AndersonPowerProductsDivision6033 AndersonPowerProductsDivision6035 AndersonPowerProductsDivision6046 ErvingPaperMills1 EssentialPowerMassachusettsLLCWS1 EssentialPowerMassachusettsLLCWS10 EssentialPowerMassachusettsLLCWS2 Shrewsbury1 Shrewsbury2 Shrewsbury3 Shrewsbury4 Shrewsbury5 StonyBrook1 StonyBrook2 StonyBrookBS1 StonyBrookBS2 StonyBrookCA1 StonyBrookCT1 StonyBrookCT2 StonyBrookCT3 StonyBrookCT4 StonyBrookEDSI WilliamsCollegeCampusCHPGEN4 WilliamsCollegeCampusCHPGEN5 WilliamsCollegeCampusCHPGEN6 WoodlandRoadWOOD ;
+
+set Slack :=
+SLACK1 SLACK2 SLACK3 SLACK4 SLACK5 SLACK6 SLACK7 SLACK8 ;
+
+set Hydro :=
+CT_hydro ME_hydro NEMA_hydro NH_hydro RI_hydro VT_hydro WCMA_hydro ;
+
+set Ramping :=
+CT_hydro ME_hydro NEMA_hydro NH_hydro RI_hydro VT_hydro WCMA_hydro HQVTI HQWCMAI NBMEI NYCTI NYVTI NYWCMAI ;
+
+set Zone1Gas :=
+AlgonquinWindsorLocksGTG AlgonquinWindsorLocksGTG2 BridgeportEnergyProjectGEN1 BridgeportEnergyProjectGEN2 CapitalDistrictEnergyCenterGTG CPVTowanticEnergyCenterCTG1 CPVTowanticEnergyCenterCTG2 FoxwoodsCoGenCT1 FoxwoodsCoGenCT2 HartfordHospitalCogenerationGEN3 KillinglyEnergyCenterKEC KimberlyClarkUnit123GT100 KleenEnergySystemsProjectU1 KleenEnergySystemsProjectU2 LakeRoadGeneratingPlantU1 LakeRoadGeneratingPlantU2 LakeRoadGeneratingPlantU3 MilfordPowerProjectCA01 MilfordPowerProjectCA02 UCONNCogenFacilityCGT1 UCONNCogenFacilityCGT2 UCONNCogenFacilityCGT3 ALPierce4 BridgeportFuelCellPark1 BristolMyersSquibbWallingfordSOL CCSUCoGenSTBYGenEC1 CCSUCoGenSTBYGenEC2 DanburyHospitalCogenPlantGEN1 FairfieldUniversityCHPPlantCHP1 FritoLayIncorporatedCOGEN HartfordHospitalCogenerationGEN4 HSCoCHP1 KimberlyClarkUnit123GT200 PepperidgeFarmBloomfieldFCB PepperidgeFarmBloomfieldFCC PfizerGrotonFuelCellMM24 PfizerGrotonFuelCellMM25 PfizerGrotonPlantGT1 PrattWhitneyFT8 RandWhitneyCHPPlantTG1 TRSFuelCellMMH1 UDRGlastonburyFuelCellUDRFC UIRCPBridgeportSeasideBPFC UIRCPNewHavenFuelCellNHFC UIRCPWoodbridgeFCWBFC WallingfordEnergyCTG1 WallingfordEnergyCTG2 WallingfordEnergyCTG3 WallingfordEnergyCTG4 WallingfordEnergyCTG5 WallingfordEnergyCTG6 WallingfordEnergyCTG7 WaterburyGeneration10 WesleyanUniversityCogen11 AlgonquinWindsorLocksSTG ALPierce1 ALPierce2 ALPierce3 BradleyEnergyCenterUNIT1 BradleyEnergyCenterUNIT2 BradleyEnergyCenterUNIT3 BradleyEnergyCenterUNIT4 BridgeportEnergyProjectGEN3 CapitalDistrictEnergyCenterSTG CCSUFuelCellProjectCCSU CelluTissueGEN1 CJTSEnergyCenterUNIT1 CJTSEnergyCenterUNIT2 CJTSEnergyCenterUNIT3 CJTSEnergyCenterUNIT4 CJTSEnergyCenterUNIT5 CJTSEnergyCenterUNIT6 CJTSEnergyCenterUNIT7 CPVTowanticEnergyCenterSTG FoxwoodsCoGenSTG1 HartfordHospitalCogenerationGEN2 IBMSouthburyIBM00 KimberlyClarkUnit123GT300 KleenEnergySystemsProjectST Middletown2 Middletown3 PfizerGrotonPlantTG1 PfizerGrotonPlantTG2 PfizerGrotonPlantTG3 PfizerGrotonPlantTG4 PfizerGrotonPlantTG5 UCONNCogenFacilitySTG1 UncasvilleMillGEN1 ;
+
+set Zone2Gas :=
+MaineIndependenceStationGEN1 MaineIndependenceStationGEN2 RumfordPowerIncUNT1 WestbrookEnergyCenterPowerPlantGTG1 WestbrookEnergyCenterPowerPlantGTG2 AndroscogginEnergyCenterCT01 AndroscogginEnergyCenterCT02 AndroscogginEnergyCenterCT03 AndroscogginMillGEN1 AndroscogginMillGEN2 AndroscogginMillGEN3 AnsonAbenakiHydrosSTG1 BucksportGenerationLLCGEN4 DomtarWoodlandMillTG10 DomtarWoodlandMillTG11 EasternMaineMedicalCenterCOGE MeadRumfordCogen3STG RedShieldEnvirOldTownFacilityTG4 RedShieldEnvirOldTownFacilityTG5 RumfordCogenerationGEN1 SomersetPlantGEN1 SomersetPlantGEN2 MaineIndependenceStationGEN3 RumfordPowerIncUNT2 WestbrookEnergyCenterPowerPlantSTG3 ;
+
+set Zone3Gas :=
+KendallSquareStationGEN4 MysticGeneratingStationGT81 MysticGeneratingStationGT82 MysticGeneratingStationGT93 MysticGeneratingStationGT94 PotterStation2CC2 TannerStreetGenerationTRENT TannerStreetGenerationV643 BostonMedicalCenterCHPPlantCOGEN DeerIslandTreatmentPlant6ENT DeerIslandTreatmentPlant7ENT DeerIslandTreatmentPlantF101 ExelonWestMedwayIILLC4 ExelonWestMedwayIILLC5 FraminghamStateUniversityPlantMSC GeneralElectricAircraftEnginesGEN5 GeneralElectricAircraftEnginesGEN6 GeneralElectricAircraftEnginesGEN7 GeneralElectricAircraftEnginesGEN8 GilletteSBMCCTG3 GilletteSBMCTG1 GilletteSBMCTG2 HighStreetStation1 HighStreetStation10 HighStreetStation11 HighStreetStation12 HighStreetStation2 HighStreetStation6 HighStreetStation9 MassInstTechCntrlUtilitiesCogenPltCTG1 MedicalAreaTotalEnergyPlantCT1 MedicalAreaTotalEnergyPlantCT2 MedicalAreaTotalEnergyPlantCT3 MedicalAreaTotalEnergyPlantSTG2 MedicalAreaTotalEnergyPlantSTG3 MysticGeneratingStation7 MysticGeneratingStationGT1 NECCOCoGenerationGEN1 NECCOCoGenerationGEN2 NewBostonGeneratingStation1 NewBostonGeneratingStation2 PotterStation2WAT1 PotterStation2WAT2 RousselotIncGEN1 RousselotIncGEN2 RousselotIncGEN3 UnivofMassachusettsMedicalCenterGEN1 UnivofMassachusettsMedicalCenterGEN2 UnivofMassachusettsMedicalCenterGEN3 UnivofMassachusettsMedicalCenterGEN4 WatersRiver1 WatersRiver2 WellesleyCollegeCentralUtilityPlant1118 WellesleyCollegeCentralUtilityPlant1119 WellesleyCollegeCentralUtilityPlant1120 WellesleyCollegeCentralUtilityPlant1121 WellesleyCollegeCentralUtilityPlant8187 WestGrotonCHPG1 DeerIslandTreatmentPlantS101 KendallSquareStation1 KendallSquareStation2 KendallSquareStation3 MysticGeneratingStationST85 MysticGeneratingStationST96 PotterStation2CC3 TannerStreetGenerationVAX ;
+
+set Zone4Gas :=
+EssentialPowerNewingtonLLCGT1 EssentialPowerNewingtonLLCGT2 GraniteRidgeCT11 GraniteRidgeCT12 HamptonFacilityGEN8 Newington1 EssentialPowerNewingtonLLCST GraniteRidgeSTG ;
+
+set Zone5Gas :=
+ManchesterStreetG10A ManchesterStreetG11A ManchesterStreetGE9A OceanStatePowerGEN1 OceanStatePowerGEN2 OceanStatePowerIIGEN1 OceanStatePowerIIGEN2 PawtucketPowerAssociatesGEN1 RhodeIslandStateEnergyCenterCTG1 RhodeIslandStateEnergyCenterCTG2 TivertonPowerPlantUNT1 TivertonPowerPlantUNT3 CentralPowerPlantGEN7 OrbitEnergyRI1 RhodeIslandHospitalGEN2 RhodeIslandHospitalGEN4 RhodeIslandHospitalNEW1 RhodeIslandHospitalNEW3 ManchesterStreetGE10 ManchesterStreetGE11 ManchesterStreetGEN9 OceanStatePowerGEN3 OceanStatePowerIIGEN3 PawtucketPowerAssociatesGEN2 RhodeIslandStateEnergyCenterSTG1 TivertonPowerPlantUNT2 TivertonPowerPlantUNT4 ;
+
+set Zone6Gas :=
+BellinghamCogenerationFacilityCT1 BellinghamCogenerationFacilityCT2 ClearyFlood9A DartmouthPowerAssociatesLPGEN1 DightonPowerPlantUNT1 ForeRiverGeneratingStationGT11 ForeRiverGeneratingStationGT12 MilfordPowerLPGT1 SalemHarborStationNGCC3 SalemHarborStationNGCC4 Canal3 CanalUN2R DartmouthPowerAssociatesLPGEN3 MansfieldGEN1 MansfieldGEN2 MansfieldGEN3 BellinghamCogenerationFacilityST1 ClearyFloodCA9 DartmouthPowerAssociatesLPGEN2 ForeRiverGeneratingStationST15 MilfordPowerLPST1 SalemHarborStationNGCC1 SalemHarborStationNGCC2 ;
+
+set Zone8Gas :=
+ANPBellinghamEnergyProjectU1 ANPBellinghamEnergyProjectU2 ANPBlackstoneEnergyProjectU1 ANPBlackstoneEnergyProjectU2 BerkshirePowerGEN2 MasspowerGEN1 MasspowerGEN2 MillenniumPowerCT01 PittsfieldGeneratingLPGEN1 PittsfieldGeneratingLPGEN2 PittsfieldGeneratingLPGEN3 StonyBrook3A AmherstCollegeCoGenCTG ClarkUniversityGEN1 ClarkUniversityGEN2 ErvingPaperMills2 ErvingPaperMills3 EssentialPowerMassachusettsLLC3 EssentialPowerMassachusettsLLCGT1 EssentialPowerMassachusettsLLCGT2 IndianOrchardPlant1TG NewarkAmericaMill1 NortonPowerhouseGEN1 NortonPowerhouseGEN2 SimondsGEN1 SimondsGEN2 SimondsGEN3 SmithCollegeCentralHeatingPlantGT1 WilliamsCollegeCampusCHPGEN2 WilliamsCollegeCampusCHPGEN3 AmherstCollegeCoGenSTG CabotHolyoke6 CabotHolyoke8 CabotHolyoke9 MasspowerGEN3 MillenniumPowerST01 PittsfieldGeneratingLPGEN4 ;
+
+set zones :=
+CT ME NEMA NH RI SEMA VT WCMA ;
+
+set sources :=
+CT ME NEMA NH RI SEMA VT WCMA ;
+
+set sinks :=
+CT ME NEMA NH RI SEMA VT WCMA ;
+
+param SimHours := 8760;
+param SimDays:= 365;
+
+param HorizonHours := 48;
+
+param HorizonDays := 2;
+
+param:	limit	hurdle :=
+CT	CT	0	0
+CT	ME	0	0
+CT	NEMA	0	0
+CT	NH	0	0
+CT	RI	2800	0
+CT	SEMA	0	0
+CT	VT	0	0
+CT	WCMA	3000	0
+ME	CT	0	0
+ME	ME	0	0
+ME	NEMA	0	0
+ME	NH	1900	0
+ME	RI	0	0
+ME	SEMA	0	0
+ME	VT	0	0
+ME	WCMA	0	0
+NEMA	CT	0	0
+NEMA	ME	0	0
+NEMA	NEMA	0	0
+NEMA	NH	4850	0
+NEMA	RI	4850	0
+NEMA	SEMA	4850	0
+NEMA	VT	0	0
+NEMA	WCMA	10000	0
+NH	CT	0	0
+NH	ME	1900	0
+NH	NEMA	4850	0
+NH	NH	0	0
+NH	RI	0	0
+NH	SEMA	0	0
+NH	VT	10000	0
+NH	WCMA	10000	0
+RI	CT	2800	0
+RI	ME	0	0
+RI	NEMA	4850	0
+RI	NH	0	0
+RI	RI	0	0
+RI	SEMA	10000	0
+RI	VT	0	0
+RI	WCMA	3400	0
+SEMA	CT	0	0
+SEMA	ME	0	0
+SEMA	NEMA	4850	0
+SEMA	NH	0	0
+SEMA	RI	10000	0
+SEMA	SEMA	0	0
+SEMA	VT	0	0
+SEMA	WCMA	0	0
+VT	CT	0	0
+VT	ME	0	0
+VT	NEMA	0	0
+VT	NH	10000	0
+VT	RI	0	0
+VT	SEMA	0	0
+VT	VT	0	0
+VT	WCMA	2700	0
+WCMA	CT	3000	0
+WCMA	ME	0	0
+WCMA	NEMA	10000	0
+WCMA	NH	2700	0
+WCMA	RI	3400	0
+WCMA	SEMA	0	0
+WCMA	VT	2700	0
+WCMA	WCMA	0	0
+;
+
+param:	typ	zone	netcap	seg1	seg2	seg3	mincap	ramp	minu	mind	var_om	no_load	st_cost	:=
+
+BridgeportStation3	coal	CT	400.0	13.6238558593077	14.023855859307698	14.423855859307697	140.0	300.0	10	10	4.6	0.0	28000	
+BraytonPoint1	coal	NEMA	241.0	11.6864032814818	12.086403281481802	12.486403281481802	84.35	241.0	10	10	4.6	0.0	16870	
+BraytonPoint2	coal	NEMA	241.0	11.6864032814818	12.086403281481802	12.486403281481802	84.35	241.0	10	10	4.6	0.0	16870	
+BraytonPoint3	coal	NEMA	642.6	11.686403281481802	12.086403281481802	12.486403281481802	224.91	300.0	10	10	4.6	0.0	44982	
+Merrimack1	coal	NH	113.6	11.6465571802045	12.046557180204498	12.446557180204497	39.76	113.6	10	10	4.6	0.0	7952	
+Merrimack2	coal	NH	345.6	11.646557180204498	12.046557180204497	12.446557180204497	120.96	300.0	10	10	4.6	0.0	24192	
+Schiller4	coal	NH	50.0	16.4556433657381	16.855643365738096	17.255643365738095	17.5	50.0	10	10	4.6	0.0	3500	
+Schiller6	coal	NH	50.0	16.4556433657381	16.855643365738096	17.255643365738095	17.5	50.0	10	10	4.6	0.0	3500	
+SalemHarbor1	coal	SEMA	81.9	11.646557180204502	12.046557180204502	12.446557180204504	28.665	81.9	10	10	4.6	0.0	5733	
+SalemHarbor2	coal	SEMA	82.0	11.646557180204502	12.0465571802045	12.446557180204499	28.7	82.0	10	10	4.6	0.0	5740	
+SalemHarbor3	coal	SEMA	165.7	11.6465571802045	12.046557180204498	12.446557180204499	57.99499999999999	165.7	10	10	4.6	0.0	11599	
+MountTom1	coal	WCMA	136.0	11.646557180204498	12.046557180204497	12.446557180204497	47.599999999999994	136.0	6	6	4.6	0.0	9520	
+CT_hydro	hydro	CT	200.0	0.0	0.0	0.0	0.0	200.0	1	1	0.0	0.0	0	
+ME_hydro	hydro	ME	1500.0	0.0	0.0	0.0	0.0	1500.0	1	1	0.0	0.0	0	
+NEMA_hydro	hydro	NEMA	100.0	0.0	0.0	0.0	0.0	100.0	1	1	0.0	0.0	0	
+NH_hydro	hydro	NH	800.0	0.0	0.0	0.0	0.0	800.0	1	1	0.0	0.0	0	
+RI_hydro	hydro	RI	5.0	0.0	0.0	0.0	0.0	5.0	1	1	0.0	0.0	0	
+VT_hydro	hydro	VT	700.0	0.0	0.0	0.0	0.0	700.0	1	1	0.0	0.0	0	
+WCMA_hydro	hydro	WCMA	500.0	0.0	0.0	0.0	0.0	500.0	1	1	0.0	0.0	0	
+HQVTI	imports	HQVT_I	0.0	0.0	0.0	0.0	0.0	0.0	1	1	0.0	0.0	0	
+HQWCMAI	imports	HQWCMA_I	0.0	0.0	0.0	0.0	0.0	0.0	1	1	0.0	0.0	0	
+NBMEI	imports	NBME_I	0.0	0.0	0.0	0.0	0.0	0.0	1	1	0.0	0.0	0	
+NYCTI	imports	NYCT_I	0.0	0.0	0.0	0.0	0.0	0.0	1	1	0.0	0.0	0	
+NYVTI	imports	NYVT_I	0.0	0.0	0.0	0.0	0.0	0.0	1	1	0.0	0.0	0	
+NYWCMAI	imports	NYWCMA_I	0.0	0.0	0.0	0.0	0.0	0.0	1	1	0.0	0.0	0	
+AlgonquinWindsorLocksGTG	ngcc	CT	40.0	7.589777035888139	7.850722775690498	8.111668515492855	16.0	40.0	6	6	2.0	49.81341115720554	2800	
+AlgonquinWindsorLocksGTG2	ngcc	CT	15.0	3.919044725306651	4.179990465109012	4.440936204911372	6.0	15.0	1	1	2.0	18.680029183952087	1050	
+BridgeportEnergyProjectGEN1	ngcc	CT	170.0	5.683168969452922	5.944114709255282	6.205060449057643	68.0	170.0	4	4	2.0	211.70699741812348	11900	
+BridgeportEnergyProjectGEN2	ngcc	CT	170.0	5.683168969452922	5.944114709255282	6.205060449057643	68.0	170.0	4	4	2.0	211.70699741812348	11900	
+CapitalDistrictEnergyCenterGTG	ngcc	CT	44.1	7.589777035888139	7.850722775690498	8.111668515492855	17.64	44.1	6	6	2.0	54.9192858008191	3087	
+CPVTowanticEnergyCenterCTG1	ngcc	CT	280.5	6.1590836956322805	6.4200294354346426	6.680975175237004	112.2	280.5	1	1	2.0	349.3165457399037	19635	
+CPVTowanticEnergyCenterCTG2	ngcc	CT	280.5	6.1590836956322805	6.4200294354346426	6.680975175237004	112.2	280.5	1	1	2.0	349.3165457399037	19635	
+FoxwoodsCoGenCT1	ngcc	CT	6.6	4.145711197369062	4.406656937171422	4.667602676973783	2.64	6.6	1	1	2.0	8.219212840938924	462	
+FoxwoodsCoGenCT2	ngcc	CT	6.6	4.145711197369062	4.406656937171422	4.667602676973783	2.64	6.6	1	1	2.0	8.219212840938924	462	
+HartfordHospitalCogenerationGEN3	ngcc	CT	6.2	4.30434694752131	4.56529268732367	4.826238427126031	2.4800000000000004	6.2	6	6	2.0	7.721078729366877	434	
+KillinglyEnergyCenterKEC	ngcc	CT	552.0	8.12033072370258	8.38127646350494	8.642222203307302	220.8	552.0	1	1	2.0	687.4250739694385	38640	
+KimberlyClarkUnit123GT100	ngcc	CT	16.1	3.919044725306651	4.179990465109012	4.440936204911372	6.440000000000001	16.1	1	1	2.0	20.04989799077525	1127	
+KleenEnergySystemsProjectU1	ngcc	CT	199.0	5.740043381031122	6.000989120833482	6.261934860635841	79.60000000000001	199.0	1	1	2.0	247.821720507098	13930	
+KleenEnergySystemsProjectU2	ngcc	CT	199.0	5.740043381031122	6.000989120833482	6.261934860635841	79.60000000000001	199.0	1	1	2.0	247.821720507098	13930	
+LakeRoadGeneratingPlantU1	ngcc	CT	280.0	6.159083695632282	6.4200294354346426	6.680975175237004	112.0	280.0	3	3	2.0	348.69387810043884	19600	
+LakeRoadGeneratingPlantU2	ngcc	CT	280.0	6.159083695632282	6.4200294354346426	6.680975175237004	112.0	280.0	3	3	2.0	348.69387810043884	19600	
+LakeRoadGeneratingPlantU3	ngcc	CT	280.0	6.159083695632282	6.4200294354346426	6.680975175237004	112.0	280.0	3	3	2.0	348.69387810043884	19600	
+MilfordPowerProjectCA01	ngcc	CT	289.0	5.834890422191342	6.095836161993702	6.356781901796063	115.60000000000001	289.0	2	2	2.0	359.9018956108093	20230	
+MilfordPowerProjectCA02	ngcc	CT	289.0	5.834890422191342	6.095836161993702	6.356781901796063	115.60000000000001	289.0	2	2	2.0	359.9018956108093	20230	
+UCONNCogenFacilityCGT1	ngcc	CT	6.9	4.4552460567004015	4.716191796502761	4.977137536305121	2.7600000000000002	6.9	2	2	2.0	8.592813424617969	483	
+UCONNCogenFacilityCGT2	ngcc	CT	6.9	4.4552460567004015	4.716191796502761	4.977137536305121	2.7600000000000002	6.9	2	2	2.0	8.592813424617969	483	
+UCONNCogenFacilityCGT3	ngcc	CT	6.9	4.4552460567004015	4.716191796502761	4.977137536305121	2.7600000000000002	6.9	2	2	2.0	8.592813424617969	483	
+MaineIndependenceStationGEN1	ngcc	ME	177.8	6.1706585177922415	6.431604257594601	6.692549997396961	71.12	177.8	4	4	2.0	221.42061259377843	12446	
+MaineIndependenceStationGEN2	ngcc	ME	177.8	6.1706585177922415	6.431604257594601	6.692549997396961	71.12	177.8	4	4	2.0	221.42061259377843	12446	
+RumfordPowerIncUNT1	ngcc	ME	179.4	4.25296308386981	4.51390882367217	4.7748545634745305	71.76	179.4	4	4	2.0	223.41314904006717	12558	
+WestbrookEnergyCenterPowerPlantGTG1	ngcc	ME	184.2	5.679808627652783	5.940754367455142	6.201700107257501	73.67999999999999	184.2	4	4	2.0	229.39075837893074	12894	
+WestbrookEnergyCenterPowerPlantGTG2	ngcc	ME	184.2	5.679808627652783	5.940754367455142	6.201700107257501	73.67999999999999	184.2	4	4	2.0	229.39075837893074	12894	
+KendallSquareStationGEN4	ngcc	NEMA	186.2	4.278095063569561	4.539040803371921	4.799986543174281	74.48	186.2	3	3	2.0	231.8814289367918	13034	
+MysticGeneratingStationGT81	ngcc	NEMA	278.6	6.091772141978382	6.35271788178074	6.6136636215830995	111.44000000000001	278.6	6	6	2.0	346.9504087099369	19502	
+MysticGeneratingStationGT82	ngcc	NEMA	278.6	6.091772141978382	6.35271788178074	6.6136636215830995	111.44000000000001	278.6	6	6	2.0	346.9504087099369	19502	
+MysticGeneratingStationGT93	ngcc	NEMA	278.6	6.091772141978382	6.35271788178074	6.6136636215830995	111.44000000000001	278.6	2	2	2.0	346.9504087099369	19502	
+MysticGeneratingStationGT94	ngcc	NEMA	278.6	6.091772141978382	6.35271788178074	6.6136636215830995	111.44000000000001	278.6	2	2	2.0	346.9504087099369	19502	
+PotterStation2CC2	ngcc	NEMA	76.0	8.640139709766562	8.901085449568921	9.16203118937128	30.400000000000002	76.0	6	6	2.0	94.64548119869066	5320	
+TannerStreetGenerationTRENT	ngcc	NEMA	57.9	7.691271241084832	7.952216980887189	8.213162720689548	23.16	57.9	1	1	2.0	72.10491265005503	4053	
+TannerStreetGenerationV643	ngcc	NEMA	65.5	7.69127124108483	7.952216980887189	8.21316272068955	26.200000000000003	65.5	5	5	2.0	81.5694607699241	4585	
+EssentialPowerNewingtonLLCGT1	ngcc	NH	185.6	6.0124123986316915	6.273358138434051	6.534303878236409	74.24	185.6	3	3	2.0	231.13422776943412	12992	
+EssentialPowerNewingtonLLCGT2	ngcc	NH	185.6	6.0124123986316915	6.273358138434051	6.534303878236409	74.24	185.6	3	3	2.0	231.13422776943412	12992	
+GraniteRidgeCT11	ngcc	NH	260.0	5.796284172055851	6.057229911858211	6.318175651660571	104.0	260.0	2	2	2.0	323.7871725218358	18200	
+GraniteRidgeCT12	ngcc	NH	260.0	5.796284172055851	6.057229911858211	6.318175651660571	104.0	260.0	2	2	2.0	323.7871725218358	18200	
+ManchesterStreetG10A	ngcc	RI	125.0	6.524328644474132	6.785274384276491	7.0462201240788485	50.0	125.0	4	4	2.0	155.66690986626736	8750	
+ManchesterStreetG11A	ngcc	RI	125.0	6.524328644474132	6.785274384276491	7.0462201240788485	50.0	125.0	4	4	2.0	155.66690986626736	8750	
+ManchesterStreetGE9A	ngcc	RI	125.0	6.524328644474132	6.785274384276491	7.0462201240788485	50.0	125.0	4	4	2.0	155.66690986626736	8750	
+OceanStatePowerGEN1	ngcc	RI	82.8	7.057793606715142	7.318739346517503	7.579685086319863	33.12	82.8	5	5	2.0	103.1137610954154	5796	
+OceanStatePowerGEN2	ngcc	RI	82.8	7.057793606715142	7.318739346517503	7.579685086319863	33.12	82.8	5	5	2.0	103.1137610954154	5796	
+OceanStatePowerIIGEN1	ngcc	RI	82.8	8.37359900799335	8.634544747795713	8.895490487598074	33.12	82.8	5	5	2.0	103.1137610954154	5796	
+OceanStatePowerIIGEN2	ngcc	RI	82.8	8.37359900799335	8.634544747795713	8.895490487598074	33.12	82.8	5	5	2.0	103.1137610954154	5796	
+PawtucketPowerAssociatesGEN1	ngcc	RI	41.8	7.8467817896830905	8.10772752948545	8.36867326928781	16.72	41.8	5	5	2.0	52.05501465927975	2926	
+RhodeIslandStateEnergyCenterCTG1	ngcc	RI	196.0	5.641820037479612	5.902765777281972	6.163711517084331	78.4	196.0	2	2	2.0	244.08571467030714	13720	
+RhodeIslandStateEnergyCenterCTG2	ngcc	RI	196.0	5.641820037479612	5.902765777281972	6.163711517084331	78.4	196.0	2	2	2.0	244.08571467030714	13720	
+TivertonPowerPlantUNT1	ngcc	RI	179.3	5.941066747057912	6.202012486860272	6.462958226662632	71.72000000000001	179.3	3	3	2.0	223.28861551217423	12551	
+TivertonPowerPlantUNT3	ngcc	RI	179.3	5.941066747057912	6.202012486860272	6.462958226662632	71.72000000000001	179.3	3	3	2.0	223.28861551217423	12551	
+BellinghamCogenerationFacilityCT1	ngcc	SEMA	128.7	7.077788675260381	7.338734415062742	7.599680154865103	51.48	128.7	5	5	2.0	160.2746503983087	9009	
+BellinghamCogenerationFacilityCT2	ngcc	SEMA	128.7	7.077788675260381	7.338734415062742	7.599680154865103	51.48	128.7	5	5	2.0	160.2746503983087	9009	
+ClearyFlood9A	ngcc	SEMA	23.0	10.360989290333963	10.621935030136326	10.88288076993869	9.200000000000001	23.0	6	6	2.0	28.642711415393265	1610	
+DartmouthPowerAssociatesLPGEN1	ngcc	SEMA	45.0	7.4613914115811415	7.722337151383501	7.983282891185861	18.0	45.0	5	5	2.0	56.04008755185633	3150	
+DightonPowerPlantUNT1	ngcc	SEMA	200.0	6.569858587462072	6.830804327264432	7.091750067066792	80.0	200.0	4	4	2.0	249.0670557860273	14000	
+ForeRiverGeneratingStationGT11	ngcc	SEMA	278.6	5.8763003995539815	6.137246139356343	6.398191879158702	111.44000000000001	278.6	2	2	2.0	346.9504087099369	19502	
+ForeRiverGeneratingStationGT12	ngcc	SEMA	278.6	5.8763003995539815	6.137246139356343	6.398191879158702	111.44000000000001	278.6	2	2	2.0	346.9504087099369	19502	
+MilfordPowerLPGT1	ngcc	SEMA	128.9	7.185808181669659	7.446753921472017	7.707699661274376	51.56	128.9	5	5	2.0	160.52371745409457	9023	
+SalemHarborStationNGCC3	ngcc	SEMA	240.7	7.07778867526038	7.338734415062742	7.599680154865105	96.28	240.7	1	1	2.0	299.7522016384852	16849	
+SalemHarborStationNGCC4	ngcc	SEMA	240.7	7.07778867526038	7.338734415062742	7.599680154865105	96.28	240.7	1	1	2.0	299.7522016384852	16849	
+ANPBellinghamEnergyProjectU1	ngcc	WCMA	289.0	5.516719243986491	5.777664983788851	6.038610723591212	115.60000000000001	289.0	3	3	2.0	359.9018956108093	20230	
+ANPBellinghamEnergyProjectU2	ngcc	WCMA	289.0	5.516719243986491	5.777664983788851	6.038610723591212	115.60000000000001	289.0	3	3	2.0	359.9018956108093	20230	
+ANPBlackstoneEnergyProjectU1	ngcc	WCMA	289.0	5.885455870657271	6.146401610459632	6.407347350261993	115.60000000000001	289.0	3	3	2.0	359.90189561080945	20230	
+ANPBlackstoneEnergyProjectU2	ngcc	WCMA	289.0	5.885455870657271	6.146401610459632	6.407347350261993	115.60000000000001	289.0	3	3	2.0	359.90189561080945	20230	
+BerkshirePowerGEN2	ngcc	WCMA	289.0	6.130031262642311	6.3909770024446715	6.651922742247031	115.60000000000001	289.0	4	4	2.0	359.90189561080916	20230	
+MasspowerGEN1	ngcc	WCMA	90.0	6.725327505228432	6.986273245030789	7.247218984833148	36.0	90.0	5	5	2.0	112.08017510371256	6300	
+MasspowerGEN2	ngcc	WCMA	90.0	6.725327505228432	6.986273245030789	7.247218984833148	36.0	90.0	5	5	2.0	112.08017510371256	6300	
+MillenniumPowerCT01	ngcc	WCMA	230.0	5.690750728401971	5.951696468204331	6.212642208006692	92.0	230.0	3	3	2.0	286.4271141539325	16100	
+PittsfieldGeneratingLPGEN1	ngcc	WCMA	40.7	7.234796314729592	7.495742054531952	7.7566877943343115	16.28	40.7	6	6	2.0	50.68514585245674	2849	
+PittsfieldGeneratingLPGEN2	ngcc	WCMA	40.7	7.234796314729592	7.495742054531952	7.7566877943343115	16.28	40.7	6	6	2.0	50.68514585245674	2849	
+PittsfieldGeneratingLPGEN3	ngcc	WCMA	40.7	7.234796314729592	7.495742054531952	7.7566877943343115	16.28	40.7	6	6	2.0	50.68514585245674	2849	
+StonyBrook3A	ngcc	WCMA	302.0	8.12033072370258	8.38127646350494	8.642222203307302	120.80000000000001	302.0	6	6	2.0	376.0912542369024	21140	
+ALPierce4	ngct	CT	84.0	8.059641346382682	8.12466610849828	8.189690870613878	29.4	84.0	1	1	3.17	129.2674315887789	5880	
+BridgeportFuelCellPark1	ngct	CT	16.6	6.947384536770451	7.012409298886051	7.077434061001651	5.8100000000000005	16.6	1	1	3.17	25.54570671873485	1162	
+BristolMyersSquibbWallingfordSOL	ngct	CT	4.8	13.569701801015768	13.634726563131368	13.69975132524697	1.68	4.8	1	1	3.17	7.386710376501651	336	
+CCSUCoGenSTBYGenEC1	ngct	CT	1.3	3.0146533504163386	3.079678112531939	3.1447028746475385	0.45499999999999996	1.3	1	1	3.17	2.000567393635864	91	
+CCSUCoGenSTBYGenEC2	ngct	CT	1.3	3.0146533504163386	3.079678112531939	3.1447028746475385	0.45499999999999996	1.3	1	1	3.17	2.000567393635864	91	
+DanburyHospitalCogenPlantGEN1	ngct	CT	4.3	3.297967774183799	3.3629925362993998	3.4280172984150004	1.505	4.3	1	1	3.17	6.617261378949404	301	
+FairfieldUniversityCHPPlantCHP1	ngct	CT	4.5	4.487886781423001	4.552911543538601	4.617936305654201	1.575	4.5	1	1	3.17	6.925040977970307	315	
+FritoLayIncorporatedCOGEN	ngct	CT	4.6	13.419857071342571	13.48488183345817	13.549906595573768	1.6099999999999999	4.6	1	1	3.17	7.078930777480756	322	
+HartfordHospitalCogenerationGEN4	ngct	CT	1.4	3.7817774356495195	3.84680219776512	3.911826959880721	0.48999999999999994	1.4	1	1	3.17	2.154457193146315	98	
+HSCoCHP1	ngct	CT	4.0	3.5643681836212298	3.6293929457368304	3.694417707852431	1.4	4.0	1	1	3.17	6.155591980418041	280	
+KimberlyClarkUnit123GT200	ngct	CT	16.1	3.3964752134348597	3.4614999755504616	3.526524737666063	5.635	16.1	1	1	3.17	24.776257721182645	1127	
+PepperidgeFarmBloomfieldFCB	ngct	CT	1.2	3.5288726223295392	3.5938973844451394	3.65892214656074	0.42	1.2	1	1	3.17	1.8466775941254128	84	
+PepperidgeFarmBloomfieldFCC	ngct	CT	1.4	3.5288726223295397	3.5938973844451403	3.658922146560741	0.48999999999999994	1.4	1	1	3.17	2.154457193146315	98	
+PfizerGrotonFuelCellMM24	ngct	CT	2.8	8.40912720373617	8.474151965851771	8.539176727967373	0.9799999999999999	2.8	1	1	3.17	4.308914386292627	196	
+PfizerGrotonFuelCellMM25	ngct	CT	2.8	8.40912720373617	8.474151965851771	8.539176727967373	0.9799999999999999	2.8	1	1	3.17	4.308914386292627	196	
+PfizerGrotonPlantGT1	ngct	CT	10.0	3.477342778955559	3.5423675410711595	3.60739230318676	3.5	10.0	1	1	3.17	15.388979951045119	700	
+PrattWhitneyFT8	ngct	CT	25.8	3.1243096407732085	3.189334402888808	3.2543591650044084	9.03	25.8	1	1	3.17	39.70356827369641	1806	
+RandWhitneyCHPPlantTG1	ngct	CT	14.6	3.2370039202273904	3.3020286823429914	3.3670534444585924	5.109999999999999	14.6	1	1	3.17	22.46791072852588	1022	
+TRSFuelCellMMH1	ngct	CT	3.7	6.1814249919586794	6.24644975407428	6.31147451618988	1.295	3.7	1	1	3.17	5.693922581886703	259	
+UDRGlastonburyFuelCellUDRFC	ngct	CT	3.4	6.181424991958679	6.246449754074278	6.311474516189878	1.19	3.4	1	1	3.17	5.232253183355341	238	
+UIRCPBridgeportSeasideBPFC	ngct	CT	2.8	6.8894295389736895	6.9544543010892905	7.0194790632048925	0.9799999999999999	2.8	1	1	3.17	4.308914386292627	196	
+UIRCPNewHavenFuelCellNHFC	ngct	CT	2.8	6.981528160367531	7.046552922483132	7.111577684598734	0.9799999999999999	2.8	1	1	3.17	4.308914386292627	196	
+UIRCPWoodbridgeFCWBFC	ngct	CT	2.8	1.8377118101624594	1.9027365722780603	1.967761334393661	0.9799999999999999	2.8	1	1	3.17	4.308914386292633	196	
+WallingfordEnergyCTG1	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WallingfordEnergyCTG2	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WallingfordEnergyCTG3	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WallingfordEnergyCTG4	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WallingfordEnergyCTG5	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WallingfordEnergyCTG6	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WallingfordEnergyCTG7	ngct	CT	50.0	7.409479388724462	7.474504150840061	7.539528912955661	17.5	50.0	1	1	3.17	76.94489975522548	3500	
+WaterburyGeneration10	ngct	CT	96.0	6.253924042865909	6.318948804981508	6.383973567097108	33.599999999999994	96.0	1	1	3.17	147.73420753003316	6720	
+WesleyanUniversityCogen11	ngct	CT	2.4	5.176045732847778	5.241070494963379	5.306095257078979	0.84	2.4	1	1	3.17	3.6933551882508255	168	
+AndroscogginEnergyCenterCT01	ngct	ME	54.5	2.67160259879063	2.7366273609062306	2.8016521230218316	19.075	54.5	1	1	3.17	83.86994073319592	3815	
+AndroscogginEnergyCenterCT02	ngct	ME	54.5	2.67160259879063	2.7366273609062306	2.8016521230218316	19.075	54.5	1	1	3.17	83.86994073319592	3815	
+AndroscogginEnergyCenterCT03	ngct	ME	54.5	2.67160259879063	2.7366273609062306	2.8016521230218316	19.075	54.5	1	1	3.17	83.86994073319592	3815	
+AndroscogginMillGEN1	ngct	ME	25.0	3.6595475501345005	3.724572312250101	3.7895970743657017	8.75	25.0	1	1	3.17	38.47244987761277	1750	
+AndroscogginMillGEN2	ngct	ME	25.0	3.6595475501345005	3.724572312250101	3.7895970743657017	8.75	25.0	1	1	3.17	38.47244987761277	1750	
+AndroscogginMillGEN3	ngct	ME	30.0	3.659547550134499	3.724572312250099	3.789597074365699	10.5	30.0	1	1	3.17	46.1669398531353	2100	
+AnsonAbenakiHydrosSTG1	ngct	ME	3.0	415.64033227233494	415.7053570344505	415.77038179656614	1.0499999999999998	3.0	1	1	3.17	4.616693985313589	210	
+BucksportGenerationLLCGEN4	ngct	ME	186.8	2.263150379970561	2.328175142086161	2.3931999042017615	65.38	186.8	1	1	3.17	287.4661454855227	13076	
+DomtarWoodlandMillTG10	ngct	ME	23.0	4.500607637620839	4.565632399736439	4.63065716185204	8.049999999999999	23.0	1	1	3.17	35.394653887403805	1610	
+DomtarWoodlandMillTG11	ngct	ME	26.8	4.500607637620838	4.565632399736439	4.6306571618520405	9.379999999999999	26.8	1	1	3.17	41.24246626880094	1876	
+EasternMaineMedicalCenterCOGE	ngct	ME	3.8	3.4234877427239194	3.4885125048395205	3.553537266955121	1.3299999999999998	3.8	1	1	3.17	5.847812381397146	266	
+MeadRumfordCogen3STG	ngct	ME	12.5	4.500607637620839	4.56563239973644	4.6306571618520405	4.375	12.5	1	1	3.17	19.236224938806384	875	
+RedShieldEnvirOldTownFacilityTG4	ngct	ME	12.5	4.500607637620839	4.56563239973644	4.6306571618520405	4.375	12.5	1	1	3.17	19.236224938806384	875	
+RedShieldEnvirOldTownFacilityTG5	ngct	ME	9.5	4.500607637620838	4.56563239973644	4.630657161852041	3.3249999999999997	9.5	1	1	3.17	14.619530953492875	665	
+RumfordCogenerationGEN1	ngct	ME	102.6	3.7303935719980195	3.7954183341136196	3.86044309622922	35.91	102.6	1	1	3.17	157.89093429772302	7182	
+SomersetPlantGEN1	ngct	ME	45.9	3.6315889258036695	3.696613687919271	3.7616384500348725	16.064999999999998	45.9	1	1	3.17	70.63541797529706	3213	
+SomersetPlantGEN2	ngct	ME	61.2	3.6315889258036704	3.6966136879192706	3.7616384500348703	21.419999999999998	61.2	1	1	3.17	94.1805573003962	4284	
+BostonMedicalCenterCHPPlantCOGEN	ngct	NEMA	2.0	3.0146533504163395	3.0796781125319397	3.1447028746475403	0.7	2.0	1	1	3.17	3.077795990209021	140	
+DeerIslandTreatmentPlant6ENT	ngct	NEMA	6.0	4.383501552191999	4.448526314307598	4.513551076423198	2.0999999999999996	6.0	1	1	3.17	9.23338797062707	420	
+DeerIslandTreatmentPlant7ENT	ngct	NEMA	6.0	4.383501552191999	4.448526314307598	4.513551076423198	2.0999999999999996	6.0	1	1	3.17	9.23338797062707	420	
+DeerIslandTreatmentPlantF101	ngct	NEMA	0.2	4.3835015521919996	4.4485263143076	4.513551076423202	0.06999999999999999	0.2	1	1	3.17	0.30777959902090285	14	
+ExelonWestMedwayIILLC4	ngct	NEMA	100.0	8.059641346382682	8.124666108498282	8.189690870613884	35.0	100.0	1	1	3.17	153.88979951045096	7000	
+ExelonWestMedwayIILLC5	ngct	NEMA	100.0	8.059641346382682	8.124666108498282	8.189690870613884	35.0	100.0	1	1	3.17	153.88979951045096	7000	
+FraminghamStateUniversityPlantMSC	ngct	NEMA	0.1	15.45283920734527	15.517863969460869	15.582888731576466	0.034999999999999996	0.1	1	1	3.17	0.15388979951045162	7	
+GeneralElectricAircraftEnginesGEN5	ngct	NEMA	10.0	1.95686204720554	2.0218868093211397	2.0869115714367394	3.5	10.0	1	1	3.17	15.388979951045119	700	
+GeneralElectricAircraftEnginesGEN6	ngct	NEMA	10.0	1.95686204720554	2.0218868093211397	2.0869115714367394	3.5	10.0	1	1	3.17	15.388979951045119	700	
+GeneralElectricAircraftEnginesGEN7	ngct	NEMA	12.5	1.9568620472055402	2.02188680932114	2.0869115714367403	4.375	12.5	1	1	3.17	19.236224938806387	875	
+GeneralElectricAircraftEnginesGEN8	ngct	NEMA	21.1	1.9568620472055405	2.0218868093211406	2.086911571436741	7.385	21.1	1	1	3.17	32.470747696705196	1477	
+GilletteSBMCCTG3	ngct	NEMA	7.2	2.9554270649995797	3.0204518271151795	3.0854765892307796	2.52	7.2	1	1	3.17	11.080065564752498	504	
+GilletteSBMCTG1	ngct	NEMA	7.1	2.955427064999581	3.0204518271151812	3.0854765892307814	2.485	7.1	1	1	3.17	10.92617576524204	497	
+GilletteSBMCTG2	ngct	NEMA	5.0	2.95542706499958	3.0204518271151803	3.0854765892307805	1.75	5.0	1	1	3.17	7.69448997552256	350	
+HighStreetStation1	ngct	NEMA	1.2	7.545079934617971	7.61010469673357	7.67512945884917	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+HighStreetStation10	ngct	NEMA	1.2	7.545079934617971	7.61010469673357	7.67512945884917	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+HighStreetStation11	ngct	NEMA	1.2	7.545079934617971	7.61010469673357	7.67512945884917	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+HighStreetStation12	ngct	NEMA	1.2	7.545079934617971	7.61010469673357	7.67512945884917	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+HighStreetStation2	ngct	NEMA	1.3	7.545079934617968	7.610104696733569	7.67512945884917	0.45499999999999996	1.3	1	1	3.17	2.000567393635865	91	
+HighStreetStation6	ngct	NEMA	1.1	7.545079934617971	7.610104696733569	7.675129458849168	0.385	1.1	1	1	3.17	1.692787794614964	77	
+HighStreetStation9	ngct	NEMA	1.3	7.545079934617968	7.610104696733569	7.67512945884917	0.45499999999999996	1.3	1	1	3.17	2.000567393635865	91	
+MassInstTechCntrlUtilitiesCogenPltCTG1	ngct	NEMA	21.2	7.545079934617968	7.610104696733569	7.67512945884917	7.419999999999999	21.2	1	1	3.17	32.62463749621565	1484	
+MedicalAreaTotalEnergyPlantCT1	ngct	NEMA	12.5	3.49306316188764	3.5580879240032406	3.6231126861188407	4.375	12.5	1	1	3.17	19.23622493880638	875	
+MedicalAreaTotalEnergyPlantCT2	ngct	NEMA	12.5	3.49306316188764	3.5580879240032406	3.6231126861188407	4.375	12.5	1	1	3.17	19.23622493880638	875	
+MedicalAreaTotalEnergyPlantCT3	ngct	NEMA	13.8	3.493063161887639	3.5580879240032393	3.6231126861188394	4.83	13.8	1	1	3.17	21.236792332442278	966	
+MedicalAreaTotalEnergyPlantSTG2	ngct	NEMA	11.0	3.49306316188764	3.558087924003241	3.623112686118842	3.8499999999999996	11.0	1	1	3.17	16.92787794614962	770	
+MedicalAreaTotalEnergyPlantSTG3	ngct	NEMA	11.0	3.49306316188764	3.558087924003241	3.623112686118842	3.8499999999999996	11.0	1	1	3.17	16.92787794614962	770	
+MysticGeneratingStation7	ngct	NEMA	617.0	5.56920263010659	5.634227392222192	5.699252154337794	215.95	617.0	1	1	3.17	949.5000629794855	43190	
+MysticGeneratingStationGT1	ngct	NEMA	14.2	5.569202630106591	5.634227392222191	5.699252154337792	4.97	14.2	1	1	3.17	21.85235153048409	994	
+NECCOCoGenerationGEN1	ngct	NEMA	2.9	3.3254597751856094	3.39048453730121	3.45550929941681	1.015	2.9	1	1	3.17	4.462804185803087	203	
+NECCOCoGenerationGEN2	ngct	NEMA	2.9	3.3254597751856094	3.39048453730121	3.45550929941681	1.015	2.9	1	1	3.17	4.462804185803087	203	
+NewBostonGeneratingStation1	ngct	NEMA	359.0	3.7303935719980195	3.7954183341136196	3.86044309622922	125.64999999999999	359.0	1	1	3.17	552.4643802425201	25130	
+NewBostonGeneratingStation2	ngct	NEMA	358.7	3.730393571998019	3.7954183341136196	3.86044309622922	125.54499999999999	358.7	1	1	3.17	552.0027108439886	25109	
+PotterStation2WAT1	ngct	NEMA	58.0	8.11757019789477	8.182594960010368	8.247619722125968	20.299999999999997	58.0	1	1	3.17	89.25608371606181	4060	
+PotterStation2WAT2	ngct	NEMA	58.0	8.11757019789477	8.182594960010368	8.247619722125968	20.299999999999997	58.0	1	1	3.17	89.25608371606181	4060	
+RousselotIncGEN1	ngct	NEMA	1.5	3.6270502187703397	3.692074980885941	3.7570997430015423	0.5249999999999999	1.5	1	1	3.17	2.3083469926567686	105	
+RousselotIncGEN2	ngct	NEMA	1.5	3.6270502187703397	3.692074980885941	3.7570997430015423	0.5249999999999999	1.5	1	1	3.17	2.3083469926567686	105	
+RousselotIncGEN3	ngct	NEMA	3.7	3.62705021877034	3.69207498088594	3.7570997430015396	1.295	3.7	1	1	3.17	5.693922581886702	259	
+UnivofMassachusettsMedicalCenterGEN1	ngct	NEMA	2.5	4.512572684597341	4.577597446712941	4.642622208828541	0.875	2.5	1	1	3.17	3.8472449877612798	175	
+UnivofMassachusettsMedicalCenterGEN2	ngct	NEMA	2.5	4.512572684597341	4.577597446712941	4.642622208828541	0.875	2.5	1	1	3.17	3.8472449877612798	175	
+UnivofMassachusettsMedicalCenterGEN3	ngct	NEMA	5.0	4.512572684597341	4.577597446712941	4.642622208828541	1.75	5.0	1	1	3.17	7.6944899755225595	350	
+UnivofMassachusettsMedicalCenterGEN4	ngct	NEMA	7.5	4.51257268459734	4.577597446712939	4.642622208828539	2.625	7.5	1	1	3.17	11.541734963283822	525	
+WatersRiver1	ngct	NEMA	21.3	12.262627916353171	12.32765267846877	12.392677440584368	7.455	21.3	1	1	3.17	32.778527295726164	1491	
+WatersRiver2	ngct	NEMA	43.6	12.262627916353168	12.327652678468768	12.392677440584368	15.26	43.6	1	1	3.17	67.09595258655679	3052	
+WellesleyCollegeCentralUtilityPlant1118	ngct	NEMA	1.3	4.707546885274668	4.772571647390269	4.8375964095058706	0.45499999999999996	1.3	1	1	3.17	2.0005673936358637	91	
+WellesleyCollegeCentralUtilityPlant1119	ngct	NEMA	1.3	4.707546885274668	4.772571647390269	4.8375964095058706	0.45499999999999996	1.3	1	1	3.17	2.0005673936358637	91	
+WellesleyCollegeCentralUtilityPlant1120	ngct	NEMA	1.3	4.707546885274668	4.772571647390269	4.8375964095058706	0.45499999999999996	1.3	1	1	3.17	2.0005673936358637	91	
+WellesleyCollegeCentralUtilityPlant1121	ngct	NEMA	1.3	4.707546885274668	4.772571647390269	4.8375964095058706	0.45499999999999996	1.3	1	1	3.17	2.0005673936358637	91	
+WellesleyCollegeCentralUtilityPlant8187	ngct	NEMA	1.9	4.707546885274669	4.7725716473902695	4.83759640950587	0.6649999999999999	1.9	1	1	3.17	2.9239061906985717	133	
+WestGrotonCHPG1	ngct	NEMA	4.1	3.5615249908251183	3.6265497529407194	3.69157451505632	1.4349999999999998	4.1	1	1	3.17	6.309481779928499	287	
+HamptonFacilityGEN8	ngct	NH	5.0	4.17544726046851	4.24047202258411	4.305496784699709	1.75	5.0	1	1	3.17	7.694489975522563	350	
+Newington1	ngct	NH	414.0	12.22646109129347	12.291485853409071	12.356510615524675	144.89999999999998	414.0	1	1	3.17	637.1037699732678	28980	
+CentralPowerPlantGEN7	ngct	RI	2.0	2.2619106225399195	2.3269353846555196	2.3919601467711202	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+OrbitEnergyRI1	ngct	RI	3.2	2.2619106225399195	2.3269353846555196	2.3919601467711202	1.1199999999999999	3.2	1	1	3.17	4.924473584334443	224	
+RhodeIslandHospitalGEN2	ngct	RI	1.7	3.72568116746779	3.790705929583391	3.8557306916989917	0.595	1.7	1	1	3.17	2.61612659167767	119	
+RhodeIslandHospitalGEN4	ngct	RI	1.7	3.72568116746779	3.790705929583391	3.8557306916989917	0.595	1.7	1	1	3.17	2.61612659167767	119	
+RhodeIslandHospitalNEW1	ngct	RI	3.5	3.7256811674677897	3.79070592958339	3.85573069169899	1.2249999999999999	3.5	1	1	3.17	5.386142982865791	245	
+RhodeIslandHospitalNEW3	ngct	RI	3.5	3.7256811674677897	3.79070592958339	3.85573069169899	1.2249999999999999	3.5	1	1	3.17	5.386142982865791	245	
+Canal3	ngct	SEMA	330.0	10.81019638460837	10.875221146723968	10.940245908839568	115.49999999999999	330.0	1	1	3.17	507.83633838448867	23100	
+CanalUN2R	ngct	SEMA	330.0	10.81019638460837	10.875221146723968	10.940245908839568	115.49999999999999	330.0	1	1	3.17	507.83633838448867	23100	
+DartmouthPowerAssociatesLPGEN3	ngct	SEMA	24.7	6.93882189970935	7.003846661824951	7.068871423940552	8.645	24.7	1	1	3.17	38.01078047908145	1729	
+MansfieldGEN1	ngct	SEMA	1.0	3.4228181307345187	3.4878428928501197	3.5528676549657203	0.35	1.0	1	1	3.17	1.5388979951045114	70	
+MansfieldGEN2	ngct	SEMA	1.0	3.4228181307345187	3.4878428928501197	3.5528676549657203	0.35	1.0	1	1	3.17	1.5388979951045114	70	
+MansfieldGEN3	ngct	SEMA	1.0	3.4228181307345187	3.4878428928501197	3.5528676549657203	0.35	1.0	1	1	3.17	1.5388979951045114	70	
+AmherstCollegeCoGenCTG	ngct	WCMA	1.2	3.4228181307345187	3.4878428928501197	3.5528676549657203	0.42	1.2	1	1	3.17	1.8466775941254132	84	
+ClarkUniversityGEN1	ngct	WCMA	2.0	3.9486738497411	4.0136986118567	4.0787233739723	0.7	2.0	1	1	3.17	3.0777959902090215	140	
+ClarkUniversityGEN2	ngct	WCMA	2.0	3.9486738497411	4.0136986118567	4.0787233739723	0.7	2.0	1	1	3.17	3.0777959902090215	140	
+ErvingPaperMills2	ngct	WCMA	0.6	3.3026789419041096	3.36770370401971	3.4327284661353112	0.21	0.6	1	1	3.17	0.9233387970627067	42	
+ErvingPaperMills3	ngct	WCMA	5.6	3.3026789419041096	3.367703704019711	3.4327284661353126	1.9599999999999997	5.6	1	1	3.17	8.617828772585264	392	
+EssentialPowerMassachusettsLLC3	ngct	WCMA	113.6	6.25392404286591	6.318948804981511	6.383973567097111	39.76	113.6	1	1	3.17	174.81881224387277	7952	
+EssentialPowerMassachusettsLLCGT1	ngct	WCMA	60.0	7.409479388724461	7.474504150840061	7.539528912955661	21.0	60.0	1	1	3.17	92.33387970627057	4200	
+EssentialPowerMassachusettsLLCGT2	ngct	WCMA	60.0	7.409479388724461	7.474504150840061	7.539528912955661	21.0	60.0	1	1	3.17	92.33387970627057	4200	
+IndianOrchardPlant1TG	ngct	WCMA	5.7	4.73904009034809	4.80406485246369	4.86908961457929	1.9949999999999999	5.7	1	1	3.17	8.771718572095722	399	
+NewarkAmericaMill1	ngct	WCMA	6.3	3.6270502187703406	3.6920749808859408	3.7570997430015414	2.2049999999999996	6.3	1	1	3.17	9.695057369158432	441	
+NortonPowerhouseGEN1	ngct	WCMA	2.5	4.27595381058829	4.340978572703891	4.406003334819491	0.875	2.5	1	1	3.17	3.8472449877612815	175	
+NortonPowerhouseGEN2	ngct	WCMA	3.1	4.275953810588289	4.340978572703889	4.4060033348194905	1.085	3.1	1	1	3.17	4.770583784823994	217	
+SimondsGEN1	ngct	WCMA	0.6	2.9956374987783687	3.0606622608939698	3.125687023009571	0.21	0.6	1	1	3.17	0.9233387970627067	42	
+SimondsGEN2	ngct	WCMA	0.6	2.9956374987783687	3.0606622608939698	3.125687023009571	0.21	0.6	1	1	3.17	0.9233387970627067	42	
+SimondsGEN3	ngct	WCMA	0.6	2.9956374987783687	3.0606622608939698	3.125687023009571	0.21	0.6	1	1	3.17	0.9233387970627067	42	
+SmithCollegeCentralHeatingPlantGT1	ngct	WCMA	5.3	3.458915534876949	3.5239402969925493	3.5889650591081494	1.8549999999999998	5.3	1	1	3.17	8.156159374053916	371	
+WilliamsCollegeCampusCHPGEN2	ngct	WCMA	3.0	3.7284983629646486	3.7935231250802492	3.85854788719585	1.0499999999999998	3.0	1	1	3.17	4.616693985313535	210	
+WilliamsCollegeCampusCHPGEN3	ngct	WCMA	1.2	3.728498362964649	3.7935231250802506	3.8585478871958516	0.42	1.2	1	1	3.17	1.8466775941254134	84	
+AlgonquinWindsorLocksSTG	ngst	CT	16.0	3.919044725306651	4.179990465109012	4.440936204911372	6.4	16.0	6	6	2.0	27.068802456784898	1120	
+ALPierce1	ngst	CT	7.5	8.158410636939708	8.863366704069165	9.56832277119862	3.0	7.5	6	6	2.0	12.688501151617915	525	
+ALPierce2	ngst	CT	7.5	8.158410636939708	8.863366704069165	9.56832277119862	3.0	7.5	6	6	2.0	12.688501151617915	525	
+ALPierce3	ngst	CT	7.5	8.158410636939708	8.863366704069165	9.56832277119862	3.0	7.5	6	6	2.0	12.688501151617915	525	
+BradleyEnergyCenterUNIT1	ngst	CT	1.5	4.543508700646247	5.248464767775705	5.953420834905162	0.6000000000000001	1.5	6	6	2.0	2.5377002303235865	105	
+BradleyEnergyCenterUNIT2	ngst	CT	1.2	4.543508700646246	5.248464767775703	5.9534208349051605	0.48	1.2	6	6	2.0	2.0301601842588677	84	
+BradleyEnergyCenterUNIT3	ngst	CT	1.2	4.543508700646246	5.248464767775703	5.9534208349051605	0.48	1.2	6	6	2.0	2.0301601842588677	84	
+BradleyEnergyCenterUNIT4	ngst	CT	1.9	4.543508700646246	5.248464767775703	5.95342083490516	0.76	1.9	6	6	2.0	3.214420291743209	133	
+BridgeportEnergyProjectGEN3	ngst	CT	180.0	5.259368748138157	5.964324815267614	6.669280882397071	72.0	180.0	6	6	2.0	304.52402763883055	12600	
+CapitalDistrictEnergyCenterSTG	ngst	CT	34.1	7.165976814573374	7.87093288170283	8.575888948832286	13.64	34.1	6	6	2.0	57.69038523602298	2387	
+CCSUFuelCellProjectCCSU	ngst	CT	1.4	4.817431199687987	5.522387266817444	6.2273433339469015	0.5599999999999999	1.4	6	6	2.0	2.3685202149686773	98	
+CelluTissueGEN1	ngst	CT	3.0	8.484714547109196	9.189670614238652	9.894626681368111	1.2000000000000002	3.0	6	6	2.0	5.075400460647176	210	
+CJTSEnergyCenterUNIT1	ngst	CT	0.2	12.242377137981494	12.94733320511095	13.652289272240408	0.08000000000000002	0.2	6	6	2.0	0.3383600307098123	14	
+CJTSEnergyCenterUNIT2	ngst	CT	0.2	12.242377137981494	12.94733320511095	13.652289272240408	0.08000000000000002	0.2	6	6	2.0	0.3383600307098123	14	
+CJTSEnergyCenterUNIT3	ngst	CT	0.2	12.242377137981494	12.94733320511095	13.652289272240408	0.08000000000000002	0.2	6	6	2.0	0.3383600307098123	14	
+CJTSEnergyCenterUNIT4	ngst	CT	0.2	12.242377137981494	12.94733320511095	13.652289272240408	0.08000000000000002	0.2	6	6	2.0	0.3383600307098123	14	
+CJTSEnergyCenterUNIT5	ngst	CT	0.2	12.242377137981494	12.94733320511095	13.652289272240408	0.08000000000000002	0.2	6	6	2.0	0.3383600307098123	14	
+CJTSEnergyCenterUNIT6	ngst	CT	0.2	12.242377137981494	12.94733320511095	13.652289272240408	0.08000000000000002	0.2	6	6	2.0	0.3383600307098123	14	
+CJTSEnergyCenterUNIT7	ngst	CT	0.4	12.242377137981494	12.94733320511095	13.652289272240408	0.16000000000000003	0.4	6	6	2.0	0.6767200614196246	28	
+CPVTowanticEnergyCenterSTG	ngst	CT	280.5	5.735283474317517	6.440239541446974	7.145195608576431	112.2	280.5	6	6	2.0	474.54994307051027	19635	
+FoxwoodsCoGenSTG1	ngst	CT	3.0	3.721910976054297	4.426867043183754	5.131823110313211	1.2000000000000002	3.0	6	6	2.0	5.075400460647173	210	
+HartfordHospitalCogenerationGEN2	ngst	CT	4.2	3.880546726206547	4.585502793336003	5.29045886046546	1.6800000000000002	4.2	6	6	2.0	7.105560644906042	294	
+IBMSouthburyIBM00	ngst	CT	1.1	5.241009456819259	5.945965523948715	6.6509215910781725	0.44000000000000006	1.1	6	6	2.0	1.8609801689039627	77	
+KimberlyClarkUnit123GT300	ngst	CT	4.1	3.495244503991886	4.200200571121343	4.9051566382508005	1.64	4.1	6	6	2.0	6.936380629551133	287	
+KleenEnergySystemsProjectST	ngst	CT	295.0	5.3162431597163575	6.021199226845814	6.726155293975273	118.0	295.0	6	6	2.0	499.08104529697243	20650	
+Middletown2	ngst	CT	113.6	9.9629292224075	10.667885289536954	11.372841356666411	45.44	113.6	6	6	2.0	192.18849744317313	7952	
+Middletown3	ngst	CT	239.4	9.962929222407496	10.667885289536951	11.372841356666408	95.76	239.4	6	6	2.0	405.016956759645	16758	
+PfizerGrotonPlantTG1	ngst	CT	2.5	3.576112069512587	4.281068136642044	4.986024203771501	1.0	2.5	6	6	2.0	4.229500383872644	175	
+PfizerGrotonPlantTG2	ngst	CT	2.5	3.576112069512587	4.281068136642044	4.986024203771501	1.0	2.5	6	6	2.0	4.229500383872644	175	
+PfizerGrotonPlantTG3	ngst	CT	10.0	3.576112069512587	4.281068136642044	4.986024203771501	4.0	10.0	6	6	2.0	16.918001535490575	700	
+PfizerGrotonPlantTG4	ngst	CT	10.0	3.576112069512587	4.281068136642044	4.986024203771501	4.0	10.0	6	6	2.0	16.918001535490575	700	
+PfizerGrotonPlantTG5	ngst	CT	7.5	3.5761120695125865	4.281068136642044	4.9860242037715015	3.0	7.5	6	6	2.0	12.688501151617931	525	
+UCONNCogenFacilitySTG1	ngst	CT	5.0	4.031445835385638	4.7364019025150945	5.441357969644553	2.0	5.0	6	6	2.0	8.459000767745291	350	
+UncasvilleMillGEN1	ngst	CT	2.8	4.374253362249158	5.079209429378615	5.7841654965080735	1.1199999999999999	2.8	6	6	2.0	4.737040429937356	196	
+MaineIndependenceStationGEN3	ngst	ME	194.6	5.746858296477476	6.451814363606934	7.15677043073639	77.84	194.6	6	6	2.0	329.224309880647	13622	
+RumfordPowerIncUNT2	ngst	ME	95.1	3.8291628625550462	4.534118929684503	5.239074996813961	38.04	95.1	6	6	2.0	160.8901946025153	6657	
+WestbrookEnergyCenterPowerPlantSTG3	ngst	ME	195.5	5.256008406338019	5.960964473467476	6.665920540596934	78.2	195.5	6	6	2.0	330.74693001884054	13685	
+DeerIslandTreatmentPlantS101	ngst	NEMA	17.5	4.482270842749028	5.187226909878484	5.89218297700794	7.0	17.5	6	6	2.0	29.606502687108513	1225	
+KendallSquareStation1	ngst	NEMA	17.2	3.854294842254796	4.559250909384254	5.264206976513712	6.88	17.2	6	6	2.0	29.098962641043798	1204	
+KendallSquareStation2	ngst	NEMA	23.0	3.854294842254798	4.5592509093842555	5.264206976513714	9.200000000000001	23.0	6	6	2.0	38.91140353162834	1610	
+KendallSquareStation3	ngst	NEMA	27.2	3.854294842254797	4.559250909384254	5.264206976513711	10.88	27.2	6	6	2.0	46.01696417653434	1904	
+MysticGeneratingStationST85	ngst	NEMA	315.0	5.667971920663617	6.372927987793075	7.0778840549225315	126.0	315.0	6	6	2.0	532.9170483679533	22050	
+MysticGeneratingStationST96	ngst	NEMA	315.0	5.667971920663617	6.372927987793075	7.0778840549225315	126.0	315.0	6	6	2.0	532.9170483679533	22050	
+PotterStation2CC3	ngst	NEMA	25.0	8.216339488451798	8.921295555581253	9.626251622710711	10.0	25.0	6	6	2.0	42.29500383872636	1750	
+TannerStreetGenerationVAX	ngst	NEMA	27.1	7.267471019770065	7.972427086899522	8.677383154028979	10.840000000000002	27.1	6	6	2.0	45.847784161179455	1897	
+EssentialPowerNewingtonLLCST	ngst	NH	234.3	5.588612177316927	6.293568244446384	6.998524311575842	93.72000000000001	234.3	6	6	2.0	396.38877597654357	16401	
+GraniteRidgeSTG	ngst	NH	270.0	5.372483950741088	6.077440017870545	6.782396085000002	108.0	270.0	6	6	2.0	456.7860414582453	18900	
+ManchesterStreetGE10	ngst	RI	48.0	6.100528423159368	6.805484490288825	7.510440557418283	19.200000000000003	48.0	6	6	2.0	81.20640737035477	3360	
+ManchesterStreetGE11	ngst	RI	46.0	6.100528423159368	6.805484490288824	7.51044055741828	18.400000000000002	46.0	4	4	2.0	77.82280706325668	3220	
+ManchesterStreetGEN9	ngst	RI	46.0	6.100528423159368	6.805484490288824	7.51044055741828	18.400000000000002	46.0	6	6	2.0	77.82280706325668	3220	
+OceanStatePowerGEN3	ngst	RI	88.6	6.6339933854003785	7.338949452529837	8.043905519659294	35.44	88.6	6	6	2.0	149.8934936044463	6202	
+OceanStatePowerIIGEN3	ngst	RI	88.6	7.949798786678587	8.654754853808045	9.359710920937502	35.44	88.6	6	6	2.0	149.89349360444632	6202	
+PawtucketPowerAssociatesGEN2	ngst	RI	27.0	7.422981568368327	8.127937635497783	8.83289370262724	10.8	27.0	6	6	2.0	45.67860414582449	1890	
+RhodeIslandStateEnergyCenterSTG1	ngst	RI	204.0	5.218019816164846	5.922975883294304	6.627931950423761	81.60000000000001	204.0	6	6	2.0	345.12723132400777	14280	
+TivertonPowerPlantUNT2	ngst	RI	93.2	5.517266525743149	6.222222592872606	6.927178660002063	37.28	93.2	6	6	2.0	157.6757743107724	6524	
+TivertonPowerPlantUNT4	ngst	RI	93.2	5.517266525743149	6.222222592872606	6.927178660002063	37.28	93.2	6	6	2.0	157.6757743107724	6524	
+BellinghamCogenerationFacilityST1	ngst	SEMA	128.7	6.653988453945617	7.358944521075074	8.06390058820453	51.48	128.7	6	6	2.0	217.7346797617633	9009	
+ClearyFloodCA9	ngst	SEMA	95.0	9.937189069019198	10.642145136148656	11.347101203278113	38.0	95.0	6	6	2.0	160.7210145871602	6650	
+DartmouthPowerAssociatesLPGEN2	ngst	SEMA	32.0	7.037591190266378	7.7425472573958345	8.44750332452529	12.8	32.0	6	6	2.0	54.137604913569746	2240	
+ForeRiverGeneratingStationST15	ngst	SEMA	315.0	5.452500178239216	6.157456245368672	6.862412312498128	126.0	315.0	6	6	2.0	532.917048367953	22050	
+MilfordPowerLPST1	ngst	SEMA	49.1	6.762007960354893	7.466964027484352	8.17192009461381	19.64	49.1	6	6	2.0	83.06738753925873	3437	
+SalemHarborStationNGCC1	ngst	SEMA	158.4	6.653988453945618	7.358944521075076	8.063900588204534	63.36000000000001	158.4	6	6	2.0	267.9811443221707	11088	
+SalemHarborStationNGCC2	ngst	SEMA	158.4	6.653988453945618	7.358944521075076	8.063900588204534	63.36000000000001	158.4	6	6	2.0	267.9811443221707	11088	
+AmherstCollegeCoGenSTG	ngst	WCMA	0.5	3.5215874212915472	4.2265434884210045	4.931499555550461	0.2	0.5	6	6	2.0	0.8459000767745278	35	
+CabotHolyoke6	ngst	WCMA	10.0	3.576112069512587	4.281068136642044	4.986024203771501	4.0	10.0	6	6	2.0	16.918001535490575	700	
+CabotHolyoke8	ngst	WCMA	10.0	3.576112069512587	4.281068136642044	4.986024203771501	4.0	10.0	6	6	2.0	16.918001535490575	700	
+CabotHolyoke9	ngst	WCMA	6.0	3.495244503991887	4.200200571121345	4.905156638250801	2.4000000000000004	6.0	6	6	2.0	10.150800921294346	420	
+MasspowerGEN3	ngst	WCMA	80.9	6.301527283913667	7.006483351043125	7.711439418172582	32.36000000000001	80.9	6	6	2.0	136.8666324221187	5663	
+MillenniumPowerST01	ngst	WCMA	130.0	5.2669505070872065	5.971906574216664	6.676862641346121	52.0	130.0	6	6	2.0	219.93401996137717	9100	
+PittsfieldGeneratingLPGEN4	ngst	WCMA	53.4	6.810996093414831	7.515952160544288	8.220908227673743	21.36	53.4	6	6	2.0	90.3421281995195	3738	
+BackusMicrogridProjectBMP1	oil	CT	2.6	17.017576912263262	17.082601674378868	17.147626436494473	0.9099999999999999	2.6	1	1	3.17	4.001134787271732	182	
+BackusMicrogridProjectBMP2	oil	CT	2.6	17.017576912263262	17.082601674378868	17.147626436494473	0.9099999999999999	2.6	1	1	3.17	4.001134787271732	182	
+BackusMicrogridProjectBMP3	oil	CT	2.6	17.017576912263262	17.082601674378868	17.147626436494473	0.9099999999999999	2.6	1	1	3.17	4.001134787271732	182	
+BackusMicrogridProjectBMP4	oil	CT	2.6	17.017576912263262	17.082601674378868	17.147626436494473	0.9099999999999999	2.6	1	1	3.17	4.001134787271732	182	
+BranfordUN10	oil	CT	21.8	16.132321811161166	16.197346573276775	16.26237133539238	7.63	21.8	1	1	3.17	33.54797629327841	1526	
+BridgeportStation2	oil	CT	163.0	10.812967793925672	10.87799255604127	10.94301731815687	57.05	163.0	1	1	3.17	250.84037320203578	11410	
+BridgeportStation4	oil	CT	18.6	10.812967793925672	10.87799255604127	10.94301731815687	6.51	18.6	1	1	3.17	28.623502708943974	1302	
+BridgeStreet12BS1	oil	CT	2.6	8.318186824485768	8.38321158660137	8.448236348716971	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+BridgeStreet12BS2	oil	CT	2.6	8.318186824485768	8.38321158660137	8.448236348716971	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+BristolMyersSquibbWallingfordDG12	oil	CT	0.9	13.569701801015768	13.634726563131366	13.699751325246966	0.315	0.9	1	1	3.17	1.3850081955940645	63	
+BristolMyersSquibbWallingfordDG3	oil	CT	2.0	13.56970180101577	13.63472656313137	13.69975132524697	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+CCSUCoGenSTBYGenGRND	oil	CT	0.3	3.0146533504163386	3.079678112531939	3.144702874647539	0.105	0.3	1	1	3.17	0.4616693985313532	21	
+CCSUCoGenSTBYGenMEMH	oil	CT	0.7	3.0146533504163395	3.07967811253194	3.1447028746475407	0.24499999999999997	0.7	1	1	3.17	1.0772285965731576	49	
+CosCobUN10	oil	CT	25.0	10.049384593228272	10.114409355343874	10.179434117459476	8.75	25.0	1	1	3.17	38.472449877612725	1750	
+CosCobUN11	oil	CT	25.0	10.049384593228272	10.114409355343874	10.179434117459476	8.75	25.0	1	1	3.17	38.472449877612725	1750	
+CosCobUN12	oil	CT	25.0	10.049384593228272	10.114409355343874	10.179434117459476	8.75	25.0	1	1	3.17	38.472449877612725	1750	
+CosCobUN13	oil	CT	20.0	10.04938459322827	10.11440935534387	10.179434117459468	7.0	20.0	1	1	3.17	30.777959902090252	1400	
+CosCobun14	oil	CT	20.0	10.04938459322827	10.11440935534387	10.179434117459468	7.0	20.0	1	1	3.17	30.777959902090252	1400	
+DevonStation10	oil	CT	18.6	42.37658352851597	42.441608290631564	42.506633052747155	6.51	18.6	1	1	3.17	28.62350270894411	1302	
+DevonStation11	oil	CT	51.0	42.37658352851597	42.44160829063157	42.50663305274717	17.849999999999998	51.0	1	1	3.17	78.48379775033051	3570	
+DevonStation12	oil	CT	51.0	42.37658352851597	42.44160829063157	42.50663305274717	17.849999999999998	51.0	1	1	3.17	78.48379775033051	3570	
+DevonStation13	oil	CT	51.0	42.37658352851597	42.44160829063157	42.50663305274717	17.849999999999998	51.0	1	1	3.17	78.48379775033051	3570	
+DevonStation14	oil	CT	51.0	42.37658352851597	42.44160829063157	42.50663305274717	17.849999999999998	51.0	1	1	3.17	78.48379775033051	3570	
+DevonStation7	oil	CT	103.5	42.37658352851597	42.44160829063157	42.50663305274717	36.224999999999994	103.5	1	1	3.17	159.27594249331676	7245	
+DevonStation8	oil	CT	103.5	42.37658352851597	42.44160829063157	42.50663305274717	36.224999999999994	103.5	1	1	3.17	159.27594249331676	7245	
+FortHill1234FH1	oil	CT	2.6	8.142261540917165	8.207286303032767	8.272311065148367	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+FortHill1234FH2	oil	CT	2.6	8.142261540917165	8.207286303032767	8.272311065148367	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+FortHill1234FH3	oil	CT	2.6	8.142261540917165	8.207286303032767	8.272311065148367	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+FortHill1234FH4	oil	CT	2.6	8.142261540917165	8.207286303032767	8.272311065148367	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+FranklinDriveUN19	oil	CT	21.8	6.65056444858445	6.715589210700051	6.780613972815652	7.63	21.8	1	1	3.17	33.54797629327838	1526	
+GaryCourt12GC1	oil	CT	2.6	8.230288405206167	8.295313167321767	8.360337929437367	0.9099999999999999	2.6	1	1	3.17	4.001134787271731	182	
+GaryCourt12GC2	oil	CT	2.6	8.230288405206167	8.295313167321767	8.360337929437367	0.9099999999999999	2.6	1	1	3.17	4.001134787271731	182	
+GenConnDevonLLC15	oil	CT	60.5	8.090491879420169	8.155516641535769	8.220541403651369	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+GenConnDevonLLC16	oil	CT	60.5	8.090491879420169	8.155516641535769	8.220541403651369	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+GenConnDevonLLC17	oil	CT	60.5	8.090491879420169	8.155516641535769	8.220541403651369	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+GenConnDevonLLC18	oil	CT	60.5	8.090491879420169	8.155516641535769	8.220541403651369	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+JewettCity1JC1	oil	CT	2.6	8.206946329522465	8.271971091638065	8.336995853753665	0.9099999999999999	2.6	1	1	3.17	4.001134787271727	182	
+JohnStreet1345JS1	oil	CT	1.8	4.56911193461797	4.634136696733571	4.699161458849171	0.63	1.8	1	1	3.17	2.770016391188125	126	
+JohnStreet1345JS3	oil	CT	1.8	4.56911193461797	4.634136696733571	4.699161458849171	0.63	1.8	1	1	3.17	2.770016391188125	126	
+JohnStreet1345JS4	oil	CT	1.8	4.56911193461797	4.634136696733571	4.699161458849171	0.63	1.8	1	1	3.17	2.770016391188125	126	
+JohnStreet1345JS5	oil	CT	1.8	4.56911193461797	4.634136696733571	4.699161458849171	0.63	1.8	1	1	3.17	2.770016391188125	126	
+LebanonPines12LP1	oil	CT	2.6	7.827442910572706	7.892467672688307	7.957492434803909	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+LebanonPines12LP2	oil	CT	2.6	7.827442910572706	7.892467672688307	7.957492434803909	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+LNG12LNG1	oil	CT	2.6	8.892390623142566	8.957415385258166	9.022440147373768	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+LNG12LNG2	oil	CT	2.6	8.892390623142566	8.957415385258166	9.022440147373768	0.9099999999999999	2.6	1	1	3.17	4.00113478727173	182	
+Middletown1	oil	CT	69.0	9.864159931850471	9.92918469396607	9.994209456081668	24.15	69.0	1	1	3.17	106.18396166221149	4830	
+Middletown10	oil	CT	18.5	9.86415993185047	9.92918469396607	9.99420945608167	6.475	18.5	1	1	3.17	28.469612909433444	1295	
+Middletown12	oil	CT	60.5	9.864159931850471	9.92918469396607	9.99420945608167	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+Middletown13	oil	CT	60.5	9.864159931850471	9.92918469396607	9.99420945608167	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+Middletown14	oil	CT	60.5	9.864159931850471	9.92918469396607	9.99420945608167	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+Middletown15	oil	CT	60.5	9.864159931850471	9.92918469396607	9.99420945608167	21.174999999999997	60.5	1	1	3.17	93.10332870382315	4235	
+Middletown4	oil	CT	414.9	9.864159931850471	9.929184693966073	9.994209456081673	145.21499999999997	414.9	1	1	3.17	638.4887781688625	29043	
+MontvilleStation10	oil	CT	2.7	11.707881878271566	11.772906640387166	11.837931402502766	0.945	2.7	1	1	3.17	4.155024586782179	189	
+MontvilleStation11	oil	CT	2.7	11.707881878271566	11.772906640387166	11.837931402502766	0.945	2.7	1	1	3.17	4.155024586782179	189	
+MontvilleStation5	oil	CT	75.0	11.70788187827157	11.77290664038717	11.83793140250277	26.25	75.0	1	1	3.17	115.41734963283847	5250	
+MontvilleStation6	oil	CT	414.9	11.707881878271573	11.772906640387175	11.837931402502779	145.21499999999997	414.9	1	1	3.17	638.4887781688625	29043	
+NewHavenHarbor1	oil	CT	460.0	25.94898771922317	26.014012481338764	26.079037243454362	161.0	460.0	1	1	3.17	707.8930777480779	32200	
+NewHavenHarbor2	oil	CT	60.5	25.94898771922317	26.01401248133876	26.079037243454348	21.174999999999997	60.5	1	1	3.17	93.10332870382335	4235	
+NewHavenHarbor3	oil	CT	60.5	25.94898771922317	26.01401248133876	26.079037243454348	21.174999999999997	60.5	1	1	3.17	93.10332870382335	4235	
+NewHavenHarbor4	oil	CT	60.5	25.94898771922317	26.01401248133876	26.079037243454348	21.174999999999997	60.5	1	1	3.17	93.10332870382335	4235	
+Norden43103NORD1	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+Norden43103NORD2	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+Norden43103NORD3	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+NorthMainStreet5	oil	CT	19.0	9.86415993185047	9.92918469396607	9.994209456081668	6.6499999999999995	19.0	1	1	3.17	29.23906190698575	1330	
+NorwichWWTP1	oil	CT	2.0	9.72720717271317	9.79223193482877	9.857256696944368	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+Shepaug2	oil	CT	49.2	16.987413092919173	17.052437855034768	17.117462617150363	17.22	49.2	1	1	3.17	75.7137813591418	3444	
+SouthMeadow11	oil	CT	41.8	16.98741309291917	17.052437855034768	17.11746261715037	14.629999999999997	41.8	1	1	3.17	64.32593619536853	2926	
+SouthMeadow12	oil	CT	41.8	16.98741309291917	17.052437855034768	17.11746261715037	14.629999999999997	41.8	1	1	3.17	64.32593619536853	2926	
+SouthMeadow13	oil	CT	41.8	16.98741309291917	17.052437855034768	17.11746261715037	14.629999999999997	41.8	1	1	3.17	64.32593619536853	2926	
+SouthMeadow14	oil	CT	41.8	16.98741309291917	17.052437855034768	17.11746261715037	14.629999999999997	41.8	1	1	3.17	64.32593619536853	2926	
+SubaseMicrogridProjectSMP1	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+SubaseMicrogridProjectSMP2	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+SubaseMicrogridProjectSMP3	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+SubaseMicrogridProjectSMP4	oil	CT	2.0	4.56911193461797	4.63413669673357	4.69916145884917	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+TorringtonTerminalUN10	oil	CT	21.8	13.14654436705037	13.211569129165971	13.276593891281571	7.63	21.8	1	1	3.17	33.54797629327836	1526	
+Tunnel10	oil	CT	18.5	9.886984275043469	9.95200903715907	10.017033799274671	6.475	18.5	1	1	3.17	28.46961290943345	1295	
+WatersidePowerLLC1	oil	CT	23.2	12.245723504865873	12.310748266981474	12.375773029097072	8.12	23.2	1	1	3.17	35.70243348642473	1624	
+WatersidePowerLLC2	oil	CT	23.2	12.245723504865873	12.310748266981474	12.375773029097072	8.12	23.2	1	1	3.17	35.70243348642473	1624	
+WatersidePowerLLC4	oil	CT	23.2	12.245723504865873	12.310748266981474	12.375773029097072	8.12	23.2	1	1	3.17	35.70243348642473	1624	
+WatersidePowerLLC5	oil	CT	23.2	12.245723504865873	12.310748266981474	12.375773029097072	8.12	23.2	1	1	3.17	35.70243348642473	1624	
+WatersidePowerLLC6	oil	CT	23.2	12.245723504865873	12.310748266981474	12.375773029097072	8.12	23.2	1	1	3.17	35.70243348642473	1624	
+WatersidePowerLLC7	oil	CT	23.2	12.245723504865873	12.310748266981474	12.375773029097072	8.12	23.2	1	1	3.17	35.70243348642473	1624	
+WaterTreatment12WT1	oil	CT	2.6	8.116225172257568	8.181249934373168	8.24627469648877	0.9099999999999999	2.6	1	1	3.17	4.001134787271728	182	
+WaterTreatment12WT2	oil	CT	2.6	8.116225172257568	8.181249934373168	8.24627469648877	0.9099999999999999	2.6	1	1	3.17	4.001134787271728	182	
+BarHarbor1	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+BarHarbor2	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+BarHarbor3	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+BarHarbor4	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+CapeGasTurbineGT4	oil	ME	17.5	14.425013321366768	14.490038083482366	14.555062845597964	6.125	17.5	1	1	3.17	26.93071491432895	1225	
+CapeGasTurbineGT5	oil	ME	17.5	14.425013321366768	14.490038083482366	14.555062845597964	6.125	17.5	1	1	3.17	26.93071491432895	1225	
+CaribouGenerationStation1	oil	ME	7.5	8.40729375279977	8.47231851491537	8.53734327703097	2.625	7.5	1	1	3.17	11.541734963283815	525	
+CaribouGenerationStationCD2	oil	ME	2.7	8.40729375279977	8.47231851491537	8.53734327703097	0.945	2.7	1	1	3.17	4.155024586782179	189	
+CaribouGenerationStationCD3	oil	ME	2.7	8.40729375279977	8.47231851491537	8.53734327703097	0.945	2.7	1	1	3.17	4.155024586782179	189	
+CaribouGenerationStationCD4	oil	ME	1.0	8.40729375279977	8.47231851491537	8.537343277030969	0.35	1.0	1	1	3.17	1.5388979951045103	70	
+CaribouGenerationStationCD5	oil	ME	1.2	8.40729375279977	8.472318514915372	8.537343277030974	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+CaribouGenerationStationST2	oil	ME	11.5	8.40729375279977	8.472318514915372	8.537343277030974	4.0249999999999995	11.5	1	1	3.17	17.697326943701906	805	
+Eastport1	oil	ME	1.0	8.24536193461797	8.31038669673357	8.37541145884917	0.35	1.0	1	1	3.17	1.5388979951045103	70	
+Eastport2	oil	ME	1.0	8.24536193461797	8.31038669673357	8.37541145884917	0.35	1.0	1	1	3.17	1.5388979951045103	70	
+Eastport3	oil	ME	2.0	8.24536193461797	8.31038669673357	8.37541145884917	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+FlosInnDieselFID1	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+FlosInnDieselFID2	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+FlosInnDieselFID3	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+MedwayIC1	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+MedwayIC2	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+MedwayIC3	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+MedwayIC4	oil	ME	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+MillinocketMillM1S1	oil	ME	15.6	8.40729375279977	8.472318514915372	8.537343277030974	5.46	15.6	1	1	3.17	24.006808723630417	1092	
+MillinocketMillM1S2	oil	ME	15.6	8.40729375279977	8.472318514915372	8.537343277030974	5.46	15.6	1	1	3.17	24.006808723630417	1092	
+MillinocketMillM1S3	oil	ME	31.5	8.40729375279977	8.47231851491537	8.53734327703097	11.024999999999999	31.5	1	1	3.17	48.47528684579218	2205	
+MillinocketMillM1S4	oil	ME	23.5	8.40729375279977	8.472318514915372	8.537343277030974	8.225	23.5	1	1	3.17	36.164102884956115	1645	
+RedShieldEnvirOldTownFacilityTG1	oil	ME	3.5	4.500607637620839	4.565632399736439	4.63065716185204	1.2249999999999999	3.5	1	1	3.17	5.386142982865794	245	
+RedShieldEnvirOldTownFacilityTG2	oil	ME	3.0	4.500607637620838	4.56563239973644	4.630657161852041	1.0499999999999998	3.0	1	1	3.17	4.616693985313538	210	
+RobbinsLumberCAT	oil	ME	2.0	4.65506898040265	4.72009374251825	4.78511850463385	0.7	2.0	1	1	3.17	3.07779599020902	140	
+WilliamFWyman1	oil	ME	50.0	9.893403618433972	9.95842838054957	10.023453142665169	17.5	50.0	1	1	3.17	76.94489975522539	3500	
+WilliamFWyman2	oil	ME	50.0	9.893403618433972	9.95842838054957	10.023453142665169	17.5	50.0	1	1	3.17	76.94489975522539	3500	
+WilliamFWyman3	oil	ME	113.6	9.89340361843397	9.958428380549572	10.023453142665174	39.76	113.6	1	1	3.17	174.8188122438729	7952	
+WilliamFWyman4	oil	ME	632.4	9.893403618433972	9.958428380549572	10.023453142665174	221.33999999999997	632.4	1	1	3.17	973.1990921040951	44268	
+BraytonPoint4	oil	NEMA	475.5	8.87551521609977	8.940539978215371	9.005564740330971	166.42499999999998	475.5	1	1	3.17	731.7459966721968	33285	
+BraytonPointIC1	oil	NEMA	2.7	8.875515216099767	8.94053997821537	9.005564740330971	0.945	2.7	1	1	3.17	4.155024586782179	189	
+BraytonPointIC2	oil	NEMA	2.7	8.875515216099767	8.94053997821537	9.005564740330971	0.945	2.7	1	1	3.17	4.155024586782179	189	
+BraytonPointIC3	oil	NEMA	2.7	8.875515216099767	8.94053997821537	9.005564740330971	0.945	2.7	1	1	3.17	4.155024586782179	189	
+BraytonPointIC4	oil	NEMA	2.7	8.875515216099767	8.94053997821537	9.005564740330971	0.945	2.7	1	1	3.17	4.155024586782179	189	
+CommercialStreet2	oil	NEMA	1.1	10.343707735142871	10.40873249725847	10.473757259374068	0.385	1.1	1	1	3.17	1.6927877946149648	77	
+DeerIslandTreatmentPlantG101	oil	NEMA	26.0	4.3835015521919996	4.448526314307601	4.513551076423201	9.1	26.0	1	1	3.17	40.01134787271725	1820	
+DeerIslandTreatmentPlantG201	oil	NEMA	26.0	4.3835015521919996	4.448526314307601	4.513551076423201	9.1	26.0	1	1	3.17	40.01134787271725	1820	
+ExelonEdgarLLCGT1	oil	NEMA	14.2	12.245723504865873	12.31074826698147	12.375773029097068	4.97	14.2	1	1	3.17	21.852351530484103	994	
+ExelonEdgarLLCGT2	oil	NEMA	14.2	12.245723504865873	12.31074826698147	12.375773029097068	4.97	14.2	1	1	3.17	21.852351530484103	994	
+ExelonFraminghamLLCGT1	oil	NEMA	14.2	12.245723504865873	12.31074826698147	12.375773029097068	4.97	14.2	1	1	3.17	21.852351530484103	994	
+ExelonFraminghamLLCGT2	oil	NEMA	14.2	12.245723504865873	12.31074826698147	12.375773029097068	4.97	14.2	1	1	3.17	21.852351530484103	994	
+ExelonFraminghamLLCGT3	oil	NEMA	14.2	12.245723504865873	12.31074826698147	12.375773029097068	4.97	14.2	1	1	3.17	21.852351530484103	994	
+ExelonLStreetGT1	oil	NEMA	18.6	19.612488557994574	19.67751332011017	19.742538082225764	6.51	18.6	1	1	3.17	28.62350270894401	1302	
+ExelonMedwayLLCGT1	oil	NEMA	45.0	16.987413092919173	17.052437855034768	17.117462617150363	15.749999999999998	45.0	1	1	3.17	69.25040977970313	3150	
+ExelonMedwayLLCGT2	oil	NEMA	45.0	16.987413092919173	17.052437855034768	17.117462617150363	15.749999999999998	45.0	1	1	3.17	69.25040977970313	3150	
+ExelonMedwayLLCGT3	oil	NEMA	45.0	16.987413092919173	17.052437855034768	17.117462617150363	15.749999999999998	45.0	1	1	3.17	69.25040977970313	3150	
+FraminghamStateUniversityPlantHA	oil	NEMA	0.2	15.45283920734527	15.517863969460869	15.582888731576466	0.06999999999999999	0.2	1	1	3.17	0.30777959902090324	14	
+FraminghamStateUniversityPlantLIB	oil	NEMA	0.3	15.452839207345272	15.51786396946087	15.58288873157647	0.105	0.3	1	1	3.17	0.4616693985313527	21	
+FraminghamStateUniversityPlantMSC2	oil	NEMA	0.2	15.45283920734527	15.517863969460869	15.582888731576466	0.06999999999999999	0.2	1	1	3.17	0.30777959902090324	14	
+FraminghamStateUniversityPlantNORTH	oil	NEMA	0.2	15.45283920734527	15.517863969460869	15.582888731576466	0.06999999999999999	0.2	1	1	3.17	0.30777959902090324	14	
+FraminghamStateUniversityPlantOC	oil	NEMA	0.1	15.45283920734527	15.517863969460869	15.582888731576466	0.034999999999999996	0.1	1	1	3.17	0.15388979951045162	7	
+FraminghamStateUniversityPlantPP	oil	NEMA	0.4	15.45283920734527	15.517863969460869	15.582888731576466	0.13999999999999999	0.4	1	1	3.17	0.6155591980418065	28	
+FraminghamStateUniversityPlantTOW1	oil	NEMA	0.2	15.45283920734527	15.517863969460869	15.582888731576466	0.06999999999999999	0.2	1	1	3.17	0.30777959902090324	14	
+FraminghamStateUniversityPlantTOW2	oil	NEMA	0.4	15.45283920734527	15.517863969460869	15.582888731576466	0.13999999999999999	0.4	1	1	3.17	0.6155591980418065	28	
+FraminghamStateUniversityPlantWEST	oil	NEMA	0.2	15.45283920734527	15.517863969460869	15.582888731576466	0.06999999999999999	0.2	1	1	3.17	0.30777959902090324	14	
+GilletteSBMCDG	oil	NEMA	0.5	2.95542706499958	3.020451827115181	3.0854765892307814	0.175	0.5	1	1	3.17	0.7694489975522552	35	
+GilletteSBMCDG2	oil	NEMA	0.5	2.95542706499958	3.020451827115181	3.0854765892307814	0.175	0.5	1	1	3.17	0.7694489975522552	35	
+GilletteSBMCDG3	oil	NEMA	1.0	2.95542706499958	3.020451827115181	3.0854765892307814	0.35	1.0	1	1	3.17	1.5388979951045103	70	
+HighStreetStation3	oil	NEMA	0.7	7.545079934617971	7.610104696733572	7.675129458849173	0.24499999999999997	0.7	1	1	3.17	1.0772285965731567	49	
+HighStreetStation4	oil	NEMA	0.6	7.545079934617971	7.61010469673357	7.67512945884917	0.21	0.6	1	1	3.17	0.9233387970627059	42	
+HighStreetStation7	oil	NEMA	1.3	7.545079934617968	7.610104696733569	7.67512945884917	0.45499999999999996	1.3	1	1	3.17	2.000567393635865	91	
+HighStreetStation8	oil	NEMA	1.1	7.545079934617971	7.610104696733569	7.675129458849168	0.385	1.1	1	1	3.17	1.692787794614964	77	
+KendallSquareStationJET1	oil	NEMA	20.0	3.7555255516977697	3.82055031381337	3.88557507592897	7.0	20.0	1	1	3.17	30.777959902090245	1400	
+KendallSquareStationJET2	oil	NEMA	20.0	3.7555255516977697	3.82055031381337	3.88557507592897	7.0	20.0	1	1	3.17	30.777959902090245	1400	
+MedicalAreaTotalEnergyPlantDEG1	oil	NEMA	6.8	3.49306316188764	3.558087924003241	3.623112686118842	2.38	6.8	1	1	3.17	10.46450636671068	476	
+MedicalAreaTotalEnergyPlantDEG2	oil	NEMA	6.8	3.49306316188764	3.558087924003241	3.623112686118842	2.38	6.8	1	1	3.17	10.46450636671068	476	
+MedicalAreaTotalEnergyPlantDEG3	oil	NEMA	6.8	3.49306316188764	3.558087924003241	3.623112686118842	2.38	6.8	1	1	3.17	10.46450636671068	476	
+MedicalAreaTotalEnergyPlantDEG4	oil	NEMA	6.8	3.49306316188764	3.558087924003241	3.623112686118842	2.38	6.8	1	1	3.17	10.46450636671068	476	
+MedicalAreaTotalEnergyPlantDEG5	oil	NEMA	6.8	3.49306316188764	3.558087924003241	3.623112686118842	2.38	6.8	1	1	3.17	10.46450636671068	476	
+MedicalAreaTotalEnergyPlantDEG6	oil	NEMA	6.8	3.49306316188764	3.558087924003241	3.623112686118842	2.38	6.8	1	1	3.17	10.46450636671068	476	
+MStreetJetNO6	oil	NEMA	69.0	3.49306316188764	3.558087924003241	3.623112686118842	24.15	69.0	1	1	3.17	106.18396166221133	4830	
+MysticGeneratingStation4	oil	NEMA	156.2	5.569202630106589	5.634227392222189	5.699252154337789	54.669999999999995	156.2	1	1	3.17	240.37586683532487	10934	
+MysticGeneratingStation5	oil	NEMA	156.2	5.569202630106589	5.634227392222189	5.699252154337789	54.669999999999995	156.2	1	1	3.17	240.37586683532487	10934	
+MysticGeneratingStation6	oil	NEMA	156.2	5.569202630106589	5.634227392222189	5.699252154337789	54.669999999999995	156.2	1	1	3.17	240.37586683532487	10934	
+PotterStation2IC1	oil	NEMA	2.7	8.11757019789477	8.18259496001037	8.247619722125972	0.945	2.7	1	1	3.17	4.155024586782181	189	
+PotterStation2IC2	oil	NEMA	2.7	8.11757019789477	8.18259496001037	8.247619722125972	0.945	2.7	1	1	3.17	4.155024586782181	189	
+WellesleyCollegeCentralUtilityPlantSB1	oil	NEMA	3.0	4.7075468852746685	4.772571647390269	4.83759640950587	1.0499999999999998	3.0	1	1	3.17	4.616693985313535	210	
+WilkinsStation1	oil	NEMA	2.7	8.40729375279977	8.47231851491537	8.53734327703097	0.945	2.7	1	1	3.17	4.155024586782179	189	
+WilkinsStation2	oil	NEMA	2.7	8.40729375279977	8.47231851491537	8.53734327703097	0.945	2.7	1	1	3.17	4.155024586782179	189	
+CrotchedMountainRehabilitationCenterGEN1	oil	NH	0.7	1.7795284055607197	1.8445531676763198	1.90957792979192	0.24499999999999997	0.7	1	1	3.17	1.077228596573158	49	
+CrotchedMountainRehabilitationCenterGEN2	oil	NH	0.7	1.7795284055607197	1.8445531676763198	1.90957792979192	0.24499999999999997	0.7	1	1	3.17	1.077228596573158	49	
+CrotchedMountainRehabilitationCenterGEN3	oil	NH	0.7	1.7795284055607197	1.8445531676763198	1.90957792979192	0.24499999999999997	0.7	1	1	3.17	1.077228596573158	49	
+DartmouthCollegeHeatingPlantGEN1	oil	NH	2.0	3.84381755643852	3.9088423185541203	3.97386708066972	0.7	2.0	1	1	3.17	3.077795990209021	140	
+DartmouthCollegeHeatingPlantGEN2	oil	NH	2.0	3.84381755643852	3.9088423185541203	3.97386708066972	0.7	2.0	1	1	3.17	3.077795990209021	140	
+DartmouthCollegeHeatingPlantGEN3	oil	NH	3.0	3.8438175564385197	3.9088423185541203	3.973867080669721	1.0499999999999998	3.0	1	1	3.17	4.616693985313535	210	
+HamptonFacilityGEN1	oil	NH	0.5	4.17544726046851	4.24047202258411	4.305496784699709	0.175	0.5	1	1	3.17	0.7694489975522556	35	
+HamptonFacilityGEN2	oil	NH	0.5	4.17544726046851	4.24047202258411	4.305496784699709	0.175	0.5	1	1	3.17	0.7694489975522556	35	
+HamptonFacilityGEN3	oil	NH	0.7	4.175447260468511	4.240472022584112	4.305496784699713	0.24499999999999997	0.7	1	1	3.17	1.0772285965731578	49	
+HamptonFacilityGEN4	oil	NH	0.7	4.175447260468511	4.240472022584112	4.305496784699713	0.24499999999999997	0.7	1	1	3.17	1.0772285965731578	49	
+HamptonFacilityGEN5	oil	NH	0.7	4.175447260468511	4.240472022584112	4.305496784699713	0.24499999999999997	0.7	1	1	3.17	1.0772285965731578	49	
+HamptonFacilityGEN6	oil	NH	0.7	4.175447260468511	4.240472022584112	4.305496784699713	0.24499999999999997	0.7	1	1	3.17	1.0772285965731578	49	
+LostNationGT1	oil	NH	18.0	20.74043689975047	20.805461661866072	20.87048642398167	6.3	18.0	1	1	3.17	27.7001639118813	1260	
+MerrimackGT1	oil	NH	18.6	8.83566911482247	8.900693876938071	8.965718639053671	6.51	18.6	1	1	3.17	28.62350270894395	1302	
+MerrimackGT2	oil	NH	18.6	8.83566911482247	8.900693876938071	8.965718639053671	6.51	18.6	1	1	3.17	28.62350270894395	1302	
+PlymouthStateCollegeCogenerationA	oil	NH	1.2	8.97040166391737	9.035426426032972	9.100451188148574	0.42	1.2	1	1	3.17	1.8466775941254137	84	
+PlymouthStateCollegeCogenerationB	oil	NH	1.6	8.97040166391737	9.035426426032972	9.100451188148574	0.5599999999999999	1.6	1	1	3.17	2.4622367921672215	112	
+SchillerGT1	oil	NH	21.2	13.644755300356072	13.709780062471673	13.774804824587275	7.419999999999999	21.2	1	1	3.17	32.62463749621571	1484	
+WhiteLakeGT1	oil	NH	18.6	19.23116140458267	19.296186166698273	19.36121092881388	6.51	18.6	1	1	3.17	28.62350270894406	1302	
+BlockIsland11	oil	RI	1.0	8.97040166391737	9.03542642603297	9.10045118814857	0.35	1.0	1	1	3.17	1.5388979951045099	70	
+BlockIsland19	oil	RI	1.1	8.97040166391737	9.03542642603297	9.100451188148568	0.385	1.1	1	1	3.17	1.692787794614964	77	
+BlockIsland21	oil	RI	1.6	8.970401663917368	9.035426426032968	9.100451188148568	0.5599999999999999	1.6	1	1	3.17	2.4622367921672237	112	
+BlockIsland22	oil	RI	1.3	8.970401663917368	9.035426426032968	9.10045118814857	0.45499999999999996	1.3	1	1	3.17	2.000567393635865	91	
+BlockIsland23	oil	RI	1.2	8.97040166391737	9.035426426032972	9.100451188148574	0.42	1.2	1	1	3.17	1.8466775941254128	84	
+BlockIsland24	oil	RI	1.6	8.970401663917368	9.035426426032968	9.100451188148568	0.5599999999999999	1.6	1	1	3.17	2.4622367921672237	112	
+BlockIsland25	oil	RI	1.8	8.97040166391737	9.035426426032968	9.100451188148567	0.63	1.8	1	1	3.17	2.7700163911881273	126	
+BlockIsland26	oil	RI	1.8	8.97040166391737	9.035426426032968	9.100451188148567	0.63	1.8	1	1	3.17	2.7700163911881273	126	
+CentralPowerPlantGEN1	oil	RI	0.7	2.2619106225399186	2.326935384655519	2.39196014677112	0.24499999999999997	0.7	1	1	3.17	1.077228596573158	49	
+CentralPowerPlantGEN3	oil	RI	2.0	2.2619106225399195	2.3269353846555196	2.3919601467711202	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+CentralPowerPlantGEN4	oil	RI	2.0	2.2619106225399195	2.3269353846555196	2.3919601467711202	0.7	2.0	1	1	3.17	3.0777959902090224	140	
+CentralPowerPlantGEN5	oil	RI	3.0	2.261910622539919	2.3269353846555205	2.3919601467711225	1.0499999999999998	3.0	1	1	3.17	4.616693985313538	210	
+CentralPowerPlantGEN6	oil	RI	3.0	2.261910622539919	2.3269353846555205	2.3919601467711225	1.0499999999999998	3.0	1	1	3.17	4.616693985313538	210	
+Canal1	oil	SEMA	585.0	10.810196384608368	10.875221146723968	10.940245908839568	204.75	585.0	1	1	3.17	900.2553271361392	40950	
+Canal2	oil	SEMA	580.0	10.81019638460837	10.875221146723971	10.940245908839575	203.0	580.0	1	1	3.17	892.5608371606164	40600	
+CherryStreet10	oil	SEMA	2.2	10.343707735142871	10.40873249725847	10.473757259374068	0.77	2.2	1	1	3.17	3.3855755892299295	154	
+CherryStreet11	oil	SEMA	2.2	10.343707735142871	10.40873249725847	10.473757259374068	0.77	2.2	1	1	3.17	3.3855755892299295	154	
+CherryStreet12	oil	SEMA	5.6	10.34370773514287	10.408732497258471	10.473757259374073	1.9599999999999997	5.6	1	1	3.17	8.61782877258525	392	
+CherryStreet7	oil	SEMA	3.3	10.343707735142871	10.408732497258473	10.473757259374073	1.1549999999999998	3.3	1	1	3.17	5.078363383844902	231	
+CherryStreet8	oil	SEMA	4.0	10.34370773514287	10.40873249725847	10.473757259374068	1.4	4.0	1	1	3.17	6.1555919804180395	280	
+CherryStreet9	oil	SEMA	3.0	10.343707735142868	10.408732497258468	10.473757259374068	1.0499999999999998	3.0	1	1	3.17	4.616693985313535	210	
+ClearyFlood8	oil	SEMA	28.3	9.838419778462171	9.903444540577771	9.96846930269337	9.905	28.3	1	1	3.17	43.55081326145774	1981	
+FrontStreet1	oil	SEMA	2.7	8.51996831759667	8.584993079712271	8.650017841827871	0.945	2.7	1	1	3.17	4.155024586782182	189	
+FrontStreet2	oil	SEMA	2.7	8.51996831759667	8.584993079712271	8.650017841827871	0.945	2.7	1	1	3.17	4.155024586782182	189	
+FrontStreet3	oil	SEMA	2.7	8.51996831759667	8.584993079712271	8.650017841827871	0.945	2.7	1	1	3.17	4.155024586782182	189	
+Nantucket10	oil	SEMA	1.2	13.831379975855066	13.896404737970668	13.961429500086268	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+Nantucket11	oil	SEMA	1.2	13.831379975855066	13.896404737970668	13.961429500086268	0.42	1.2	1	1	3.17	1.8466775941254119	84	
+Nantucket12	oil	SEMA	3.7	13.831379975855066	13.896404737970668	13.96142950008627	1.295	3.7	1	1	3.17	5.693922581886711	259	
+Nantucket13	oil	SEMA	3.7	13.831379975855066	13.896404737970668	13.96142950008627	1.295	3.7	1	1	3.17	5.693922581886711	259	
+Nantucket14	oil	SEMA	2.5	13.831379975855066	13.896404737970668	13.96142950008627	0.875	2.5	1	1	3.17	3.847244987761288	175	
+Nantucket15	oil	SEMA	2.5	13.831379975855066	13.896404737970668	13.96142950008627	0.875	2.5	1	1	3.17	3.847244987761288	175	
+Nantucket16	oil	SEMA	2.5	13.831379975855066	13.896404737970668	13.96142950008627	0.875	2.5	1	1	3.17	3.847244987761288	175	
+Nantucket17	oil	SEMA	2.5	13.831379975855066	13.896404737970668	13.96142950008627	0.875	2.5	1	1	3.17	3.847244987761288	175	
+OakBluffsDieselGeneratingFacilityUN1	oil	SEMA	2.7	8.391437516013267	8.45646227812887	8.521487040244471	0.945	2.7	1	1	3.17	4.155024586782183	189	
+OakBluffsDieselGeneratingFacilityUN2	oil	SEMA	2.7	8.391437516013267	8.45646227812887	8.521487040244471	0.945	2.7	1	1	3.17	4.155024586782183	189	
+OakBluffsDieselGeneratingFacilityUN3	oil	SEMA	2.7	8.391437516013267	8.45646227812887	8.521487040244471	0.945	2.7	1	1	3.17	4.155024586782183	189	
+SalemHarbor4	oil	SEMA	475.5	8.83566911482247	8.900693876938071	8.965718639053673	166.42499999999998	475.5	1	1	3.17	731.7459966721964	33285	
+WestTisburyGeneratingFacilityUN1	oil	SEMA	2.7	15.889111934617969	15.954136696733572	16.019161458849176	0.945	2.7	1	1	3.17	4.155024586782179	189	
+WestTisburyGeneratingFacilityUN2	oil	SEMA	2.7	15.889111934617969	15.954136696733572	16.019161458849176	0.945	2.7	1	1	3.17	4.155024586782179	189	
+AscutneyGT4	oil	VT	13.2	26.37116321666927	26.43618797878487	26.501212740900467	4.619999999999999	13.2	1	1	3.17	20.313453535379644	924	
+Berlin5GT1	oil	VT	41.8	15.07121163250317	15.136236394618777	15.201261156734382	14.629999999999997	41.8	1	1	3.17	64.3259361953686	2926	
+BurlingtonGTGT1	oil	VT	25.5	8.40729375279977	8.472318514915372	8.537343277030974	8.924999999999999	25.5	1	1	3.17	39.24189887516506	1785	
+Colchester16GT1	oil	VT	18.0	18.455503119190976	18.520527881306574	18.585552643422176	6.3	18.0	1	1	3.17	27.70016391188132	1260	
+EssexJunction19IC5a	oil	VT	2.0	8.314242824670371	8.37926758678597	8.44429234890157	0.7	2.0	1	1	3.17	3.0777959902090197	140	
+EssexJunction19IC5	oil	VT	1.0	8.314242824670371	8.37926758678597	8.44429234890157	0.35	1.0	1	1	3.17	1.5388979951045099	70	
+EssexJunction19IC6a	oil	VT	2.0	8.314242824670371	8.37926758678597	8.44429234890157	0.7	2.0	1	1	3.17	3.0777959902090197	140	
+EssexJunction19IC6	oil	VT	1.0	8.314242824670371	8.37926758678597	8.44429234890157	0.35	1.0	1	1	3.17	1.5388979951045099	70	
+EssexJunction19IC7a	oil	VT	2.0	8.314242824670371	8.37926758678597	8.44429234890157	0.7	2.0	1	1	3.17	3.0777959902090197	140	
+EssexJunction19IC7	oil	VT	1.0	8.314242824670371	8.37926758678597	8.44429234890157	0.35	1.0	1	1	3.17	1.5388979951045099	70	
+EssexJunction19IC8a	oil	VT	2.0	8.314242824670371	8.37926758678597	8.44429234890157	0.7	2.0	1	1	3.17	3.0777959902090197	140	
+EssexJunction19IC8	oil	VT	1.0	8.314242824670371	8.37926758678597	8.44429234890157	0.35	1.0	1	1	3.17	1.5388979951045099	70	
+Florence1	oil	VT	4.6	2.26191062253992	2.32693538465552	2.3919601467711202	1.6099999999999999	4.6	1	1	3.17	7.078930777480754	322	
+Florence2	oil	VT	4.6	2.26191062253992	2.32693538465552	2.3919601467711202	1.6099999999999999	4.6	1	1	3.17	7.078930777480754	322	
+NewportDiesels10	oil	VT	1.1	8.97040166391737	9.03542642603297	9.100451188148568	0.385	1.1	1	1	3.17	1.692787794614964	77	
+NewportDiesels4	oil	VT	0.9	8.97040166391737	9.035426426032968	9.100451188148567	0.315	0.9	1	1	3.17	1.3850081955940636	63	
+NewportDiesels5	oil	VT	0.9	8.97040166391737	9.035426426032968	9.100451188148567	0.315	0.9	1	1	3.17	1.3850081955940636	63	
+NewportDiesels6	oil	VT	0.9	8.97040166391737	9.035426426032968	9.100451188148567	0.315	0.9	1	1	3.17	1.3850081955940636	63	
+NewportDiesels7	oil	VT	0.9	8.97040166391737	9.035426426032968	9.100451188148567	0.315	0.9	1	1	3.17	1.3850081955940636	63	
+NewportDiesels8	oil	VT	1.1	8.97040166391737	9.03542642603297	9.100451188148568	0.385	1.1	1	1	3.17	1.692787794614964	77	
+NewportDiesels9	oil	VT	1.1	8.97040166391737	9.03542642603297	9.100451188148568	0.385	1.1	1	1	3.17	1.692787794614964	77	
+RutlandGT5	oil	VT	13.2	19.892309966598273	19.95733472871387	20.022359490829466	4.619999999999999	13.2	1	1	3.17	20.313453535379626	924	
+Vergennes95	oil	VT	2.0	8.942853431216571	9.007878193332171	9.072902955447772	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+Vergennes96	oil	VT	2.0	8.942853431216571	9.007878193332171	9.072902955447772	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+WestCharlestonIC3	oil	VT	1.4	8.942853431216571	9.007878193332171	9.072902955447772	0.48999999999999994	1.4	1	1	3.17	2.1544571931463126	98	
+WestCharlestonIC4	oil	VT	1.4	8.942853431216571	9.007878193332171	9.072902955447772	0.48999999999999994	1.4	1	1	3.17	2.1544571931463126	98	
+AndersonPowerProductsDivision3622	oil	WCMA	0.1	3.014653350416339	3.07967811253194	3.144702874647541	0.034999999999999996	0.1	1	1	3.17	0.15388979951045148	7	
+AndersonPowerProductsDivision6033	oil	WCMA	0.3	3.0146533504163386	3.079678112531939	3.144702874647539	0.105	0.3	1	1	3.17	0.4616693985313532	21	
+AndersonPowerProductsDivision6035	oil	WCMA	0.3	3.0146533504163386	3.079678112531939	3.144702874647539	0.105	0.3	1	1	3.17	0.4616693985313532	21	
+AndersonPowerProductsDivision6046	oil	WCMA	0.3	3.0146533504163386	3.079678112531939	3.144702874647539	0.105	0.3	1	1	3.17	0.4616693985313532	21	
+ErvingPaperMills1	oil	WCMA	2.5	3.3026789419041096	3.36770370401971	3.4327284661353104	0.875	2.5	1	1	3.17	3.8472449877612798	175	
+EssentialPowerMassachusettsLLCWS1	oil	WCMA	51.0	11.70788187827157	11.77290664038717	11.837931402502772	17.849999999999998	51.0	1	1	3.17	78.4837977503302	3570	
+EssentialPowerMassachusettsLLCWS10	oil	WCMA	17.0	12.245723504865868	12.310748266981468	12.37577302909707	5.949999999999999	17.0	1	1	3.17	26.16126591677672	1190	
+EssentialPowerMassachusettsLLCWS2	oil	WCMA	51.0	11.70788187827157	11.77290664038717	11.837931402502772	17.849999999999998	51.0	1	1	3.17	78.4837977503302	3570	
+Shrewsbury1	oil	WCMA	2.8	11.70788187827157	11.77290664038717	11.837931402502772	0.9799999999999999	2.8	1	1	3.17	4.308914386292648	196	
+Shrewsbury2	oil	WCMA	2.8	11.70788187827157	11.77290664038717	11.837931402502772	0.9799999999999999	2.8	1	1	3.17	4.308914386292648	196	
+Shrewsbury3	oil	WCMA	2.8	11.70788187827157	11.77290664038717	11.837931402502772	0.9799999999999999	2.8	1	1	3.17	4.308914386292648	196	
+Shrewsbury4	oil	WCMA	2.8	11.70788187827157	11.77290664038717	11.837931402502772	0.9799999999999999	2.8	1	1	3.17	4.308914386292648	196	
+Shrewsbury5	oil	WCMA	2.8	11.70788187827157	11.77290664038717	11.837931402502772	0.9799999999999999	2.8	1	1	3.17	4.308914386292648	196	
+StonyBrook1	oil	WCMA	85.0	7.5977612118307905	7.6627859739463915	7.727810736061993	29.749999999999996	85.0	1	1	3.17	130.80632958388344	5950	
+StonyBrook2	oil	WCMA	85.0	7.5977612118307905	7.6627859739463915	7.727810736061993	29.749999999999996	85.0	1	1	3.17	130.80632958388344	5950	
+StonyBrookBS1	oil	WCMA	2.0	7.5977612118307905	7.662785973946391	7.727810736061991	0.7	2.0	1	1	3.17	3.0777959902090215	140	
+StonyBrookBS2	oil	WCMA	2.0	7.5977612118307905	7.662785973946391	7.727810736061991	0.7	2.0	1	1	3.17	3.0777959902090215	140	
+StonyBrookCA1	oil	WCMA	105.0	7.5977612118307905	7.66278597394639	7.727810736061988	36.75	105.0	1	1	3.17	161.58428948597376	7350	
+StonyBrookCT1	oil	WCMA	85.0	7.5977612118307905	7.6627859739463915	7.727810736061993	29.749999999999996	85.0	1	1	3.17	130.80632958388344	5950	
+StonyBrookCT2	oil	WCMA	85.0	7.5977612118307905	7.6627859739463915	7.727810736061993	29.749999999999996	85.0	1	1	3.17	130.80632958388344	5950	
+StonyBrookCT3	oil	WCMA	85.0	7.5977612118307905	7.6627859739463915	7.727810736061993	29.749999999999996	85.0	1	1	3.17	130.80632958388344	5950	
+StonyBrookCT4	oil	WCMA	120.0	7.5977612118307905	7.66278597394639	7.727810736061988	42.0	120.0	1	1	3.17	184.66775941254105	8400	
+StonyBrookEDSI	oil	WCMA	0.6	7.59776121183079	7.662785973946391	7.727810736061991	0.21	0.6	1	1	3.17	0.9233387970627062	42	
+WilliamsCollegeCampusCHPGEN4	oil	WCMA	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+WilliamsCollegeCampusCHPGEN5	oil	WCMA	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+WilliamsCollegeCampusCHPGEN6	oil	WCMA	2.0	3.7284983629646495	3.7935231250802497	3.8585478871958503	0.7	2.0	1	1	3.17	3.0777959902090206	140	
+WoodlandRoadWOOD	oil	WCMA	20.4	20.768873839379864	20.83389860149547	20.89892336361108	7.139999999999999	20.4	1	1	3.17	31.39351910013208	1428	
+SLACK1	slack	CT	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK2	slack	ME	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK3	slack	NEMA	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK4	slack	NH	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK5	slack	RI	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK6	slack	SEMA	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK7	slack	VT	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+SLACK8	slack	WCMA	10000.0	10000.0	10000.0	10000.0	0.0	5000.0	1	1	0.0	10000000000.0	10000000000	
+;
+
+param:	SimDemand	SimWind	SimMustRun:=
+;
+
+param:	SimNY_imports_CT	SimNY_imports_VT	SimNY_imports_WCMA	SimNB_imports_ME	SimHQ_imports_VT	SimHQ_imports_WCMA	SimCT_hydro	SimME_hydro	SimNH_hydro	SimNEMA_hydro	SimRI_hydro	SimVT_hydro	SimWCMA_hydro:=
+1	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+2	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+3	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+4	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+5	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+6	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+7	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+8	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+9	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+10	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+11	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+12	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+13	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+14	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+15	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+16	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+17	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+18	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+19	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+20	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+21	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+22	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+23	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+24	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+25	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+26	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+27	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+28	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+29	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+30	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+31	0	0	0	0	0	0	1162.25961	10480.34021	4195.378901	544.3184581	13.12756344	3937.107991	3761.611594
+32	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+33	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+34	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+35	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+36	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+37	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+38	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+39	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+40	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+41	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+42	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+43	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+44	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+45	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+46	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+47	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+48	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+49	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+50	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+51	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+52	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+53	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+54	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+55	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+56	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+57	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+58	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+59	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+60	0	0	0	0	0	0	1048.224628	9800.830647	3680.81238	482.37743560000007	12.45392444	3364.272462	3343.246898
+61	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+62	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+63	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+64	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+65	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+66	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+67	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+68	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+69	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+70	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+71	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+72	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+73	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+74	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+75	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+76	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+77	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+78	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+79	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+80	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+81	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+82	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+83	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+84	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+85	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+86	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+87	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+88	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+89	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+90	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+91	0	0	0	0	0	0	899.7188332999999	8756.950617	2978.934355	368.0533871	10.67275269	2563.667527	3058.227488
+92	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+93	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+94	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+95	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+96	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+97	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+98	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+99	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+100	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+101	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+102	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+103	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+104	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+105	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+106	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+107	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+108	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+109	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+110	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+111	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+112	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+113	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+114	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+115	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+116	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+117	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+118	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+119	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+120	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+121	0	0	0	0	0	0	782.2018222	8380.403118	1950.479053	247.37935330000002	9.275666667000001	1842.757327	2155.369271
+122	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+123	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+124	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+125	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+126	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+127	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+128	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+129	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+130	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+131	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+132	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+133	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+134	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+135	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+136	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+137	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+138	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+139	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+140	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+141	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+142	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+143	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+144	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+145	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+146	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+147	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+148	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+149	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+150	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+151	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+152	0	0	0	0	0	0	931.7272929999999	8948.592011	2548.011594	318.591929	10.63676774	2505.2858920000003	2599.307875
+153	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+154	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+155	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+156	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+157	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+158	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+159	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+160	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+161	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+162	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+163	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+164	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+165	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+166	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+167	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+168	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+169	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+170	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+171	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+172	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+173	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+174	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+175	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+176	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+177	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+178	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+179	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+180	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+181	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+182	0	0	0	0	0	0	1035.420677	9159.170333	3261.316002	385.7304172	11.96538925	3132.590716	2943.698785
+183	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+184	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+185	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+186	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+187	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+188	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+189	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+190	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+191	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+192	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+193	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+194	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+195	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+196	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+197	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+198	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+199	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+200	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+201	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+202	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+203	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+204	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+205	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+206	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+207	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+208	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+209	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+210	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+211	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+212	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+213	0	0	0	0	0	0	1162.863133	10248.58742	4277.28014	463.3534244	13.11946667	3888.650682	3258.2776289999997
+214	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+215	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+216	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+217	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+218	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+219	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+220	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+221	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+222	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+223	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+224	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+225	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+226	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+227	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+228	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+229	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+230	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+231	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+232	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+233	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+234	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+235	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+236	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+237	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+238	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+239	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+240	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+241	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+242	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+243	0	0	0	0	0	0	1397.618124	11148.68799	5607.5341960000005	551.1450925	14.87054194	4344.716372	3577.0574560000005
+244	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+245	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+246	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+247	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+248	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+249	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+250	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+251	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+252	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+253	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+254	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+255	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+256	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+257	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+258	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+259	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+260	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+261	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+262	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+263	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+264	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+265	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+266	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+267	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+268	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+269	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+270	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+271	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+272	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+273	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+274	0	0	0	0	0	0	1550.540028	11446.3438	6223.470718	607.9228311	16.08270667	5048.197391	3784.8298270000005
+275	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+276	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+277	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+278	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+279	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+280	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+281	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+282	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+283	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+284	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+285	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+286	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+287	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+288	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+289	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+290	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+291	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+292	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+293	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+294	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+295	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+296	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+297	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+298	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+299	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+300	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+301	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+302	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+303	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+304	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+305	0	0	0	0	0	0	1222.1843039999999	10772.07726	3950.2773700000002	533.6846667	13.69475269	4071.3573979999996	3460.0032340000002
+306	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+307	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+308	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+309	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+310	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+311	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+312	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+313	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+314	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+315	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+316	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+317	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+318	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+319	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+320	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+321	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+322	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+323	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+324	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+325	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+326	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+327	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+328	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+329	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+330	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+331	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+332	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+333	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+334	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+335	0	0	0	0	0	0	1124.5933929999999	11343.61025	3421.416471	461.93936669999994	13.22843095	3385.5653859999998	3117.988526
+336	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+337	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+338	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+339	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+340	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+341	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+342	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+343	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+344	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+345	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+346	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+347	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+348	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+349	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+350	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+351	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+352	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+353	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+354	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+355	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+356	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+357	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+358	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+359	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+360	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+361	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+362	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+363	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+364	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+365	0	0	0	0	0	0	1167.048548	11125.291870000001	3759.053125	517.6094086	13.56729247	3693.595882	3539.5864189999998
+;
+
+param:	SimCT_exports_NY	SimWCMA_exports_NY	SimVT_exports_NY	SimVT_exports_HQ	SimWCMA_exports_HQ	SimME_exports_NB	SimReserves	SimCT_hydro_minflow	SimME_hydro_minflow	SimNH_hydro_minflow	SimNEMA_hydro_minflow	SimRI_hydro_minflow	SimVT_hydro_minflow	SimWCMA_hydro_minflow	SimNY_imports_CT_minflow	SimNY_imports_VT_minflow	SimNY_imports_WCMA_minflow	SimHQ_imports_VT_minflow	SimHQ_imports_WCMA_minflow	SimNB_imports_ME_minflow:=
+;
+
