@@ -78,6 +78,69 @@ oct = df_data.loc[df_data['Month'] == 10,:]
 nov = df_data.loc[df_data['Month'] == 11,:]
 dec = df_data.loc[df_data['Month'] == 12,:] 
 
+
+#############################################################################
+#      Synthetic data setup
+#############################################################################
+
+
+syn_days = len(synthetic_weather_all)
+
+AvgT_all = np.zeros((syn_days,num_cities))
+Wind_all = np.zeros((syn_days,num_cities))
+
+for i in cities:
+    n1_new = i + '_T'
+    n2_new = i + '_W'
+    
+    j = int(cities.index(i))
+    
+    AvgT_all[:,j] = synthetic_weather_all.loc[:,n1_new] 
+    Wind_all[:,j] = synthetic_weather_all.loc[:,n2_new]
+       
+#convert to degree days
+HDD_new = np.zeros((syn_days,num_cities))
+CDD_new = np.zeros((syn_days,num_cities))
+
+
+for i in range(0,syn_days):
+    for j in range(0,num_cities):
+        HDD_new[i,j] = np.max((0,65-AvgT_all[i,j]))
+        CDD_new[i,j] = np.max((0,AvgT_all[i,j] - 65))
+
+
+#separate Wind_all speed by cooling/heating degree day
+binary_CDD_new = CDD_new>0
+binary_HDD_new = HDD_new>0
+CDD_new_Wind_all = np.multiply(Wind_all,binary_CDD_new)
+HDD_new_Wind_all = np.multiply(Wind_all,binary_HDD_new)
+
+
+X1_new = np.array(synthetic_weather_all.loc[:,'Month':'Year'])
+X2_new = np.array(synthetic_weather_all.loc[:,'Weekday'])
+X3_new = np.column_stack((HDD_new,CDD_new,HDD_new_Wind_all,CDD_new_Wind_all))
+
+cXY_new = np.column_stack((X1_new,X2_new,X3_new))
+df_data_new = pd.DataFrame(cXY_new)
+df_data_new.rename(columns={0:'Month'}, inplace=True)
+df_data_new.rename(columns={3:'Weekday'}, inplace=True)
+
+
+jan_new = df_data_new.loc[df_data_new['Month'] == 1,:]
+feb_new = df_data_new.loc[df_data_new['Month'] == 2,:]
+mar_new = df_data_new.loc[df_data_new['Month'] == 3,:]
+apr_new = df_data_new.loc[df_data_new['Month'] == 4,:]
+may_new = df_data_new.loc[df_data_new['Month'] == 5,:]
+jun_new = df_data_new.loc[df_data_new['Month'] == 6,:]
+jul_new = df_data_new.loc[df_data_new['Month'] == 7,:]
+aug_new = df_data_new.loc[df_data_new['Month'] == 8,:]
+sep_new = df_data_new.loc[df_data_new['Month'] == 9,:]
+oct_new = df_data_new.loc[df_data_new['Month'] == 10,:]
+nov_new = df_data_new.loc[df_data_new['Month'] == 11,:]
+dec_new = df_data_new.loc[df_data_new['Month'] == 12,:] 
+
+############################################################################
+
 Interchange_line = ['SALBRYNB', 'ROSETON', 'HQ_P1_P2', 'HQHIGATE', 'SHOREHAM', 'NORTHPORT']
 for line in Interchange_line:
     line_index = Interchange_line.index(line)
@@ -192,77 +255,17 @@ for line in Interchange_line:
         Residuals_line.columns = [line]
         
     else:
-        Residuals_line[line] = residuals
-        
+        Residuals_line[line] = residuals     
 
 
 ######################## Interchange simulation #####################
-
-    syn_days = len(synthetic_weather_all)
-    
-    AvgT_all = np.zeros((syn_days,num_cities))
-    Wind_all = np.zeros((syn_days,num_cities))
-    
-    for i in cities:
-        n1_new = i + '_T'
-        n2_new = i + '_W'
-        
-        j = int(cities.index(i))
-        
-        AvgT_all[:,j] = synthetic_weather_all.loc[:,n1_new] 
-        Wind_all[:,j] = synthetic_weather_all.loc[:,n2_new]
-           
-    #convert to degree days
-    HDD_new = np.zeros((syn_days,num_cities))
-    CDD_new = np.zeros((syn_days,num_cities))
-    
-    
-    for i in range(0,syn_days):
-        for j in range(0,num_cities):
-            HDD_new[i,j] = np.max((0,65-AvgT_all[i,j]))
-            CDD_new[i,j] = np.max((0,AvgT_all[i,j] - 65))
-    
-    
-    #separate Wind_all speed by cooling/heating degree day
-    binary_CDD_new = CDD_new>0
-    binary_HDD_new = HDD_new>0
-    CDD_new_Wind_all = np.multiply(Wind_all,binary_CDD_new)
-    HDD_new_Wind_all = np.multiply(Wind_all,binary_HDD_new)
-    
-    
-    X1_new = np.array(synthetic_weather_all.loc[:,'Month':'Year'])
-    X2_new = np.array(synthetic_weather_all.loc[:,'Weekday'])
-    X3_new = np.column_stack((HDD_new,CDD_new,HDD_new_Wind_all,CDD_new_Wind_all))
-    
-    cXY_new = np.column_stack((X1_new,X2_new,X3_new))
-    df_data_new = pd.DataFrame(cXY_new)
-    df_data_new.rename(columns={0:'Month'}, inplace=True)
-    df_data_new.rename(columns={3:'Weekday'}, inplace=True)
-    
-    
-    jan_new = df_data_new.loc[df_data_new['Month'] == 1,:]
-    feb_new = df_data_new.loc[df_data_new['Month'] == 2,:]
-    mar_new = df_data_new.loc[df_data_new['Month'] == 3,:]
-    apr_new = df_data_new.loc[df_data_new['Month'] == 4,:]
-    may_new = df_data_new.loc[df_data_new['Month'] == 5,:]
-    jun_new = df_data_new.loc[df_data_new['Month'] == 6,:]
-    jul_new = df_data_new.loc[df_data_new['Month'] == 7,:]
-    aug_new = df_data_new.loc[df_data_new['Month'] == 8,:]
-    sep_new = df_data_new.loc[df_data_new['Month'] == 9,:]
-    oct_new = df_data_new.loc[df_data_new['Month'] == 10,:]
-    nov_new = df_data_new.loc[df_data_new['Month'] == 11,:]
-    dec_new = df_data_new.loc[df_data_new['Month'] == 12,:] 
-    
-    
-    z = df_data_new.iloc[:,line_index]
-
 
     # Make predictions using the synthetic set
     predicted_new = []
     rc_new = np.shape(jan_new.loc[:,'Weekday':])
     n_new = rc_new[1] 
     
-    for i in range(0,len(z)):
+    for i in range(0,syn_days):
         
         t = df_data_new.loc[i,'Month']
         
@@ -334,9 +337,8 @@ for line in Interchange_line:
     
     else:
         predictions_all[line] = predicted_new
-
-
-
+        
+        
   #####################################################################
   #                       Residual Analysis for Interchange
   #####################################################################
@@ -386,13 +388,23 @@ for i in range(0,cols):
 
 
 simulated_errors = pd.DataFrame(sim_residuals)
+
+# enact logical bounds
+for line in Interchange_line:
+    line_index = Interchange_line.index(line)
+    for i in range(0,len(sim_residuals)):
+        if predictions_all.loc[i,line] > np.max(Y[:,line_index]):
+            predictions_all.loc[i,line] = np.max(Y[:,line_index])
+        elif predictions_all.loc[i,line] < np.min(Y[:,line_index]):
+            predictions_all.loc[i,line] = np.min(Y[:,line_index])
+            
 SALBRYNB_total = predictions_all.loc[:,'SALBRYNB'] + simulated_errors.loc[:,0]
 ROSETON_total = predictions_all.loc[:,'ROSETON'] + simulated_errors.loc[:,1]
 HQ_P1_P2_total = predictions_all.loc[:,'HQ_P1_P2'] + simulated_errors.loc[:,2]
 HQHIGATE_total = predictions_all.loc[:,'HQHIGATE'] + simulated_errors.loc[:,3]
 SHOREHAM_total = predictions_all.loc[:,'SHOREHAM'] + simulated_errors.loc[:,4]
 NORTHPORT_total = predictions_all.loc[:,'NORTHPORT'] + simulated_errors.loc[:,5]
-list_labels = ['SALBRYNB', 'ROSETON', 'HQ_P1_P2', 'HQHIGATE', 'SHOREHAM', 'NORTHPORT']
+list_labels = ['SALBRYNB', 'ROSETON', 'HQ_P1_P2', 'HQHIGATE', 'SHOREHAM', 'NORTHPORT']       
 list_columns = [SALBRYNB_total, ROSETON_total, HQ_P1_P2_total, HQHIGATE_total, SHOREHAM_total, NORTHPORT_total]
 zipped_list = list(zip(list_labels, list_columns))
 interchange_simulated = dict(zipped_list)
