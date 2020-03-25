@@ -411,3 +411,26 @@ interchange_simulated = dict(zipped_list)
 interchange_simulated_final = pd.DataFrame(interchange_simulated)
 interchange_simulated_final.to_csv("Sim_daily_interchange.csv")
 
+plt.figure()
+plt.plot(SALBRYNB_total[0:3650])
+plt.title('SALBRYNB')
+
+plt.figure()
+plt.plot(ROSETON_total[0:3650])
+plt.title('ROSETON')
+
+plt.figure()
+plt.plot(HQ_P1_P2_total[0:3650])
+plt.title('HQ_P1_P2')
+
+plt.figure()
+plt.plot(HQHIGATE_total[0:3650])
+plt.title('HQHIGATE')
+
+plt.figure()
+plt.plot(SHOREHAM_total[0:3650])
+plt.title('SHOREHAM')
+
+plt.figure()
+plt.plot(NORTHPORT_total[0:3650])
+plt.title('NORTHPORT')
