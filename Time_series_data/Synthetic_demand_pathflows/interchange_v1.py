@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 #import data
 synthetic_weather_all = pd.read_excel('All_Data.xlsx',sheet_name='Weather',header=0)
 df_data1 = pd.read_excel('Interchange.xlsx',sheet_name='Daily', header=0)
-df_data1 = df_data1.iloc[1461:,:]
+df_data1 = df_data1.iloc[1460:,:]
 #find average temps 
 cities = ['CT','ME','NEMA','NH','RI','SEMA','VT','WCMA']
 num_cities = len(cities)
