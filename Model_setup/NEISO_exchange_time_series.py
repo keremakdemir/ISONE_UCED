@@ -49,57 +49,58 @@ def exchange(year):
     df_data = df_data.loc[year*365:year*365+364,:]
     df_data = df_data.reset_index()
     
-    e = np.zeros((8760,len(df_data.columns)))
+    e = np.zeros((8760,len(paths)))
     
     #SALBRYNB
     path_profiles = pd.read_excel('Path_setup/NEISO_path_export_profiles.xlsx',sheet_name='SALBRYNB',header=None)
     pp = path_profiles.values
     
     for i in range(0,len(df_data)):
-        if df_data.loc[i,'SALBRYNB'].values < 0:
-            e[i*24:i*24+24,0] = pp[i,:]*df_data.loc[i,'SALBRYNB'].values*-1
-  
+        if df_data.loc[i,'SALBRYNB'] < 0:
+            e[i*24:i*24+24,0] = pp[i,:]*df_data.loc[i,'SALBRYNB']*-1
+      
     #ROSETON
     path_profiles = pd.read_excel('Path_setup/NEISO_path_export_profiles.xlsx',sheet_name='ROSETON',header=None)
     pp = path_profiles.values
     
     for i in range(0,len(df_data)):
-        if df_data.loc[i,'ROSETON'].values < 0:
-            e[i*24:i*24+24,1] = pp[i,:]*df_data.loc[i,'ROSETON'].values*-1
+        if df_data.loc[i,'ROSETON'] < 0:
+            e[i*24:i*24+24,1] = pp[i,:]*df_data.loc[i,'ROSETON']*-1
     
     #HQ_P1_P2
     path_profiles = pd.read_excel('Path_setup/NEISO_path_export_profiles.xlsx',sheet_name='HQ_P1_P2',header=None)
     pp = path_profiles.values
     
     for i in range(0,len(df_data)):
-        if df_data.loc[i,'HQ_P1_P2'].values < 0:
-            e[i*24:i*24+24,2] = pp[i,:]*df_data.loc[i,'HQ_P1_P2'].values*-1
+        if df_data.loc[i,'HQ_P1_P2'] < 0:
+            e[i*24:i*24+24,2] = pp[i,:]*df_data.loc[i,'HQ_P1_P2']*-1
     
     #HQHIGATE
     path_profiles = pd.read_excel('Path_setup/NEISO_path_export_profiles.xlsx',sheet_name='HQHIGATE',header=None)
     pp = path_profiles.values
     
     for i in range(0,len(df_data)):
-        if df_data.loc[i,'HQHIGATE'].values < 0:
-            e[i*24:i*24+24,3] = pp[i,:]*df_data.loc[i,'HQHIGATE'].values*-1
+        if df_data.loc[i,'HQHIGATE'] < 0:
+            e[i*24:i*24+24,3] = pp[i,:]*df_data.loc[i,'HQHIGATE']*-1
     
     #SHOREHAM
     path_profiles = pd.read_excel('Path_setup/NEISO_path_export_profiles.xlsx',sheet_name='SHOREHAM',header=None)
     pp = path_profiles.values
     
     for i in range(0,len(df_data)):
-        if df_data.loc[i,'SHOREHAM'].values < 0:
-            e[i*24:i*24+24,4] = pp[i,:]*df_data.loc[i,'SHOREHAM'].values*-1
+        if df_data.loc[i,'SHOREHAM'] < 0:
+            e[i*24:i*24+24,4] = pp[i,:]*df_data.loc[i,'SHOREHAM']*-1
     
     #NORTHPORT
     path_profiles = pd.read_excel('Path_setup/NEISO_path_export_profiles.xlsx',sheet_name='NORTHPORT',header=None)
     pp = path_profiles.values
     
     for i in range(0,len(df_data)):
-        if df_data.loc[i,'NORTHPORT'].values < 0:
-            e[i*24:i*24+24,5] = pp[i,:]*df_data.loc[i,'NORTHPORT'].values*-1
+        if df_data.loc[i,'NORTHPORT'] < 0:
+            e[i*24:i*24+24,5] = pp[i,:]*df_data.loc[i,'NORTHPORT']*-1
     
     exports = pd.DataFrame(e) 
+    exports.columns = paths
     exports_total = exports.copy()
     exports_total.rename(columns={'SALBRYNB':'ME_exports_NB'}, inplace=True)
     exports_total['HYDRO_QUEBEC'] = exports_total['HQ_P1_P2'] + exports_total['HQHIGATE']

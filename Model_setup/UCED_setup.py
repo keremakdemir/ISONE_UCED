@@ -36,6 +36,9 @@ for i in range(0,1):
     
 ############################################################################
 #                          UC/ED Data File Setup
+    
+    import NEISO_exchange_time_series
+    NEISO_exchange_time_series.exchange(year)
 
     import NEISO_data_setup
     NEISO_data_setup.setup(year, Hub_height)
