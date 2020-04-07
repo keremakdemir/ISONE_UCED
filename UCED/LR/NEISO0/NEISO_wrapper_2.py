@@ -28,8 +28,6 @@ def sim(days):
     opt = SolverFactory("cplex")
 
 
-
-
     H = instance.HorizonHours
     D = 2
     K=range(1,H+1)
@@ -61,32 +59,11 @@ def sim(days):
             for i in K:
                 instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
                 instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
-                # instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
                 instance.HorizonMustRun[z,i] = instance.SimMustRun[z,(day-1)*24+i]
 
-        # for d in range(1,D+1):
-        #     instance.HorizonPath66_imports[d] = instance.SimPath66_imports[day-1+d]
-        #     instance.HorizonPath46_SCE_imports[d] = instance.SimPath46_SCE_imports[day-1+d]
-        #     instance.HorizonPath61_imports[d] = instance.SimPath61_imports[day-1+d]
-        #     instance.HorizonPath42_imports[d] = instance.SimPath42_imports[day-1+d]
-        #     instance.HorizonPath24_imports[d] = instance.SimPath24_imports[day-1+d]
-        #     instance.HorizonPath45_imports[d] = instance.SimPath45_imports[day-1+d]
-        #     instance.HorizonPGE_valley_hydro[d] = instance.SimPGE_valley_hydro[day-1+d]
-        #     instance.HorizonSCE_hydro[d] = instance.SimSCE_hydro[day-1+d]
 
         for i in K:
             instance.HorizonReserves[i] = instance.SimReserves[(day-1)*24+i]
-            # instance.HorizonPath42_exports[i] = instance.SimPath42_exports[(day-1)*24+i]
-            # instance.HorizonPath24_exports[i] = instance.SimPath24_exports[(day-1)*24+i]
-            # instance.HorizonPath45_exports[i] = instance.SimPath45_exports[(day-1)*24+i]
-            # instance.HorizonPath66_exports[i] = instance.SimPath66_exports[(day-1)*24+i]
-
-            # instance.HorizonPath46_SCE_minflow[i] = instance.SimPath46_SCE_imports_minflow[(day-1)*24+i]
-            # instance.HorizonPath66_minflow[i] = instance.SimPath66_imports_minflow[(day-1)*24+i]
-            # instance.HorizonPath42_minflow[i] = instance.SimPath42_imports_minflow[(day-1)*24+i]
-            # instance.HorizonPath61_minflow[i] = instance.SimPath61_imports_minflow[(day-1)*24+i]
-            # instance.HorizonPGE_valley_hydro_minflow[i] = instance.SimPGE_valley_hydro_minflow[(day-1)*24+i]
-            # instance.HorizonSCE_hydro_minflow[i] = instance.SimSCE_hydro_minflow[(day-1)*24+i]
     #
         NEISO_result = opt.solve(instance)
         instance.solutions.load_from(NEISO_result)
@@ -98,32 +75,12 @@ def sim(days):
             for i in K:
                 instance2.HorizonDemand[z,i] = instance2.SimDemand[z,(day-1)*24+i]
                 instance2.HorizonWind[z,i] = instance2.SimWind[z,(day-1)*24+i]
-                # instance2.HorizonSolar[z,i] = instance2.SimSolar[z,(day-1)*24+i]
                 instance2.HorizonMustRun[z,i] = instance2.SimMustRun[z,(day-1)*24+i]
 
-        # for d in range(1,D+1):
-        #     instance2.HorizonPath66_imports[d] = instance2.SimPath66_imports[day-1+d]
-        #     instance2.HorizonPath46_SCE_imports[d] = instance2.SimPath46_SCE_imports[day-1+d]
-        #     instance2.HorizonPath61_imports[d] = instance2.SimPath61_imports[day-1+d]
-        #     instance2.HorizonPath42_imports[d] = instance2.SimPath42_imports[day-1+d]
-        #     instance2.HorizonPath24_imports[d] = instance2.SimPath24_imports[day-1+d]
-        #     instance2.HorizonPath45_imports[d] = instance2.SimPath45_imports[day-1+d]
-        #     instance2.HorizonPGE_valley_hydro[d] = instance2.SimPGE_valley_hydro[day-1+d]
-        #     instance2.HorizonSCE_hydro[d] = instance2.SimSCE_hydro[day-1+d]
 
         for i in K:
             instance2.HorizonReserves[i] = instance2.SimReserves[(day-1)*24+i]
-            # instance2.HorizonPath42_exports[i] = instance2.SimPath42_exports[(day-1)*24+i]
-            # instance2.HorizonPath24_exports[i] = instance2.SimPath24_exports[(day-1)*24+i]
-            # instance2.HorizonPath45_exports[i] = instance2.SimPath45_exports[(day-1)*24+i]
-            # instance2.HorizonPath66_exports[i] = instance2.SimPath66_exports[(day-1)*24+i]
 
-            # instance2.HorizonPath46_SCE_minflow[i] = instance2.SimPath46_SCE_imports_minflow[(day-1)*24+i]
-            # instance2.HorizonPath66_minflow[i] = instance2.SimPath66_imports_minflow[(day-1)*24+i]
-            # instance2.HorizonPath42_minflow[i] = instance2.SimPath42_imports_minflow[(day-1)*24+i]
-            # instance2.HorizonPath61_minflow[i] = instance2.SimPath61_imports_minflow[(day-1)*24+i]
-            # instance2.HorizonPGE_valley_hydro_minflow[i] = instance2.SimPGE_valley_hydro_minflow[(day-1)*24+i]
-            # instance2.HorizonSCE_hydro_minflow[i] = instance2.SimSCE_hydro_minflow[(day-1)*24+i]
         for j in instance.Generators:
             for t in K:
                 if instance.on[j,t] == 1:
