@@ -215,24 +215,6 @@ model.HorizonWind = Param(model.zones,model.hh_periods,within=NonNegativeReals,m
 model.HorizonSolar = Param(model.zones,model.hh_periods,within=NonNegativeReals,mutable=True)
 model.HorizonHydro = Param(model.zones,model.hh_periods,within=NonNegativeReals,mutable=True)
 
-#Minimum flows (hydro and paths)
-
-model.SimME_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-model.SimVT_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-model.SimRI_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-model.SimNH_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-model.SimCT_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-model.SimWCMA_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-model.SimNEMA_hydro_minflow = Param(model.SH_periods, within=NonNegativeReals)
-
-model.HorizonME_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-model.HorizonVT_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-model.HorizonRI_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-model.HorizonNH_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-model.HorizonCT_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-model.HorizonWCMA_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-model.HorizonNEMA_hydro_minflow = Param(model.hh_periods, within=NonNegativeReals,mutable=True)
-
 ##Initial conditions
 model.ini_on = Param(model.Generators, within=NonNegativeReals, initialize=0,mutable=True) 
 model.ini_mwh_1 = Param(model.Generators,initialize=0,mutable=True) #seg1
@@ -263,16 +245,6 @@ model.nrsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,init
 #Renewable energy production
 # model.solar = Var(model.zones,model.HH_periods,within=NonNegativeReals)
 model.wind = Var(model.zones,model.HH_periods,within=NonNegativeReals)
-
-#Minimum flows for import paths and hydropower
-
-model.ME_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
-model.NH_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
-model.RI_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
-model.VT_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
-model.CT_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
-model.WCMA_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
-model.NEMA_hydro_minflow = Var(model.HH_periods,within=NonNegativeReals)
 
 #Power flows on each path
 model.flow = Var(model.sources*model.sinks*model.HH_periods, within=NonNegativeReals)
@@ -337,7 +309,7 @@ def WECC1(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone1Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone1Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone1Generators) 
-    renew = model.wind['CT',i] + model.CT_hydro_minflow[i]
+    renew = model.wind['CT',i] 
     must_run = model.HorizonMustRun['CT',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['CT',i]
 model.Local1= Constraint(model.hh_periods,rule=WECC1)
@@ -346,7 +318,7 @@ def WECC2(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone2Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone2Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone2Generators) 
-    renew = model.wind['ME',i] + model.ME_hydro_minflow[i]
+    renew = model.wind['ME',i] 
     must_run = model.HorizonMustRun['ME',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['ME',i]
 model.Local2= Constraint(model.hh_periods,rule=WECC2)
@@ -355,7 +327,7 @@ def WECC3(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone3Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone3Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone3Generators) 
-    renew = model.wind['NH',i] + model.NH_hydro_minflow[i]
+    renew = model.wind['NH',i] 
     must_run = model.HorizonMustRun['NH',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['NH',i]
 model.Local3= Constraint(model.hh_periods,rule=WECC3)
@@ -364,7 +336,7 @@ def WECC4(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone4Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone4Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone4Generators) 
-    renew = model.wind['NEMA',i] + model.NEMA_hydro_minflow[i]
+    renew = model.wind['NEMA',i] 
     must_run = model.HorizonMustRun['NEMA',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['NEMA',i]
 model.Local4= Constraint(model.hh_periods,rule=WECC4)
@@ -373,7 +345,7 @@ def WECC5(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone5Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone5Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone5Generators) 
-    renew = model.wind['RI',i] + model.RI_hydro_minflow[i]
+    renew = model.wind['RI',i] 
     must_run = model.HorizonMustRun['RI',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['RI',i]
 model.Local5= Constraint(model.hh_periods,rule=WECC5)
@@ -391,7 +363,7 @@ def WECC7(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone7Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone7Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone7Generators) 
-    renew = model.wind['VT',i] + model.VT_hydro_minflow[i]
+    renew = model.wind['VT',i] 
     must_run = model.HorizonMustRun['VT',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['VT',i]
 model.Local7= Constraint(model.hh_periods,rule=WECC7)
@@ -400,7 +372,7 @@ def WECC8(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone8Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone8Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone8Generators) 
-    renew = model.wind['WCMA',i] + model.WCMA_hydro_minflow[i]
+    renew = model.wind['WCMA',i] 
     must_run = model.HorizonMustRun['WCMA',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['WCMA',i]
 model.Local8= Constraint(model.hh_periods,rule=WECC8)
@@ -411,8 +383,7 @@ def Zone1_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone1Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone1Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone1Generators)  
-    other = model.CT_hydro_minflow[i]\
-    + model.wind['CT',i] + model.HorizonMustRun['CT',i]
+    other = model.wind['CT',i] + model.HorizonMustRun['CT',i]
     imports = sum(model.flow[s,'CT',i] for s in model.sources) + model.mwh_1['NYCTI',i] + model.mwh_2['NYCTI',i] + model.mwh_3['NYCTI',i] 
     exports = sum(model.flow['CT',k,i] for k in model.sinks) + model.HorizonCT_exports_NY[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['CT',i]
@@ -422,8 +393,7 @@ def Zone2_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone2Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone2Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone2Generators)  
-    other = model.ME_hydro_minflow[i]\
-    + model.wind['ME',i] + model.HorizonMustRun['ME',i]
+    other = model.wind['ME',i] + model.HorizonMustRun['ME',i]
     imports = sum(model.flow[s,'ME',i] for s in model.sources) + model.mwh_1['NBMEI',i] + model.mwh_2['NBMEI',i] + model.mwh_3['NBMEI',i] 
     exports = sum(model.flow['ME',k,i] for k in model.sinks) + model.HorizonME_exports_NB[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['ME',i]
@@ -433,8 +403,7 @@ def Zone3_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone3Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone3Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone3Generators)  
-    other = model.NH_hydro_minflow[i]\
-    + model.wind['NH',i] + model.HorizonMustRun['NH',i]
+    other = model.wind['NH',i] + model.HorizonMustRun['NH',i]
     imports = sum(model.flow[s,'NH',i] for s in model.sources) 
     exports = sum(model.flow['NH',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['NH',i]
@@ -444,8 +413,7 @@ def Zone4_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone4Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone4Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone4Generators)  
-    other = model.NEMA_hydro_minflow[i]\
-    + model.wind['NEMA',i] + model.HorizonMustRun['NEMA',i]
+    other = model.wind['NEMA',i] + model.HorizonMustRun['NEMA',i]
     imports = sum(model.flow[s,'NEMA',i] for s in model.sources) 
     exports = sum(model.flow['NEMA',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['NEMA',i]
@@ -455,8 +423,7 @@ def Zone5_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone5Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone5Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone5Generators)  
-    other = model.RI_hydro_minflow[i]\
-    + model.wind['RI',i] + model.HorizonMustRun['RI',i]
+    other = model.wind['RI',i] + model.HorizonMustRun['RI',i]
     imports = sum(model.flow[s,'RI',i] for s in model.sources) 
     exports = sum(model.flow['RI',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['RI',i]
@@ -476,8 +443,7 @@ def Zone7_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone7Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone7Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone7Generators)  
-    other = model.VT_hydro_minflow[i]\
-    + model.wind['VT',i] + model.HorizonMustRun['VT',i]
+    other = model.wind['VT',i] + model.HorizonMustRun['VT',i]
     imports = sum(model.flow[s,'VT',i] for s in model.sources) + model.mwh_1['NYVTI',i] + model.mwh_2['NYVTI',i] + model.mwh_3['NYVTI',i] + model.mwh_1['HQVTI',i] + model.mwh_2['HQVTI',i] + model.mwh_3['HQVTI',i] 
     exports = sum(model.flow['VT',k,i] for k in model.sinks) + model.HorizonVT_exports_NY[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['VT',i]
@@ -487,8 +453,7 @@ def Zone8_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone8Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone8Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone8Generators)  
-    other = model.WCMA_hydro_minflow[i]\
-    + model.wind['WCMA',i] + model.HorizonMustRun['WCMA',i]
+    other = model.wind['WCMA',i] + model.HorizonMustRun['WCMA',i]
     imports = sum(model.flow[s,'WCMA',i] for s in model.sources) + model.mwh_1['NYWCMAI',i] + model.mwh_2['NYWCMAI',i] + model.mwh_3['NYWCMAI',i] 
     exports = sum(model.flow['WCMA',k,i] for k in model.sinks) + model.HorizonWCMA_exports_NY[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['WCMA',i]
@@ -599,41 +564,6 @@ def HydroC14(model,i):
     m3 = sum(model.mwh_3['WCMA_hydro',i] for i in model.h2_periods)
     return m1 + m2 + m3 <= model.HorizonWCMA_hydro[2]
 model.HydroConstraint14= Constraint(model.h2_periods,rule=HydroC14)
-
-
-def CTHminC(model,i):
-    return model.CT_hydro_minflow[i] <= model.HorizonCT_hydro_minflow[i]
-model.CTHMinflowConstraint= Constraint(model.hh_periods,rule=CTHminC)
-
-
-def MEHminC(model,i):
-    return model.ME_hydro_minflow[i] <= model.HorizonME_hydro_minflow[i]
-model.MEHMinflowConstraint= Constraint(model.hh_periods,rule=MEHminC)
-
-
-def NHHminC(model,i):
-    return model.NH_hydro_minflow[i] <= model.HorizonNH_hydro_minflow[i]
-model.NHHMinflowConstraint= Constraint(model.hh_periods,rule=NHHminC)
-
-
-def NEMAHminC(model,i):
-    return model.NEMA_hydro_minflow[i] <= model.HorizonNEMA_hydro_minflow[i]
-model.NEMAHMinflowConstraint= Constraint(model.hh_periods,rule=NEMAHminC)
-
-
-def RIHminC(model,i):
-    return model.RI_hydro_minflow[i] <= model.HorizonRI_hydro_minflow[i]
-model.RIHMinflowConstraint= Constraint(model.hh_periods,rule=RIHminC)
-
-
-def VTHminC(model,i):
-    return model.VT_hydro_minflow[i] <= model.HorizonVT_hydro_minflow[i]
-model.VTHMinflowConstraint= Constraint(model.hh_periods,rule=VTHminC)
-
-
-def WCMAHminC(model,i):
-    return model.WCMA_hydro_minflow[i] <= model.HorizonWCMA_hydro_minflow[i]
-model.WCMAHMinflowConstraint= Constraint(model.hh_periods,rule=WCMAHminC)
 
 
 # Daily production limits on imported power

@@ -60,10 +60,7 @@ def setup(year, Hub_height):
     df_wind = df_wind.loc[year*8760:year*8760+8759]
     df_wind = df_wind.reset_index()
     wind_caps = pd.read_excel('NEISO_data_file/wind_caps.xlsx')
-        
-    #california hydro hourly minimum flows
-    df_NEISO_hydro_mins = pd.read_csv('Hydro_setup/NEISO_hydro_mins.csv', header=0)
-    
+            
     # must run generation 
     must_run_CT = []
     must_run_ME = []
@@ -104,7 +101,7 @@ def setup(year, Hub_height):
     generators_file='NEISO_data_file/generators.xlsx'
     dispatch_file='../UCED/NEISO_dispatch.py'
     dispatchLP_file='../UCED/NEISO_dispatchLP.py'
-    wrapper_file='../UCED/NEISO_wrapper_2.py'
+    wrapper_file='../UCED/NEISO_wrapper.py'
     simulation_file='../UCED/NEISO_simulation.py'
     
     copy(dispatch_file,path)
@@ -357,9 +354,9 @@ def setup(year, Hub_height):
         f.write(';\n\n')
             
         #system wide (hourly)
-        f.write('param:' + '\t' + 'SimCT_exports_NY' + '\t' + 'SimWCMA_exports_NY' + '\t' + 'SimVT_exports_NY' + '\t' + 'SimVT_exports_HQ' + '\t' + 'SimME_exports_NB' + '\t' + 'SimReserves' + '\t' + 'SimCT_hydro_minflow' + '\t' + 'SimME_hydro_minflow' + '\t' + 'SimNH_hydro_minflow' + '\t' + 'SimNEMA_hydro_minflow' + '\t' + 'SimRI_hydro_minflow' + '\t' + 'SimVT_hydro_minflow' + '\t' + 'SimWCMA_hydro_minflow:=' + '\n')
+        f.write('param:' + '\t' + 'SimCT_exports_NY' + '\t' + 'SimWCMA_exports_NY' + '\t' + 'SimVT_exports_NY' + '\t' + 'SimVT_exports_HQ' + '\t' + 'SimME_exports_NB' + '\t' + 'SimReserves:=' + '\n')
         for h in range(0,len(df_load)):
-                f.write(str(h+1) + '\t' + str(df_exports.loc[h,'CT_exports_NY']) + '\t' + str(df_exports.loc[h,'WCMA_exports_NY']) + '\t' + str(df_exports.loc[h,'VT_exports_NY']) + '\t' + str(df_exports.loc[h,'VT_exports_HQ']) + '\t' + str(df_exports.loc[h,'ME_exports_NB']) + '\t' + str(df_reserves.loc[h,'reserves'])  + '\t' + str(df_NEISO_hydro_mins.loc[h,'CT']) + '\t' + str(df_NEISO_hydro_mins.loc[h,'ME']) + '\t' + str(df_NEISO_hydro_mins.loc[h,'NH']) + '\t' + str(df_NEISO_hydro_mins.loc[h,'NEMA']) + '\t' + str(df_NEISO_hydro_mins.loc[h,'RI']) + '\t' + str(df_NEISO_hydro_mins.loc[h,'VT']) + '\t' + str(df_NEISO_hydro_mins.loc[h,'WCMA']) + '\n')
+                f.write(str(h+1) + '\t' + str(df_exports.loc[h,'CT_exports_NY']) + '\t' + str(df_exports.loc[h,'WCMA_exports_NY']) + '\t' + str(df_exports.loc[h,'VT_exports_NY']) + '\t' + str(df_exports.loc[h,'VT_exports_HQ']) + '\t' + str(df_exports.loc[h,'ME_exports_NB']) + '\t' + str(df_reserves.loc[h,'reserves'])  + '\n')
         f.write(';\n\n')
     
     return None

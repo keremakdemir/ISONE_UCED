@@ -19,8 +19,8 @@ Created on Mon Oct  8 11:45:39 2018
 days = 2
                            
 # NEISO
-import NEISO_wrapper_2
-NEISO_wrapper_2.sim(days)
+import NEISO_wrapper
+NEISO_wrapper.sim(days)
 
 #
 ############################################################################
