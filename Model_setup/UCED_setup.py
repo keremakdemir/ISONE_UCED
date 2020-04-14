@@ -30,9 +30,11 @@ years = int(year_length/365)
 Hub_height = input("Enter hub height: ") 
 Hub_height = int(Hub_height)
 
-for i in range(0,1):
+for i in range(0,10):
     
     year = i
+    
+    print(i)
     
 ############################################################################
 #                          UC/ED Data File Setup
