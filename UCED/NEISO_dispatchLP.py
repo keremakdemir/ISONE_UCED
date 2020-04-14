@@ -68,7 +68,6 @@ model.NY_Imports_CT = Set()
 model.NY_Imports_WCMA = Set()
 model.NY_Imports_VT = Set()
 model.HQ_Imports_VT = Set()
-model.HQ_Imports_WCMA = Set()
 model.NB_Imports_ME = Set()
 
 model.Ramping = model.Hydro | model.NY_Imports_CT | model.NY_Imports_WCMA |  model.NY_Imports_VT | model.HQ_Imports_VT | model.NB_Imports_ME
