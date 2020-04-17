@@ -9,8 +9,6 @@ import pandas as pd
 import numpy as np
 
 def setup(year, Hub_height):
-
-    Hub_height = 110
             
     #read generator parameters into DataFrame
     df_gen = pd.read_excel('NEISO_data_file/generators.xlsx',header=0)
