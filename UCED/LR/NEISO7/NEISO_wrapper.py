@@ -258,44 +258,44 @@ def sim(days):
                         marginal_cost = 0
                         mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Hydro',marginal_cost))
 
-            if a=='on':
-
-             for index in varobject:
-               name = index[0]
-               g = df_generators[df_generators['name']==name]
-               zone = g['zone']
-                 
-               if int(index[1]>0 and index[1]<25):
-                
-                 on.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
-                
-
-
-            if a=='switch':
-               
-
-             for index in varobject:
-               name = index[0]
-               g = df_generators[df_generators['name']==name]
-               zone = g['zone']
-               if int(index[1]>0 and index[1]<25):
-                # if index[0] in instance.Zone1Generators:
-                 switch.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
+#            if a=='on':
+#
+#             for index in varobject:
+#               name = index[0]
+#               g = df_generators[df_generators['name']==name]
+#               zone = g['zone']
+#                 
+#               if int(index[1]>0 and index[1]<25):
+#                
+#                 on.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
                 
 
 
-            if a=='srsv':
-
-             for index in varobject:
-               name = index[0]
-               g = df_generators[df_generators['name']==name]
-               zone = g['zone']
-               if int(index[1]>0 and index[1]<25):
-                # if index[0] in instance.Zone1Generators:
-                 srsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
+#            if a=='switch':
+#               
+#
+#             for index in varobject:
+#               name = index[0]
+#               g = df_generators[df_generators['name']==name]
+#               zone = g['zone']
+#               if int(index[1]>0 and index[1]<25):
+#                # if index[0] in instance.Zone1Generators:
+#                 switch.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
                 
 
 
+#            if a=='srsv':
+#
+#             for index in varobject:
+#               name = index[0]
+#               g = df_generators[df_generators['name']==name]
+#               zone = g['zone']
+#               if int(index[1]>0 and index[1]<25):
+#                # if index[0] in instance.Zone1Generators:
+#                 srsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
+#                
+#
+#
             if a=='nrsv':
 
              for index in varobject:
@@ -307,11 +307,11 @@ def sim(days):
                  nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
                 
 
-            if a=='wind':
-
-             for index in varobject:
-               if int(index[1]>0 and index[1]<25):
-                wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+#            if a=='wind':
+#
+#             for index in varobject:
+#               if int(index[1]>0 and index[1]<25):
+#                wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
             if a=='flow':
 
@@ -374,12 +374,12 @@ def sim(days):
     mwh_1_pd=pd.DataFrame(mwh_1,columns=('Generator','Time','Value','Zones','Type','$/MWh'))
     mwh_2_pd=pd.DataFrame(mwh_2,columns=('Generator','Time','Value','Zones','Type','$/MWh'))
     mwh_3_pd=pd.DataFrame(mwh_3,columns=('Generator','Time','Value','Zones','Type','$/MWh'))
-    on_pd=pd.DataFrame(on,columns=('Generator','Time','Value','Zones'))
-    switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value','Zones'))
-    srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value','Zones'))
+#    on_pd=pd.DataFrame(on,columns=('Generator','Time','Value','Zones'))
+#    switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value','Zones'))
+#    srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value','Zones'))
     nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value','Zones'))
     # solar_pd=pd.DataFrame(solar,columns=('Zone','Time','Value'))
-    wind_pd=pd.DataFrame(wind,columns=('Zone','Time','Value'))
+#    wind_pd=pd.DataFrame(wind,columns=('Zone','Time','Value'))
     flow_pd=pd.DataFrame(flow,columns=('Source','Sink','Time','Value'))
     shadow_price=pd.DataFrame(Duals,columns=('Constraint','Time','Value'))
 
@@ -387,12 +387,12 @@ def sim(days):
     mwh_1_pd.to_csv('mwh_1.csv')
     mwh_2_pd.to_csv('mwh_2.csv')
     mwh_3_pd.to_csv('mwh_3.csv')
-    on_pd.to_csv('on.csv')
-    switch_pd.to_csv('switch.csv')
-    srsv_pd.to_csv('srsv.csv')
+#    on_pd.to_csv('on.csv')
+#    switch_pd.to_csv('switch.csv')
+#    srsv_pd.to_csv('srsv.csv')
     nrsv_pd.to_csv('nrsv.csv')
     # solar_pd.to_csv('solar_out.csv')
-    wind_pd.to_csv('wind_out.csv')
+#    wind_pd.to_csv('wind_out.csv')
     shadow_price.to_csv('shadow_price.csv')
 
     return None

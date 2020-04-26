@@ -68,7 +68,6 @@ model.NY_Imports_CT = Set()
 model.NY_Imports_WCMA = Set()
 model.NY_Imports_VT = Set()
 model.HQ_Imports_VT = Set()
-model.HQ_Imports_WCMA = Set()
 model.NB_Imports_ME = Set()
 
 model.Ramping = model.Hydro | model.NY_Imports_CT | model.NY_Imports_WCMA |  model.NY_Imports_VT | model.HQ_Imports_VT | model.NB_Imports_ME
@@ -682,27 +681,27 @@ def ZeroSum(model,j,i):
 model.ZeroSumConstraint=Constraint(model.Generators,model.hh_periods,rule=ZeroSum)
 #
 #
-##Switch is 1 if unit is turned on in current period
-def SwitchCon(model,j,i):
-    return model.switch[j,i] >= 1 - model.on[j,i-1] - (1 - model.on[j,i])
-model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = SwitchCon)
+###Switch is 1 if unit is turned on in current period
+#def SwitchCon(model,j,i):
+#    return model.switch[j,i] >= 1 - model.on[j,i-1] - (1 - model.on[j,i])
+#model.SwitchConstraint = Constraint(model.Generators,model.hh_periods,rule = SwitchCon)
 #
 #
-##Min Up time
-def MinUp(model,j,i,k):
-    if i > 0 and k > i and k < min(i+model.minu[j]-1,model.HorizonHours):
-        return model.on[j,i] - model.on[j,i-1] <= model.on[j,k]
-    else: 
-        return Constraint.Skip
-model.MinimumUp = Constraint(model.Generators,model.HH_periods,model.HH_periods,rule=MinUp)
-#
-##Min Down time
-def MinDown(model,j,i,k):
-   if i > 0 and k > i and k < min(i+model.mind[j]-1,model.HorizonHours):
-       return model.on[j,i-1] - model.on[j,i] <= 1 - model.on[j,k]
-   else:
-       return Constraint.Skip
-model.MinimumDown = Constraint(model.Generators,model.HH_periods,model.HH_periods,rule=MinDown)
+###Min Up time
+#def MinUp(model,j,i,k):
+#    if i > 0 and k > i and k < min(i+model.minu[j]-1,model.HorizonHours):
+#        return model.on[j,i] - model.on[j,i-1] <= model.on[j,k]
+#    else: 
+#        return Constraint.Skip
+#model.MinimumUp = Constraint(model.Generators,model.HH_periods,model.HH_periods,rule=MinUp)
+##
+###Min Down time
+#def MinDown(model,j,i,k):
+#   if i > 0 and k > i and k < min(i+model.mind[j]-1,model.HorizonHours):
+#       return model.on[j,i-1] - model.on[j,i] <= 1 - model.on[j,k]
+#   else:
+#       return Constraint.Skip
+#model.MinimumDown = Constraint(model.Generators,model.HH_periods,model.HH_periods,rule=MinDown)
 
 #Ramp Rate Constraints
 def Ramp1(model,j,i):
