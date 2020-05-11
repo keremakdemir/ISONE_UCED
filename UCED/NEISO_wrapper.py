@@ -88,7 +88,7 @@ def sim(days):
             instance.HorizonME_exports_NB[i] = instance.SimME_exports_NB[(day-1)*24+i]
 
   
-        NEISO_result = opt.solve(instance)
+        NEISO_result = opt.solve(instance,tee=True,symbolic_solver_labels=True)
         instance.solutions.load_from(NEISO_result)
 
         for z in instance2.zones:
@@ -144,7 +144,7 @@ def sim(days):
                     instance2.switch[j,t] = 0
                     instance2.switch[j,t].fixed = True
                     
-        results = opt.solve(instance2)
+        results = opt.solve(instance2,tee=True,symbolic_solver_labels=True)
         instance2.solutions.load_from(results)
 
 
