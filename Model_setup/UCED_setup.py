@@ -27,6 +27,7 @@ import numpy as np
 Load_data = pd.read_csv('../Time_series_data/Synthetic_demand_pathflows/Sim_hourly_load.csv',header=0)
 year_length = len(Load_data)
 years = int(year_length/365)
+print('Possible hub heights are 53, 60, 80, 90, 100, 110, 120, 140, 160, 180 and 200 m.')
 Hub_height = input("Enter hub height: ") 
 Hub_height = int(Hub_height)
 
