@@ -53,6 +53,7 @@ def setup(year, Hub_height):
         
     ##time series of wind generation for each zone
     df_wind = pd.read_excel('../Time_series_data/Synthetic_wind_power/wind_power_sim.xlsx',header=0)
+    wind_capacity = int(df_wind.iloc[0, 1])
     df_wind = df_wind.loc[:, Hub_height]
     # df_wind = df_wind.loc[:,'NEISO']
     df_wind = df_wind.loc[year*8760:year*8760+8759]
@@ -93,7 +94,7 @@ def setup(year, Hub_height):
     from pathlib import Path
     
     
-    path=str(Path.cwd().parent) +str (Path('/UCED/LR/NEISO' + str(year)))
+    path= str(Path.cwd().parent) + str(Path('/UCED/LR/NEISO' + str(year) +'_'+ str(Hub_height) +'_'+ str(wind_capacity)))
     os.makedirs(path,exist_ok=True)
     
     generators_file='NEISO_data_file/generators.xlsx'
