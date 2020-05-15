@@ -94,7 +94,7 @@ def setup(year, Hub_height):
     from pathlib import Path
     
     
-    path= str(Path.cwd().parent) + str(Path('/UCED/LR/NEISO' + str(year) +'_'+ str(Hub_height) +'_'+ str(wind_capacity)))
+    path = str(Path.cwd().parent) + str(Path('/UCED/LR/NEISO' +'_'+ str(Hub_height) +'_'+ str(wind_capacity) +'_'+ str(year)))
     os.makedirs(path,exist_ok=True)
     
     generators_file='NEISO_data_file/generators.xlsx'
