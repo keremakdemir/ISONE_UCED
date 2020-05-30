@@ -598,5 +598,5 @@ All_Generation_MWh = All_Generation_MWh.reset_index(drop=True)
 All_Generation_MWh.loc[:, [53, 60, 80, 90, 100, 110, 120, 140, 160, 180, 200]] *= 84
 
 #exporting data to a excel file
-All_Generation_MWh.to_excel("Historical_Wind_Generation.xlsx")
+All_Generation_MWh.to_excel("wind_power_sim.xlsx")
 
