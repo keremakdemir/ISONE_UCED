@@ -531,7 +531,6 @@ plt.yticks([2000, 4000, 6000, 8000, 10000], [format(2000, ','), format(4000, ','
 plt.xticks([53, 60, 80, 90, 100, 110, 120, 140, 160, 180, 200])  
 plt.xlabel("Hub Height (m)")
 plt.ylabel("Number of Hours above cut-out Wind\n Speed between 1949-2018")
-plt.savefig('123.png', bbox_inches='tight', dpi=200)
 plt.show()
 #clearing the plot
 plt.clf() 
