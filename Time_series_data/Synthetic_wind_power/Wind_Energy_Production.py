@@ -17,9 +17,10 @@ All_Hourly_Data = pd.read_excel("Historical_Hourly_Wind_Speeds.xlsx", index_col=
 smoothed_hourly_110 = All_Hourly_Data[110].rolling(window=8760).mean()
 
 #plotting the overall wind speed trend for 110 m
+plt.style.use('seaborn-whitegrid')
 plt.plot(All_Hourly_Data.index, smoothed_hourly_110)
 plt.xticks(rotation=45)
-plt.title("Hourly Wind Speeds at 110 m")
+plt.title("Hourly Wind Speeds at 110 m (One Year Moving Average)")
 plt.ylabel("Wind Speed (m/s)")
 plt.show()
 #clearing the plot
@@ -526,34 +527,11 @@ for height in turbine_height:
     
 #plotting cut-out frequency vs hub height       
 plt.plot(turbine_height, all_cut_out_freq) 
+plt.yticks([2000, 4000, 6000, 8000, 10000], [format(2000, ','), format(4000, ','), format(6000, ','), format(8000, ','), format(10000, ',')])
 plt.xticks([53, 60, 80, 90, 100, 110, 120, 140, 160, 180, 200])  
 plt.xlabel("Hub Height (m)")
-plt.ylabel("Number of Hours that exceeds cut-out\n wind speed between 1949-2018")
-plt.show()
-#clearing the plot
-plt.clf() 
-
-#calculating the total energy produced for different hub heights
-Total_Energy_53 = Predicted_Hourly_Energy_MWh[53].sum()
-Total_Energy_60 = Predicted_Hourly_Energy_MWh[60].sum()
-Total_Energy_80 = Predicted_Hourly_Energy_MWh[80].sum()
-Total_Energy_90 = Predicted_Hourly_Energy_MWh[90].sum()
-Total_Energy_100 = Predicted_Hourly_Energy_MWh[100].sum()
-Total_Energy_110 = Predicted_Hourly_Energy_MWh[110].sum()
-Total_Energy_120 = Predicted_Hourly_Energy_MWh[120].sum()
-Total_Energy_140 = Predicted_Hourly_Energy_MWh[140].sum()
-Total_Energy_160 = Predicted_Hourly_Energy_MWh[160].sum()
-Total_Energy_180 = Predicted_Hourly_Energy_MWh[180].sum()
-Total_Energy_200 = Predicted_Hourly_Energy_MWh[200].sum()
-
-#adding total energy produced to a general list
-Energy_List = [Total_Energy_53, Total_Energy_60, Total_Energy_80, Total_Energy_90, Total_Energy_100, Total_Energy_110, Total_Energy_120, Total_Energy_140, Total_Energy_160, Total_Energy_180, Total_Energy_200]
-        
-#plotting total energy produced vs hub height       
-plt.plot(turbine_height, Energy_List) 
-plt.xticks([53, 60, 80, 90, 100, 110, 120, 140, 160, 180, 200])  
-plt.xlabel("Hub Height (m)")
-plt.ylabel("Total Energy Produced between 1949-2018 (MWh)")
+plt.ylabel("Number of Hours above cut-out Wind\n Speed between 1949-2018")
+plt.savefig('123.png', bbox_inches='tight', dpi=200)
 plt.show()
 #clearing the plot
 plt.clf() 
@@ -576,9 +554,11 @@ Annual_Energy_200 = Yearly_Total_Generation[200].mean()
 
 #adding average annual energy produced to a general list
 Annual_Energy_List = [Annual_Energy_53, Annual_Energy_60, Annual_Energy_80, Annual_Energy_90, Annual_Energy_100, Annual_Energy_110, Annual_Energy_120, Annual_Energy_140, Annual_Energy_160, Annual_Energy_180, Annual_Energy_200]
+Annual_Energy_List = [i*84 for i in Annual_Energy_List]
 
 #plotting average annual energy produced between 1949-2018 vs hub height       
 plt.plot(turbine_height, Annual_Energy_List) 
+plt.yticks([3700000, 3800000, 3900000, 4000000, 4100000, 4200000, 4300000, 4400000, 4500000, 4600000, 4700000], [format(3700000, ','), format(3800000, ','), format(3900000, ','), format(4000000, ','), format(4100000, ','), format(4200000, ','), format(4300000, ','), format(4400000, ','), format(4500000, ','), format(4600000, ','), format(4700000, ',')])
 plt.xticks([53, 60, 80, 90, 100, 110, 120, 140, 160, 180, 200])  
 plt.xlabel("Hub Height (m)")
 plt.ylabel("Average Annual Energy Produced between\n 1949-2018 (MWh)")
