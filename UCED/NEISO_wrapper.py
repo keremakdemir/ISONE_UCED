@@ -46,6 +46,7 @@ def sim(days):
     flow=[]
     Generator=[]
     Duals=[]
+    System_cost = []
     df_generators = pd.read_excel('generators.xlsx',header=0)
 
     #max here can be (1,365)
@@ -90,6 +91,90 @@ def sim(days):
   
         NEISO_result = opt.solve(instance,tee=True,symbolic_solver_labels=True)
         instance.solutions.load_from(NEISO_result)
+
+
+        # record objective function value
+        coal = 0
+        gas1_1 = 0
+        gas2_1 = 0
+        gas3_1 = 0
+        gas1_2 = 0
+        gas2_2 = 0
+        gas3_2 = 0
+        gas1_3 = 0
+        gas2_3 = 0
+        gas3_3 = 0
+        gas1_4 = 0
+        gas2_4 = 0
+        gas3_4 = 0
+        gas1_5 = 0
+        gas2_5 = 0
+        gas3_5 = 0
+        gas1_6 = 0
+        gas2_6 = 0
+        gas3_6 = 0
+        gas1_7 = 0
+        gas2_7 = 0
+        gas3_7 = 0
+        gas1_8 = 0
+        gas2_8 = 0
+        gas3_8 = 0
+        oil = 0
+        slack = 0
+        fix_cost = 0
+        st = 0
+        exchn = 0
+        
+        for i in range(1,25):
+            for j in instance.Coal:
+                coal = coal + instance.mwh_1[j,i].value*(instance.seg1[j]*2 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*2 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*2 + instance.var_om[j])  
+            for j in instance.Zone1Gas:
+                gas1_1 = gas1_1 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['CT'].value + instance.var_om[j]) 
+                gas2_1 = gas2_1 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['CT'].value + instance.var_om[j]) 
+                gas3_1 = gas3_1 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['CT'].value + instance.var_om[j]) 
+            for j in instance.Zone2Gas:
+                gas1_2 = gas1_2 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['ME'].value + instance.var_om[j]) 
+                gas2_2 = gas2_2 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['ME'].value + instance.var_om[j]) 
+                gas3_2 = gas3_2 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['ME'].value + instance.var_om[j]) 
+            for j in instance.Zone3Gas:
+                gas1_3 = gas1_3 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['NH'].value + instance.var_om[j]) 
+                gas2_3 = gas2_3 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['NH'].value + instance.var_om[j]) 
+                gas3_3 = gas3_3 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['NH'].value + instance.var_om[j]) 
+            for j in instance.Zone4Gas:
+                gas1_4 = gas1_4 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['NEMA'].value + instance.var_om[j]) 
+                gas2_4 = gas2_4 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['NEMA'].value + instance.var_om[j]) 
+                gas3_4 = gas3_4 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['NEMA'].value + instance.var_om[j])    
+            for j in instance.Zone5Gas:
+                gas1_5 = gas1_5 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['RI'].value + instance.var_om[j]) 
+                gas2_5 = gas2_5 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['RI'].value + instance.var_om[j]) 
+                gas3_5 = gas3_5 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['RI'].value + instance.var_om[j])   
+            for j in instance.Zone6Gas:
+                gas1_6 = gas1_6 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['SEMA'].value + instance.var_om[j]) 
+                gas2_6 = gas2_6 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['SEMA'].value + instance.var_om[j]) 
+                gas3_6 = gas3_6 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['SEMA'].value + instance.var_om[j])                
+            for j in instance.Zone7Gas:
+                gas1_7 = gas1_7 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['VT'].value + instance.var_om[j]) 
+                gas2_7 = gas2_7 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['VT'].value + instance.var_om[j]) 
+                gas3_7 = gas3_7 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['VT'].value + instance.var_om[j])   
+            for j in instance.Zone8Gas:
+                gas1_8 = gas1_8 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['WCMA'].value + instance.var_om[j]) 
+                gas2_8 = gas2_8 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['WCMA'].value + instance.var_om[j]) 
+                gas3_8 = gas3_8 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['WCMA'].value + instance.var_om[j])   
+            for j in instance.Oil:
+                oil = oil + instance.mwh_1[j,i].value*(instance.seg1[j]*20 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*20 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*20 + instance.var_om[j])  
+            for j in instance.Slack:
+                slack = slack + instance.mwh_1[j,i].value*(instance.seg1[j]*2000 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*2000 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*2000 + instance.var_om[j])  
+            for j in instance.Generators:
+                fix_cost = fix_cost + instance.no_load[j]*instance.on[j,i].value
+            for j in instance.Generators:
+                st = st + instance.st_cost[j]*instance.switch[j,i].value
+            for s in instance.sources:
+                for k in instance.sinks:
+                    exchn = exchn + instance.flow[s,k,i].value*instance.hurdle[s,k] 
+
+            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + oil + slack + fix_cost + st + exchn
+            System_cost.append(S)
+
 
         for z in instance2.zones:
 
@@ -382,6 +467,7 @@ def sim(days):
 #    wind_pd=pd.DataFrame(wind,columns=('Zone','Time','Value'))
     flow_pd=pd.DataFrame(flow,columns=('Source','Sink','Time','Value'))
     shadow_price=pd.DataFrame(Duals,columns=('Constraint','Time','Value'))
+    objective = pd.DataFrame(System_cost)
 
     flow_pd.to_csv('flow.csv')
     mwh_1_pd.to_csv('mwh_1.csv')
@@ -394,5 +480,6 @@ def sim(days):
     # solar_pd.to_csv('solar_out.csv')
 #    wind_pd.to_csv('wind_out.csv')
     shadow_price.to_csv('shadow_price.csv')
+    objective.to_csv('obj_function.csv')
 
     return None

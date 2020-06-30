@@ -17,7 +17,7 @@ def setup(year, Hub_height):
     df_paths = pd.read_csv('NEISO_data_file/paths.csv',header=0)
     
     #list zones
-    zones = ['CT', 'ME', 'NEMA', 'NH', 'RI', 'SEMA', 'VT', 'WCMA']
+    zones = ['CT', 'ME', 'NH', 'NEMA', 'RI', 'SEMA', 'VT', 'WCMA']
        
     ##time series of load for each zone
     df_load = pd.read_csv('../Time_series_data/Synthetic_demand_pathflows/Sim_hourly_load.csv',header=0)
