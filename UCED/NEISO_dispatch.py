@@ -18,7 +18,7 @@ from pyomo.opt import SolverFactory
 import itertools
 
 ##Create a solver
-opt = SolverFactory('cplex')
+opt = SolverFactory('gurobi')
 
 model = AbstractModel()
 #
