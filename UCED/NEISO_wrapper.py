@@ -19,19 +19,15 @@ import pyomo.environ as pyo
 
 def sim(days):
 
-
     instance = m1.create_instance('data.dat')
     instance2 = m2.create_instance('data.dat')
 
-
     instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
-    opt = SolverFactory("gurobi")
-
+    opt = SolverFactory('gurobi')
 
     H = instance.HorizonHours
     D = 2
     K=range(1,H+1)
-
 
     #Space to store results
     mwh_1=[]
@@ -51,13 +47,19 @@ def sim(days):
 
     #max here can be (1,365)
     for day in range(1,days):
+        
+        if day == days-1:
+            horizon_end = 49
+        else:
+            horizon_end = 25
 
-         #load time series data
+        #load time series data
         for z in instance.zones:
 
             instance.GasPrice[z] = 5
 
             for i in K:
+                
                 instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
                 instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
                 instance.HorizonMustRun[z,i] = instance.SimMustRun[z,(day-1)*24+i]
@@ -88,10 +90,8 @@ def sim(days):
             instance.HorizonVT_exports_HQ[i] = instance.SimVT_exports_HQ[(day-1)*24+i]
             instance.HorizonME_exports_NB[i] = instance.SimME_exports_NB[(day-1)*24+i]
 
-  
         NEISO_result = opt.solve(instance,tee=True,symbolic_solver_labels=True)
         instance.solutions.load_from(NEISO_result)
-
 
         # record objective function value
         coal = 0
@@ -125,7 +125,7 @@ def sim(days):
         st = 0
         exchn = 0
         
-        for i in range(1,25):
+        for i in range(1,horizon_end):
             for j in instance.Coal:
                 coal = coal + instance.mwh_1[j,i].value*(instance.seg1[j]*2 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*2 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*2 + instance.var_om[j])  
             for j in instance.Zone1Gas:
@@ -181,6 +181,7 @@ def sim(days):
             instance2.GasPrice[z] = 5
 
             for i in K:
+                
                 instance2.HorizonDemand[z,i] = instance2.SimDemand[z,(day-1)*24+i]
                 instance2.HorizonWind[z,i] = instance2.SimWind[z,(day-1)*24+i]
                 instance2.HorizonMustRun[z,i] = instance2.SimMustRun[z,(day-1)*24+i]
@@ -232,7 +233,6 @@ def sim(days):
         results = opt.solve(instance2,tee=True,symbolic_solver_labels=True)
         instance2.solutions.load_from(results)
 
-
         print ("Duals")
 
         for c in instance2.component_objects(Constraint, active=True):
@@ -240,7 +240,7 @@ def sim(days):
             cobject = getattr(instance2, str(c))
             if str(c) in ['Bal1Constraint','Bal2Constraint','Bal3Constraint','Bal4Constraint', 'Bal5Constraint','Bal6Constraint','Bal7Constraint','Bal8Constraint']:
                 for index in cobject:
-                     if int(index>0 and index<25):
+                     if index>0 and index<horizon_end:
     #                print ("   Constraint",c)
                          Duals.append((str(c),index+((day-1)*24), instance2.dual[cobject[index]]))
     #            print ("      ", index, instance2.dual[cobject[index]])
@@ -251,158 +251,166 @@ def sim(days):
             
             if a=='mwh_1':
 
-             for index in varobject:
-
-               name = index[0]
-
-               g = df_generators[df_generators['name']==name]
-               seg1 = g['seg1'].values
-               seg1 = seg1[0]
-               zone = g['zone'] 
-               if int(index[1]>0 and index[1]<25):
-                # if index[0] in instance.Zone1Generators:
-
-                    gas_price = 5
+                for index in varobject:
                     
-                    if index[0] in instance.Gas:
-                        marginal_cost = seg1*gas_price
-                        mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Gas',marginal_cost))
-                    elif index[0] in instance.Coal:
-                        marginal_cost = seg1*2
-                        mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Coal',marginal_cost))
-                    elif index[0] in instance.Oil:
-                        marginal_cost = seg1*20
-                        mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Oil',marginal_cost))
-                    elif index[0] in instance.Slack:
-                        marginal_cost = 700
-                        mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Slack',marginal_cost))
-                    elif index[0] in instance.Hydro:
-                        marginal_cost = 0
-                        mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Hydro',marginal_cost))
+                    name = index[0]
+                    g = df_generators[df_generators['name']==name]
+                    seg1 = g['seg1'].values
+                    seg1 = seg1[0]
+                    zone = g['zone'] 
+                    
+                    if int(index[1]>0 and index[1]<horizon_end):
+                        
+                        gas_price = 5
+                        
+                        if index[0] in instance.Gas:
+                            marginal_cost = seg1*gas_price
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Gas',marginal_cost))
+                        elif index[0] in instance.Coal:
+                            marginal_cost = seg1*2
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Coal',marginal_cost))
+                        elif index[0] in instance.Oil:
+                            marginal_cost = seg1*20
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Oil',marginal_cost))
+                        elif index[0] in instance.Slack:
+                            marginal_cost = 700
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Slack',marginal_cost))
+                        elif index[0] in instance.Hydro:
+                            marginal_cost = 0
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))
 
 
             if a=='mwh_2':
 
-             for index in varobject:
+                for index in varobject:
 
-               name = index[0]
-               g = df_generators[df_generators['name']==name]
-               seg2 = g['seg2'].values
-               seg2 = seg2[0]
-               zone = g['zone'] 
-               if int(index[1]>0 and index[1]<25):
-                # if index[0] in instance.Zone1Generators:
-
-                    gas_price = 5
+                    name = index[0]
+                    g = df_generators[df_generators['name']==name]
+                    seg2 = g['seg2'].values
+                    seg2 = seg2[0]
+                    zone = g['zone'] 
                     
-                    if index[0] in instance.Gas:
-                        marginal_cost = seg2*gas_price
-                        mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Gas',marginal_cost))
-                    elif index[0] in instance.Coal:
-                        marginal_cost = seg2*2
-                        mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Coal',marginal_cost))
-                    elif index[0] in instance.Oil:
-                        marginal_cost = seg2*20
-                        mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Oil',marginal_cost))
-                    elif index[0] in instance.Slack:
-                        marginal_cost = 700
-                        mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Slack',marginal_cost))
-                    elif index[0] in instance.Hydro:
-                        marginal_cost = 0
-                        mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Hydro',marginal_cost))
+                    if int(index[1]>0 and index[1]<horizon_end):
 
+                        gas_price = 5
+                        
+                        if index[0] in instance.Gas:
+                            marginal_cost = seg2*gas_price
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Gas',marginal_cost))
+                        elif index[0] in instance.Coal:
+                            marginal_cost = seg2*2
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Coal',marginal_cost))
+                        elif index[0] in instance.Oil:
+                            marginal_cost = seg2*20
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Oil',marginal_cost))
+                        elif index[0] in instance.Slack:
+                            marginal_cost = 700
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Slack',marginal_cost))
+                        elif index[0] in instance.Hydro:
+                            marginal_cost = 0
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))
 
 
             if a=='mwh_3':
 
-             for index in varobject:
+                for index in varobject:
 
-               name = index[0]
-               g = df_generators[df_generators['name']==name]
-               seg3 = g['seg3'].values
-               seg3 = seg3[0]
-               zone = g['zone']
-               if int(index[1]>0 and index[1]<25):
-                # if index[0] in instance.Zone1Generators:
+                    name = index[0]
+                    g = df_generators[df_generators['name']==name]
+                    seg3 = g['seg3'].values
+                    seg3 = seg3[0]
+                    zone = g['zone']
+                    
+                    if int(index[1]>0 and index[1]<horizon_end):
 
-                    gas_price = 5
+                        gas_price = 5
+    
+                        if index[0] in instance.Gas:
+                            marginal_cost = seg3*gas_price
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Gas',marginal_cost))
+                        elif index[0] in instance.Coal:
+                            marginal_cost = seg3*2
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Coal',marginal_cost))
+                        elif index[0] in instance.Oil:
+                            marginal_cost = seg3*20
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Oil',marginal_cost))
+                        elif index[0] in instance.Slack:
+                            marginal_cost = 700
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Slack',marginal_cost))
+                        elif index[0] in instance.Hydro:
+                            marginal_cost = 0
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))
 
-                    if index[0] in instance.Gas:
-                        marginal_cost = seg3*gas_price
-                        mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Gas',marginal_cost))
-                    elif index[0] in instance.Coal:
-                        marginal_cost = seg3*2
-                        mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Coal',marginal_cost))
-                    elif index[0] in instance.Oil:
-                        marginal_cost = seg3*20
-                        mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Oil',marginal_cost))
-                    elif index[0] in instance.Slack:
-                        marginal_cost = 700
-                        mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Slack',marginal_cost))
-                    elif index[0] in instance.Hydro:
-                        marginal_cost = 0
-                        mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone,'Hydro',marginal_cost))
 
-#            if a=='on':
-#
-#             for index in varobject:
-#               name = index[0]
-#               g = df_generators[df_generators['name']==name]
-#               zone = g['zone']
-#                 
-#               if int(index[1]>0 and index[1]<25):
-#                
-#                 on.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
+            # if a=='on':
+
+            #     for index in varobject:
+                    
+            #         name = index[0]
+            #         g = df_generators[df_generators['name']==name]
+            #         zone = g['zone']
+                
+            #         if int(index[1]>0 and index[1]<horizon_end):
+                
+            #             on.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0]))
                 
 
+            # if a=='switch':
+              
 
-#            if a=='switch':
-#               
-#
-#             for index in varobject:
-#               name = index[0]
-#               g = df_generators[df_generators['name']==name]
-#               zone = g['zone']
-#               if int(index[1]>0 and index[1]<25):
-#                # if index[0] in instance.Zone1Generators:
-#                 switch.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
+            #     for index in varobject:
+                    
+            #         name = index[0]
+            #         g = df_generators[df_generators['name']==name]
+            #         zone = g['zone']
+                    
+            #         if int(index[1]>0 and index[1]<horizon_end):
+                        
+            #             switch.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0]))
                 
 
+            # if a=='srsv':
 
-#            if a=='srsv':
-#
-#             for index in varobject:
-#               name = index[0]
-#               g = df_generators[df_generators['name']==name]
-#               zone = g['zone']
-#               if int(index[1]>0 and index[1]<25):
-#                # if index[0] in instance.Zone1Generators:
-#                 srsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
-#                
-#
-#
+            #     for index in varobject:
+                    
+            #         name = index[0]
+            #         g = df_generators[df_generators['name']==name]
+            #         zone = g['zone']
+                    
+            #         if int(index[1]>0 and index[1]<horizon_end):
+                        
+            #             srsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0]))
+                
+
             if a=='nrsv':
 
-             for index in varobject:
-               name = index[0]
-               g = df_generators[df_generators['name']==name]
-               zone = g['zone']
-               if int(index[1]>0 and index[1]<25):
-                # if index[0] in instance.Zone1Generators:
-                 nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone))
+                for index in varobject:
+                    
+                    name = index[0]
+                    g = df_generators[df_generators['name']==name]
+                    zone = g['zone']
+                    
+                    if int(index[1]>0 and index[1]<horizon_end):
+                        
+                        nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0]))
                 
 
-#            if a=='wind':
-#
-#             for index in varobject:
-#               if int(index[1]>0 and index[1]<25):
-#                wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+            # if a=='wind':
+
+            #     for index in varobject:
+                    
+            #         if int(index[1]>0 and index[1]<horizon_end):
+                        
+            #             wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+
 
             if a=='flow':
 
-             for index in varobject:
-               if int(index[2]>0 and index[2]<25):
-                flow.append((index[0],index[1],index[2]+((day-1)*24),varobject[index].value))
+                for index in varobject:
+                    
+                    if int(index[2]>0 and index[2]<horizon_end):
+                        
+                        flow.append((index[0],index[1],index[2]+((day-1)*24),varobject[index].value))
 
 
             for j in instance.Generators:
@@ -456,30 +464,30 @@ def sim(days):
 
         print(day)
 
-    mwh_1_pd=pd.DataFrame(mwh_1,columns=('Generator','Time','Value','Zones','Type','$/MWh'))
-    mwh_2_pd=pd.DataFrame(mwh_2,columns=('Generator','Time','Value','Zones','Type','$/MWh'))
-    mwh_3_pd=pd.DataFrame(mwh_3,columns=('Generator','Time','Value','Zones','Type','$/MWh'))
-#    on_pd=pd.DataFrame(on,columns=('Generator','Time','Value','Zones'))
-#    switch_pd=pd.DataFrame(switch,columns=('Generator','Time','Value','Zones'))
-#    srsv_pd=pd.DataFrame(srsv,columns=('Generator','Time','Value','Zones'))
-    nrsv_pd=pd.DataFrame(nrsv,columns=('Generator','Time','Value','Zones'))
-    # solar_pd=pd.DataFrame(solar,columns=('Zone','Time','Value'))
-#    wind_pd=pd.DataFrame(wind,columns=('Zone','Time','Value'))
-    flow_pd=pd.DataFrame(flow,columns=('Source','Sink','Time','Value'))
-    shadow_price=pd.DataFrame(Duals,columns=('Constraint','Time','Value'))
-    objective = pd.DataFrame(System_cost)
+    mwh_1_pd=pd.DataFrame(mwh_1,columns=['Generator','Time','Value','Zones','Type','$/MWh'])
+    mwh_2_pd=pd.DataFrame(mwh_2,columns=['Generator','Time','Value','Zones','Type','$/MWh'])
+    mwh_3_pd=pd.DataFrame(mwh_3,columns=['Generator','Time','Value','Zones','Type','$/MWh'])
+#    on_pd=pd.DataFrame(on,columns=['Generator','Time','Value','Zones'])
+#    switch_pd=pd.DataFrame(switch,columns=['Generator','Time','Value','Zones'])
+#    srsv_pd=pd.DataFrame(srsv,columns=['Generator','Time','Value','Zones'])
+    nrsv_pd=pd.DataFrame(nrsv,columns=['Generator','Time','Value','Zones'])
+    # solar_pd=pd.DataFrame(solar,columns=['Zone','Time','Value'])
+#    wind_pd=pd.DataFrame(wind,columns=['Zone','Time','Value'])
+    flow_pd=pd.DataFrame(flow,columns=['Source','Sink','Time','Value'])
+    shadow_price=pd.DataFrame(Duals,columns=['Constraint','Time','Value'])
+    objective = pd.DataFrame(System_cost,columns=['Value'])
 
-    flow_pd.to_csv('flow.csv')
-    mwh_1_pd.to_csv('mwh_1.csv')
-    mwh_2_pd.to_csv('mwh_2.csv')
-    mwh_3_pd.to_csv('mwh_3.csv')
-#    on_pd.to_csv('on.csv')
-#    switch_pd.to_csv('switch.csv')
-#    srsv_pd.to_csv('srsv.csv')
-    nrsv_pd.to_csv('nrsv.csv')
-    # solar_pd.to_csv('solar_out.csv')
-#    wind_pd.to_csv('wind_out.csv')
-    shadow_price.to_csv('shadow_price.csv')
-    objective.to_csv('obj_function.csv')
+    flow_pd.to_csv('flow.csv',index=False)
+    mwh_1_pd.to_csv('mwh_1.csv',index=False)
+    mwh_2_pd.to_csv('mwh_2.csv',index=False)
+    mwh_3_pd.to_csv('mwh_3.csv',index=False)
+#    on_pd.to_csv('on.csv',index=False)
+#    switch_pd.to_csv('switch.csv',index=False)
+#    srsv_pd.to_csv('srsv.csv',index=False)
+    nrsv_pd.to_csv('nrsv.csv',index=False)
+    # solar_pd.to_csv('solar_out.csv',index=False)
+#    wind_pd.to_csv('wind_out.csv',index=False)
+    shadow_price.to_csv('shadow_price.csv',index=False)
+    objective.to_csv('obj_function.csv',index=False)
 
     return None
