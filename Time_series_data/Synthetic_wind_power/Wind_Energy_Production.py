@@ -67,7 +67,7 @@ for height in turbine_height:
         elif 12.5 <= speed < 14:
             energy_kwh = (279.6*speed) + 5610.8
             energy_mwh = energy_kwh/1000
-        elif 14 <= speed <= 25:
+        elif 14 <= speed < 25:
             energy_kwh = 9500
             energy_mwh = energy_kwh/1000
         elif 25 <= speed:
