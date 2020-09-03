@@ -18,9 +18,6 @@ Created on Wed Oct  3 21:29:55 2018
 ############################################################################
 #                         YEAR SELECTION
 
-# Default is that a random year from the synthetic record is selected to be run
-# through the UC/ED model. 
-
 import pandas as pd
 import numpy as np
 
@@ -31,7 +28,7 @@ print('Possible hub heights are 53, 60, 80, 90, 100, 110, 120, 140, 160, 180 and
 Hub_height = input("Enter hub height: ") 
 Hub_height = int(Hub_height)
 
-for i in range(0,10):
+for i in range(0,69):
     
     year = i
     

@@ -22,7 +22,4 @@ days = 365
 import NEISO_wrapper
 NEISO_wrapper.sim(days)
 
-#
-############################################################################
-#                    WHOLESALE ELECTRICITY PRICES
-# 
+
