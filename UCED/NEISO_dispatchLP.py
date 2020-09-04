@@ -283,10 +283,22 @@ def SysCost(model):
     gas3_7 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.GasPrice['VT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone7Gas)  
     gas1_8 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.GasPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Gas) 
     gas2_8 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.GasPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Gas)  
-    gas3_8 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.GasPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Gas)    
-
-# NOTE: IMPORTS CURRENTLY CONSIDERED "FREE" IN OBJECTIVE FUNCTION -- NEED TO CHANGE THIS TO ACCOUNT FOR COST OF IMPORTS USING INTERCHANGE DATA    
-    
+    gas3_8 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.GasPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Gas)
+    NY_Imports_CT1 = sum(model.mwh_1[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_CT)
+    NY_Imports_CT2 = sum(model.mwh_2[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_CT)
+    NY_Imports_CT3 = sum(model.mwh_3[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_CT) 
+    NY_Imports_WCMA1 = sum(model.mwh_1[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_WCMA)
+    NY_Imports_WCMA2 = sum(model.mwh_2[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_WCMA)
+    NY_Imports_WCMA3 = sum(model.mwh_3[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_WCMA)
+    NY_Imports_VT1 = sum(model.mwh_1[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_VT)
+    NY_Imports_VT2 = sum(model.mwh_2[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_VT)
+    NY_Imports_VT3 = sum(model.mwh_3[j,i]*4.3 for i in model.hh_periods for j in model.NY_Imports_VT)
+    HQ_Imports_VT1 = sum(model.mwh_1[j,i]*4.3 for i in model.hh_periods for j in model.HQ_Imports_VT)
+    HQ_Imports_VT2 = sum(model.mwh_2[j,i]*4.3 for i in model.hh_periods for j in model.HQ_Imports_VT)
+    HQ_Imports_VT3 = sum(model.mwh_3[j,i]*4.3 for i in model.hh_periods for j in model.HQ_Imports_VT)
+    NB_Imports_ME1 = sum(model.mwh_1[j,i]*4.3 for i in model.hh_periods for j in model.NB_Imports_ME)
+    NB_Imports_ME2 = sum(model.mwh_2[j,i]*4.3 for i in model.hh_periods for j in model.NB_Imports_ME)
+    NB_Imports_ME3 = sum(model.mwh_3[j,i]*4.3 for i in model.hh_periods for j in model.NB_Imports_ME)
     oil1 = sum(model.mwh_1[j,i]*(model.seg1[j]*20 + model.var_om[j]) for i in model.hh_periods for j in model.Oil) 
     oil2 = sum(model.mwh_2[j,i]*(model.seg2[j]*20 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)  
     oil3 = sum(model.mwh_3[j,i]*(model.seg3[j]*20 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)  
@@ -295,7 +307,7 @@ def SysCost(model):
     slack3 = sum(model.mwh_3[j,i]*model.seg3[j]*10000 for i in model.hh_periods for j in model.Slack)
     starts = sum(model.st_cost[j]*model.switch[j,i] for i in model.hh_periods for j in model.Generators) 
     exchange = sum(model.flow[s,k,i]*model.hurdle[s,k] for s in model.sources for k in model.sinks for i in model.hh_periods)
-    return fixed + coal1 + coal2 + coal3 + gas1_1 + gas1_2 + gas1_3 + gas1_4 + gas1_5 + gas1_6 + gas1_7 + gas1_8 + gas2_1 + gas2_2 + gas2_3 + gas2_4 + gas2_5 + gas2_6 + gas2_7 + gas2_8 + gas3_1 + gas3_2 + gas3_3 + gas3_4 + gas3_5 + gas3_6 + gas3_7 + gas3_8 + oil1 + oil2 + oil3 + slack1 + slack2 + slack3 + starts + exchange
+    return fixed + coal1 + coal2 + coal3 + gas1_1 + gas1_2 + gas1_3 + gas1_4 + gas1_5 + gas1_6 + gas1_7 + gas1_8 + gas2_1 + gas2_2 + gas2_3 + gas2_4 + gas2_5 + gas2_6 + gas2_7 + gas2_8 + gas3_1 + gas3_2 + gas3_3 + gas3_4 + gas3_5 + gas3_6 + gas3_7 + gas3_8 + oil1 + oil2 + oil3 + slack1 + slack2 + slack3 + starts + exchange + NY_Imports_CT1 + NY_Imports_CT2 + NY_Imports_CT3 + NY_Imports_WCMA1 + NY_Imports_WCMA2 + NY_Imports_WCMA3 + NY_Imports_VT1 + NY_Imports_VT2 + NY_Imports_VT3 + HQ_Imports_VT1 + HQ_Imports_VT2 + HQ_Imports_VT3 + NB_Imports_ME1 + NB_Imports_ME2 + NB_Imports_ME3
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
     
    

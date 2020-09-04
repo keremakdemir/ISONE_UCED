@@ -120,6 +120,11 @@ def sim(days):
         gas2_8 = 0
         gas3_8 = 0
         oil = 0
+        NY_Imports_CT_all = 0
+        NY_Imports_WCMA_all = 0
+        NY_Imports_VT_all = 0
+        HQ_Imports_VT_all = 0
+        NB_Imports_ME_all = 0
         slack = 0
         fix_cost = 0
         st = 0
@@ -161,7 +166,17 @@ def sim(days):
                 gas2_8 = gas2_8 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['WCMA'].value + instance.var_om[j]) 
                 gas3_8 = gas3_8 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['WCMA'].value + instance.var_om[j])   
             for j in instance.Oil:
-                oil = oil + instance.mwh_1[j,i].value*(instance.seg1[j]*20 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*20 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*20 + instance.var_om[j])  
+                oil = oil + instance.mwh_1[j,i].value*(instance.seg1[j]*20 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*20 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*20 + instance.var_om[j])
+            for j in instance.NY_Imports_CT:
+                NY_Imports_CT_all = NY_Imports_CT_all + instance.mwh_1[j,i].value*4.3 + instance.mwh_2[j,i].value*4.3 + instance.mwh_3[j,i].value*4.3
+            for j in instance.NY_Imports_WCMA:
+                NY_Imports_WCMA_all = NY_Imports_WCMA_all + instance.mwh_1[j,i].value*4.3 + instance.mwh_2[j,i].value*4.3 + instance.mwh_3[j,i].value*4.3
+            for j in instance.NY_Imports_VT:
+                NY_Imports_VT_all = NY_Imports_VT_all + instance.mwh_1[j,i].value*4.3 + instance.mwh_2[j,i].value*4.3 + instance.mwh_3[j,i].value*4.3
+            for j in instance.HQ_Imports_VT:
+                HQ_Imports_VT_all = HQ_Imports_VT_all + instance.mwh_1[j,i].value*4.3 + instance.mwh_2[j,i].value*4.3 + instance.mwh_3[j,i].value*4.3  
+            for j in instance.NB_Imports_ME:
+                NB_Imports_ME_all = NB_Imports_ME_all + instance.mwh_1[j,i].value*4.3 + instance.mwh_2[j,i].value*4.3 + instance.mwh_3[j,i].value*4.3
             for j in instance.Slack:
                 slack = slack + instance.mwh_1[j,i].value*(instance.seg1[j]*2000 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*2000 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*2000 + instance.var_om[j])  
             for j in instance.Generators:
@@ -172,7 +187,7 @@ def sim(days):
                 for k in instance.sinks:
                     exchn = exchn + instance.flow[s,k,i].value*instance.hurdle[s,k] 
 
-            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + oil + slack + fix_cost + st + exchn
+            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + oil + slack + fix_cost + st + exchn + NY_Imports_CT_all + NY_Imports_WCMA_all + NY_Imports_VT_all + HQ_Imports_VT_all + NB_Imports_ME_all  
             System_cost.append(S)
 
 
