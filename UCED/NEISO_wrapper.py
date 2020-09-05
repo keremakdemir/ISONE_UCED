@@ -39,7 +39,7 @@ def sim(days):
     nrsv=[]
     solar=[]
     onshore_wind = []
-    wind=[]
+    offshore_wind=[]
     flow=[]
     Generator=[]
     Duals=[]
@@ -62,7 +62,7 @@ def sim(days):
             for i in K:
                 
                 instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
-                instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
+                instance.HorizonOffshoreWind[z,i] = instance.SimOffshoreWind[z,(day-1)*24+i]
                 instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
                 instance.HorizonOnshoreWind[z,i] = instance.SimOnshoreWind[z,(day-1)*24+i]
                 instance.HorizonMustRun[z,i] = instance.SimMustRun[z,(day-1)*24+i]
@@ -201,7 +201,7 @@ def sim(days):
             for i in K:
                 
                 instance2.HorizonDemand[z,i] = instance2.SimDemand[z,(day-1)*24+i]
-                instance2.HorizonWind[z,i] = instance2.SimWind[z,(day-1)*24+i]
+                instance2.HorizonOffshoreWind[z,i] = instance2.SimOffshoreWind[z,(day-1)*24+i]
                 instance2.HorizonSolar[z,i] = instance2.SimSolar[z,(day-1)*24+i]
                 instance2.HorizonOnshoreWind[z,i] = instance2.SimOnshoreWind[z,(day-1)*24+i]
                 instance2.HorizonMustRun[z,i] = instance2.SimMustRun[z,(day-1)*24+i]
@@ -463,13 +463,13 @@ def sim(days):
                         nrsv.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0]))
                 
 
-            # if a=='wind':
+            if a=='offshorewind':
 
-            #     for index in varobject:
+                for index in varobject:
                     
-            #         if int(index[1]>0 and index[1]<horizon_end):
+                    if int(index[1]>0 and index[1]<horizon_end):
                         
-            #             wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+                        offshore_wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
             
             
             if a=='solar':
@@ -559,7 +559,7 @@ def sim(days):
     nrsv_pd=pd.DataFrame(nrsv,columns=['Generator','Time','Value','Zones'])
     solar_pd=pd.DataFrame(solar,columns=['Zone','Time','Value'])
     onshore_wind_pd=pd.DataFrame(onshore_wind,columns=['Zone','Time','Value'])
-#    wind_pd=pd.DataFrame(wind,columns=['Zone','Time','Value'])
+    offshore_wind_pd=pd.DataFrame(offshore_wind,columns=['Zone','Time','Value'])
     flow_pd=pd.DataFrame(flow,columns=['Source','Sink','Time','Value'])
     shadow_price=pd.DataFrame(Duals,columns=['Constraint','Time','Value'])
     objective = pd.DataFrame(System_cost,columns=['Value'])
@@ -574,7 +574,7 @@ def sim(days):
     nrsv_pd.to_csv('nrsv.csv',index=False)
     solar_pd.to_csv('solar_out.csv',index=False)
     onshore_wind_pd.to_csv('onshore_wind_out.csv',index=False)
-#    wind_pd.to_csv('wind_out.csv',index=False)
+    offshore_wind_pd.to_csv('offshore_wind_out.csv',index=False)
     shadow_price.to_csv('shadow_price.csv',index=False)
     objective.to_csv('obj_function.csv',index=False)
 
