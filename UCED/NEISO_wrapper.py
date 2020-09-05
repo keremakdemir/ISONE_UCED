@@ -23,7 +23,7 @@ def sim(days):
     instance2 = m2.create_instance('data.dat')
 
     instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
-    opt = SolverFactory('gurobi')
+    opt = SolverFactory('cplex')
 
     H = instance.HorizonHours
     D = 2
@@ -257,7 +257,10 @@ def sim(days):
                 for index in cobject:
                      if index>0 and index<horizon_end:
     #                print ("   Constraint",c)
-                         Duals.append((str(c),index+((day-1)*24), instance2.dual[cobject[index]]))
+                         try:
+                             Duals.append((str(c),index+((day-1)*24), instance2.dual[cobject[index]]))
+                         except KeyError:
+                             Duals.append((str(c),index+((day-1)*24),-999))
     #            print ("      ", index, instance2.dual[cobject[index]])
         #The following section is for storing and sorting results
         for v in instance.component_objects(Var, active=True):
@@ -293,6 +296,21 @@ def sim(days):
                         elif index[0] in instance.Hydro:
                             marginal_cost = 0
                             mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))
+                        elif index[0] in instance.NY_Imports_CT:
+                            marginal_cost = 4.3
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))
+                        elif index[0] in instance.NY_Imports_WCMA:
+                            marginal_cost = 4.3
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))                
+                        elif index[0] in instance.NY_Imports_VT:
+                            marginal_cost = 4.3
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost)) 
+                        elif index[0] in instance.HQ_Imports_VT:
+                            marginal_cost = 4.3
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost)) 
+                        elif index[0] in instance.NB_Imports_ME:
+                            marginal_cost = 4.3
+                            mwh_1.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))
 
 
             if a=='mwh_2':
@@ -323,7 +341,22 @@ def sim(days):
                             mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Slack',marginal_cost))
                         elif index[0] in instance.Hydro:
                             marginal_cost = 0
-                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))    
+                        elif index[0] in instance.NY_Imports_CT:
+                            marginal_cost = 4.3
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))
+                        elif index[0] in instance.NY_Imports_WCMA:
+                            marginal_cost = 4.3
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))                
+                        elif index[0] in instance.NY_Imports_VT:
+                            marginal_cost = 4.3
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost)) 
+                        elif index[0] in instance.HQ_Imports_VT:
+                            marginal_cost = 4.3
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost)) 
+                        elif index[0] in instance.NB_Imports_ME:
+                            marginal_cost = 4.3
+                            mwh_2.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))
 
 
             if a=='mwh_3':
@@ -354,7 +387,22 @@ def sim(days):
                             mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Slack',marginal_cost))
                         elif index[0] in instance.Hydro:
                             marginal_cost = 0
-                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Hydro',marginal_cost))    
+                        elif index[0] in instance.NY_Imports_CT:
+                            marginal_cost = 4.3
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))
+                        elif index[0] in instance.NY_Imports_WCMA:
+                            marginal_cost = 4.3
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))                
+                        elif index[0] in instance.NY_Imports_VT:
+                            marginal_cost = 4.3
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost)) 
+                        elif index[0] in instance.HQ_Imports_VT:
+                            marginal_cost = 4.3
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost)) 
+                        elif index[0] in instance.NB_Imports_ME:
+                            marginal_cost = 4.3
+                            mwh_3.append((index[0],index[1]+((day-1)*24),varobject[index].value,zone.values[0],'Imports',marginal_cost))
 
 
             # if a=='on':
