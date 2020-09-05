@@ -23,7 +23,7 @@ def sim(days):
     instance2 = m2.create_instance('data.dat')
 
     instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
-    opt = SolverFactory('cplex')
+    opt = SolverFactory('gurobi')
 
     H = instance.HorizonHours
     D = 2
