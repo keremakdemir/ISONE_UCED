@@ -51,14 +51,17 @@ def setup(year, Hub_height):
     # df_ng = df_ng.loc[year*365:year*365+364,:]
     # df_ng = df_ng.reset_index()
         
-    ##time series of wind generation for each zone
+    # time series of offshore wind generation for each zone
     df_wind = pd.read_excel('../Time_series_data/Synthetic_wind_power/wind_power_sim.xlsx',header=0)
     wind_capacity = int(df_wind.iloc[0, 1])
     df_wind = df_wind.loc[:, Hub_height]
-    # df_wind = df_wind.loc[:,'NEISO']
     df_wind = df_wind.loc[year*8760:year*8760+8759]
     df_wind = df_wind.reset_index()
     wind_caps = pd.read_excel('NEISO_data_file/wind_caps.xlsx')
+    
+    # time series of solar generation
+    df_solar = pd.read_excel('NEISO_data_file/hourly_solar_gen.xlsx',header=0)
+    solar_caps = pd.read_excel('NEISO_data_file/solar_caps.xlsx',header=0)
             
     # must run generation 
     must_run_CT = []
@@ -330,12 +333,14 @@ def setup(year, Hub_height):
         # times series data
         # zonal (hourly)
         f.write('param:' + '\t' + 'SimDemand' + '\t' + 'SimWind' \
-        + '\t' + 'SimMustRun:=' + '\n')      
+        + '\t' + 'SimSolar' + '\t' + 'SimMustRun:=' + '\n')      
         for z in zones:
             wz = wind_caps.loc[0,z]
+            sz = solar_caps.loc[0,z]
             for h in range(0,len(df_load)): 
                 f.write(z + '\t' + str(h+1) + '\t' + str(df_load.loc[h,z])\
                 + '\t' + str(df_wind.loc[h,Hub_height]*wz)\
+                + '\t' + str(df_solar.loc[h,'Solar_Output_MWh']*sz)\
                 + '\t' + str(df_total_must_run.loc[h,z]) + '\n')
         f.write(';\n\n')
         

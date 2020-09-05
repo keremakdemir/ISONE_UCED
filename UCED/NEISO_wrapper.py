@@ -62,6 +62,7 @@ def sim(days):
                 
                 instance.HorizonDemand[z,i] = instance.SimDemand[z,(day-1)*24+i]
                 instance.HorizonWind[z,i] = instance.SimWind[z,(day-1)*24+i]
+                instance.HorizonSolar[z,i] = instance.SimSolar[z,(day-1)*24+i]
                 instance.HorizonMustRun[z,i] = instance.SimMustRun[z,(day-1)*24+i]
         
         for d in range(1,D+1):
@@ -199,6 +200,7 @@ def sim(days):
                 
                 instance2.HorizonDemand[z,i] = instance2.SimDemand[z,(day-1)*24+i]
                 instance2.HorizonWind[z,i] = instance2.SimWind[z,(day-1)*24+i]
+                instance2.HorizonSolar[z,i] = instance2.SimSolar[z,(day-1)*24+i]
                 instance2.HorizonMustRun[z,i] = instance2.SimMustRun[z,(day-1)*24+i]
 
         for d in range(1,D+1):
@@ -465,6 +467,15 @@ def sim(days):
             #         if int(index[1]>0 and index[1]<horizon_end):
                         
             #             wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+            
+            
+            if a=='solar':
+
+                for index in varobject:
+                    
+                    if int(index[1]>0 and index[1]<horizon_end):
+                        
+                        solar.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
 
             if a=='flow':
@@ -534,7 +545,7 @@ def sim(days):
 #    switch_pd=pd.DataFrame(switch,columns=['Generator','Time','Value','Zones'])
 #    srsv_pd=pd.DataFrame(srsv,columns=['Generator','Time','Value','Zones'])
     nrsv_pd=pd.DataFrame(nrsv,columns=['Generator','Time','Value','Zones'])
-    # solar_pd=pd.DataFrame(solar,columns=['Zone','Time','Value'])
+    solar_pd=pd.DataFrame(solar,columns=['Zone','Time','Value'])
 #    wind_pd=pd.DataFrame(wind,columns=['Zone','Time','Value'])
     flow_pd=pd.DataFrame(flow,columns=['Source','Sink','Time','Value'])
     shadow_price=pd.DataFrame(Duals,columns=['Constraint','Time','Value'])
@@ -548,7 +559,7 @@ def sim(days):
 #    switch_pd.to_csv('switch.csv',index=False)
 #    srsv_pd.to_csv('srsv.csv',index=False)
     nrsv_pd.to_csv('nrsv.csv',index=False)
-    # solar_pd.to_csv('solar_out.csv',index=False)
+    solar_pd.to_csv('solar_out.csv',index=False)
 #    wind_pd.to_csv('wind_out.csv',index=False)
     shadow_price.to_csv('shadow_price.csv',index=False)
     objective.to_csv('obj_function.csv',index=False)
