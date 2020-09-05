@@ -62,6 +62,10 @@ def setup(year, Hub_height):
     # time series of solar generation
     df_solar = pd.read_excel('NEISO_data_file/hourly_solar_gen.xlsx',header=0)
     solar_caps = pd.read_excel('NEISO_data_file/solar_caps.xlsx',header=0)
+    
+    # time series of onshore wind generation
+    df_onshore_wind = pd.read_excel('NEISO_data_file/hourly_onshore_wind_gen.xlsx',header=0)
+    onshore_wind_caps = pd.read_excel('NEISO_data_file/wind_onshore_caps.xlsx',header=0)
             
     # must run generation 
     must_run_CT = []
@@ -333,14 +337,16 @@ def setup(year, Hub_height):
         # times series data
         # zonal (hourly)
         f.write('param:' + '\t' + 'SimDemand' + '\t' + 'SimWind' \
-        + '\t' + 'SimSolar' + '\t' + 'SimMustRun:=' + '\n')      
+        + '\t' + 'SimSolar' + '\t' + 'SimOnshoreWind' + '\t' + 'SimMustRun:=' + '\n')      
         for z in zones:
             wz = wind_caps.loc[0,z]
             sz = solar_caps.loc[0,z]
+            owz = onshore_wind_caps.loc[0,z]
             for h in range(0,len(df_load)): 
                 f.write(z + '\t' + str(h+1) + '\t' + str(df_load.loc[h,z])\
                 + '\t' + str(df_wind.loc[h,Hub_height]*wz)\
                 + '\t' + str(df_solar.loc[h,'Solar_Output_MWh']*sz)\
+                + '\t' + str(df_onshore_wind.loc[h,'Onshore_Output_MWh']*owz)\
                 + '\t' + str(df_total_must_run.loc[h,z]) + '\n')
         f.write(';\n\n')
         

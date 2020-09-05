@@ -162,6 +162,7 @@ model.HorizonReserves = Param(model.hh_periods, within=NonNegativeReals,mutable=
 ##Variable resources over simulation period
 model.SimWind = Param(model.zones, model.SH_periods, within=NonNegativeReals)
 model.SimSolar = Param(model.zones, model.SH_periods, within=NonNegativeReals)
+model.SimOnshoreWind = Param(model.zones, model.SH_periods, within=NonNegativeReals)
 
 #Exports
 model.SimCT_exports_NY = Param(model.SH_periods, within=NonNegativeReals)
@@ -212,6 +213,7 @@ model.HorizonNEMA_hydro = Param(model.hd_periods, within=NonNegativeReals,mutabl
 #Variable resources over horizon
 model.HorizonWind = Param(model.zones,model.hh_periods,within=NonNegativeReals,mutable=True)
 model.HorizonSolar = Param(model.zones,model.hh_periods,within=NonNegativeReals,mutable=True)
+model.HorizonOnshoreWind = Param(model.zones,model.hh_periods,within=NonNegativeReals,mutable=True)
 model.HorizonHydro = Param(model.zones,model.hh_periods,within=NonNegativeReals,mutable=True)
 
 ##Initial conditions
@@ -243,6 +245,7 @@ model.nrsv = Var(model.Generators,model.HH_periods, within=NonNegativeReals,init
 
 #Renewable energy production
 model.solar = Var(model.zones,model.HH_periods,within=NonNegativeReals)
+model.onshorewind = Var(model.zones,model.HH_periods,within=NonNegativeReals)
 model.wind = Var(model.zones,model.HH_periods,within=NonNegativeReals)
 
 #Power flows on each path
@@ -320,7 +323,7 @@ def WECC1(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone1Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone1Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone1Generators) 
-    renew = model.wind['CT',i] + model.solar['CT',i]
+    renew = model.wind['CT',i] + model.solar['CT',i] + model.onshorewind['CT',i]
     must_run = model.HorizonMustRun['CT',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['CT',i]
 model.Local1= Constraint(model.hh_periods,rule=WECC1)
@@ -329,7 +332,7 @@ def WECC2(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone2Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone2Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone2Generators) 
-    renew = model.wind['ME',i] + model.solar['ME',i]
+    renew = model.wind['ME',i] + model.solar['ME',i] + model.onshorewind['ME',i]
     must_run = model.HorizonMustRun['ME',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['ME',i]
 model.Local2= Constraint(model.hh_periods,rule=WECC2)
@@ -338,7 +341,7 @@ def WECC3(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone3Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone3Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone3Generators) 
-    renew = model.wind['NH',i] + model.solar['NH',i]
+    renew = model.wind['NH',i] + model.solar['NH',i] + model.onshorewind['NH',i]
     must_run = model.HorizonMustRun['NH',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['NH',i]
 model.Local3= Constraint(model.hh_periods,rule=WECC3)
@@ -347,7 +350,7 @@ def WECC4(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone4Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone4Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone4Generators) 
-    renew = model.wind['NEMA',i] + model.solar['NEMA',i]
+    renew = model.wind['NEMA',i] + model.solar['NEMA',i] + model.onshorewind['NEMA',i]
     must_run = model.HorizonMustRun['NEMA',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['NEMA',i]
 model.Local4= Constraint(model.hh_periods,rule=WECC4)
@@ -356,7 +359,7 @@ def WECC5(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone5Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone5Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone5Generators) 
-    renew = model.wind['RI',i] + model.solar['RI',i]
+    renew = model.wind['RI',i] + model.solar['RI',i] + model.onshorewind['RI',i]
     must_run = model.HorizonMustRun['RI',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['RI',i]
 model.Local5= Constraint(model.hh_periods,rule=WECC5)
@@ -365,7 +368,7 @@ def WECC6(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone6Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone6Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone6Generators) 
-    renew = model.wind['SEMA',i] + model.solar['SEMA',i]
+    renew = model.wind['SEMA',i] + model.solar['SEMA',i] + model.onshorewind['SEMA',i]
     must_run = model.HorizonMustRun['SEMA',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['SEMA',i]
 model.Local6= Constraint(model.hh_periods,rule=WECC6)
@@ -374,7 +377,7 @@ def WECC7(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone7Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone7Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone7Generators) 
-    renew = model.wind['VT',i] + model.solar['VT',i]
+    renew = model.wind['VT',i] + model.solar['VT',i] + model.onshorewind['VT',i]
     must_run = model.HorizonMustRun['VT',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['VT',i]
 model.Local7= Constraint(model.hh_periods,rule=WECC7)
@@ -383,7 +386,7 @@ def WECC8(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone8Generators) 
     s2 = sum(model.mwh_2[j,i] for j in model.Zone8Generators) 
     s3 = sum(model.mwh_3[j,i] for j in model.Zone8Generators) 
-    renew = model.wind['WCMA',i] + model.solar['WCMA',i]
+    renew = model.wind['WCMA',i] + model.solar['WCMA',i] + model.onshorewind['WCMA',i]
     must_run = model.HorizonMustRun['WCMA',i]
     return s1 + s2 + s3 + renew + must_run >=  0.25*model.HorizonDemand['WCMA',i]
 model.Local8= Constraint(model.hh_periods,rule=WECC8)
@@ -394,7 +397,7 @@ def Zone1_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone1Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone1Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone1Generators)  
-    other = model.wind['CT',i] + model.HorizonMustRun['CT',i] + model.solar['CT',i]
+    other = model.wind['CT',i] + model.HorizonMustRun['CT',i] + model.solar['CT',i] + model.onshorewind['CT',i]
     imports = sum(model.flow[s,'CT',i] for s in model.sources) + model.mwh_1['NYCTI',i] + model.mwh_2['NYCTI',i] + model.mwh_3['NYCTI',i] 
     exports = sum(model.flow['CT',k,i] for k in model.sinks) + model.HorizonCT_exports_NY[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['CT',i]
@@ -404,7 +407,7 @@ def Zone2_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone2Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone2Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone2Generators)  
-    other = model.wind['ME',i] + model.HorizonMustRun['ME',i] + model.solar['ME',i]
+    other = model.wind['ME',i] + model.HorizonMustRun['ME',i] + model.solar['ME',i] + model.onshorewind['ME',i]
     imports = sum(model.flow[s,'ME',i] for s in model.sources) + model.mwh_1['NBMEI',i] + model.mwh_2['NBMEI',i] + model.mwh_3['NBMEI',i] 
     exports = sum(model.flow['ME',k,i] for k in model.sinks) + model.HorizonME_exports_NB[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['ME',i]
@@ -414,7 +417,7 @@ def Zone3_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone3Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone3Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone3Generators)  
-    other = model.wind['NH',i] + model.HorizonMustRun['NH',i] + model.solar['NH',i]
+    other = model.wind['NH',i] + model.HorizonMustRun['NH',i] + model.solar['NH',i] + model.onshorewind['NH',i]
     imports = sum(model.flow[s,'NH',i] for s in model.sources) 
     exports = sum(model.flow['NH',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['NH',i]
@@ -424,7 +427,7 @@ def Zone4_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone4Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone4Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone4Generators)  
-    other = model.wind['NEMA',i] + model.HorizonMustRun['NEMA',i] + model.solar['NEMA',i]
+    other = model.wind['NEMA',i] + model.HorizonMustRun['NEMA',i] + model.solar['NEMA',i] + model.onshorewind['NEMA',i]
     imports = sum(model.flow[s,'NEMA',i] for s in model.sources) 
     exports = sum(model.flow['NEMA',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['NEMA',i]
@@ -434,7 +437,7 @@ def Zone5_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone5Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone5Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone5Generators)  
-    other = model.wind['RI',i] + model.HorizonMustRun['RI',i] + model.solar['RI',i]
+    other = model.wind['RI',i] + model.HorizonMustRun['RI',i] + model.solar['RI',i] + model.onshorewind['RI',i]
     imports = sum(model.flow[s,'RI',i] for s in model.sources) 
     exports = sum(model.flow['RI',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['RI',i]
@@ -444,7 +447,7 @@ def Zone6_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone6Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone6Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone6Generators)  
-    other = model.wind['SEMA',i] + model.HorizonMustRun['SEMA',i] + model.solar['SEMA',i]
+    other = model.wind['SEMA',i] + model.HorizonMustRun['SEMA',i] + model.solar['SEMA',i] + model.onshorewind['SEMA',i]
     imports = sum(model.flow[s,'SEMA',i] for s in model.sources) 
     exports = sum(model.flow['SEMA',k,i] for k in model.sinks)        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['SEMA',i]
@@ -454,7 +457,7 @@ def Zone7_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone7Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone7Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone7Generators)  
-    other = model.wind['VT',i] + model.HorizonMustRun['VT',i] + model.solar['VT',i]
+    other = model.wind['VT',i] + model.HorizonMustRun['VT',i] + model.solar['VT',i] + model.onshorewind['VT',i]
     imports = sum(model.flow[s,'VT',i] for s in model.sources) + model.mwh_1['NYVTI',i] + model.mwh_2['NYVTI',i] + model.mwh_3['NYVTI',i] + model.mwh_1['HQVTI',i] + model.mwh_2['HQVTI',i] + model.mwh_3['HQVTI',i] 
     exports = sum(model.flow['VT',k,i] for k in model.sinks) + model.HorizonVT_exports_NY[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['VT',i]
@@ -464,7 +467,7 @@ def Zone8_Balance(model,i):
     s1 = sum(model.mwh_1[j,i] for j in model.Zone8Generators)
     s2 = sum(model.mwh_2[j,i] for j in model.Zone8Generators)  
     s3 = sum(model.mwh_3[j,i] for j in model.Zone8Generators)  
-    other = model.wind['WCMA',i] + model.HorizonMustRun['WCMA',i] + model.solar['WCMA',i]
+    other = model.wind['WCMA',i] + model.HorizonMustRun['WCMA',i] + model.solar['WCMA',i] + model.onshorewind['WCMA',i]
     imports = sum(model.flow[s,'WCMA',i] for s in model.sources) + model.mwh_1['NYWCMAI',i] + model.mwh_2['NYWCMAI',i] + model.mwh_3['NYWCMAI',i] 
     exports = sum(model.flow['WCMA',k,i] for k in model.sinks) + model.HorizonWCMA_exports_NY[i]        
     return s1 + s2 + s3 + other + imports - exports >= model.HorizonDemand['WCMA',i]
@@ -475,6 +478,10 @@ model.Bal8Constraint= Constraint(model.hh_periods,rule=Zone8_Balance)
 def SolarC(model,z,i):
     return model.solar[z,i] <= model.HorizonSolar[z,i]
 model.SolarConstraint= Constraint(model.zones,model.hh_periods,rule=SolarC)
+
+def OnshoreWindC(model,z,i):
+    return model.onshorewind[z,i] <= model.HorizonOnshoreWind[z,i]
+model.OnshoreWindConstraint= Constraint(model.zones,model.hh_periods,rule=OnshoreWindC)
 
 def WindC(model,z,i):
     return model.wind[z,i] <= model.HorizonWind[z,i]
