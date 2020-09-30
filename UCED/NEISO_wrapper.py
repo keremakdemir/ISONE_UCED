@@ -40,6 +40,7 @@ def sim(days):
     solar=[]
     onshore_wind = []
     offshore_wind=[]
+    must_run=[]
     flow=[]
     Generator=[]
     Duals=[]
@@ -132,6 +133,11 @@ def sim(days):
         fix_cost = 0
         st = 0
         exchn = 0
+        hydro = 0
+        onshore_all = 0
+        offshore_all = 0
+        solar_all = 0
+        mustrun_all = 0
         
         for i in range(1,horizon_end):
             for j in instance.Coal:
@@ -189,8 +195,18 @@ def sim(days):
             for s in instance.sources:
                 for k in instance.sinks:
                     exchn = exchn + instance.flow[s,k,i].value*instance.hurdle[s,k] 
+            for j in instance.Hydro:
+                hydro = hydro + instance.mwh_1[j,i].value*0.01 + instance.mwh_2[j,i].value*0.01 + instance.mwh_3[j,i].value*0.01
+            for j in instance.zones:
+                onshore_all = onshore_all + instance.onshorewind[j,i].value*0.01 + instance.onshorewind[j,i].value*0.01 + instance.onshorewind[j,i].value*0.01
+            for j in instance.zones:
+                offshore_all = offshore_all + instance.offshorewind[j,i].value*0.01 + instance.offshorewind[j,i].value*0.01 + instance.offshorewind[j,i].value*0.01
+            for j in instance.zones:
+                solar_all = solar_all + instance.solar[j,i].value*0.01 + instance.solar[j,i].value*0.01 + instance.solar[j,i].value*0.01 
+            for j in instance.zones:
+                mustrun_all = mustrun_all + instance.mustrun[j,i].value*0.01 + instance.mustrun[j,i].value*0.01 + instance.mustrun[j,i].value*0.01
 
-            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + oil + slack + fix_cost + st + exchn + NY_Imports_CT_all + NY_Imports_WCMA_all + NY_Imports_VT_all + HQ_Imports_VT_all + NB_Imports_ME_all  
+            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + oil + slack + fix_cost + st + exchn + NY_Imports_CT_all + NY_Imports_WCMA_all + NY_Imports_VT_all + HQ_Imports_VT_all + NB_Imports_ME_all + hydro + onshore_all + offshore_all + solar_all + mustrun_all
             System_cost.append(S)
 
 
@@ -488,6 +504,15 @@ def sim(days):
                     if int(index[1]>0 and index[1]<horizon_end):
                         
                         onshore_wind.append((index[0],index[1]+((day-1)*24),varobject[index].value))
+                   
+                        
+            if a=='mustrun':
+
+                for index in varobject:
+                    
+                    if int(index[1]>0 and index[1]<horizon_end):
+                        
+                        must_run.append((index[0],index[1]+((day-1)*24),varobject[index].value))
 
 
             if a=='flow':
@@ -560,6 +585,7 @@ def sim(days):
     solar_pd=pd.DataFrame(solar,columns=['Zone','Time','Value'])
     onshore_wind_pd=pd.DataFrame(onshore_wind,columns=['Zone','Time','Value'])
     offshore_wind_pd=pd.DataFrame(offshore_wind,columns=['Zone','Time','Value'])
+    must_run_pd=pd.DataFrame(must_run,columns=['Zone','Time','Value'])
     flow_pd=pd.DataFrame(flow,columns=['Source','Sink','Time','Value'])
     shadow_price=pd.DataFrame(Duals,columns=['Constraint','Time','Value'])
     objective = pd.DataFrame(System_cost,columns=['Value'])
@@ -575,6 +601,7 @@ def sim(days):
     solar_pd.to_csv('solar_out.csv',index=False)
     onshore_wind_pd.to_csv('onshore_wind_out.csv',index=False)
     offshore_wind_pd.to_csv('offshore_wind_out.csv',index=False)
+    must_run_pd.to_csv('mustrun_out.csv',index=False)
     shadow_price.to_csv('shadow_price.csv',index=False)
     objective.to_csv('obj_function.csv',index=False)
 
