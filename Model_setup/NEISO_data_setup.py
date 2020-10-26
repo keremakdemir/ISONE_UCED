@@ -311,7 +311,7 @@ def setup(year, Hub_height):
                         match = 1
                         p_match = p
                 if match > 0:
-                    f.write(str(df_paths.loc[p_match,'limit']) + '\t' + str(df_paths.loc[p_match,'hurdle']) + '\n')
+                    f.write(str(round(df_paths.loc[p_match,'limit'],3)) + '\t' + str(round(df_paths.loc[p_match,'hurdle'],3)) + '\n')
                 else:
                     f.write('0' + '\t' + '0' + '\n')
         f.write(';\n\n')
@@ -328,8 +328,10 @@ def setup(year, Hub_height):
                     unit_name = df_gen.loc[i,'name']
                     unit_name = unit_name.replace(' ','_')
                     f.write(unit_name + '\t')  
+                elif c == 'typ' or c == 'zone':
+                    f.write(str(df_gen.loc[i,c]) + '\t')    
                 else:
-                    f.write(str((df_gen.loc[i,c])) + '\t')               
+                    f.write(str(round(df_gen.loc[i,c],3)) + '\t')               
             f.write('\n')
                 
         f.write(';\n\n')     
@@ -343,11 +345,11 @@ def setup(year, Hub_height):
             sz = solar_caps.loc[0,z]
             owz = onshore_wind_caps.loc[0,z]
             for h in range(0,len(df_load)): 
-                f.write(z + '\t' + str(h+1) + '\t' + str(df_load.loc[h,z])\
-                + '\t' + str(df_offshore_wind.loc[h,Hub_height]*wz)\
-                + '\t' + str(df_solar.loc[h,'Solar_Output_MWh']*sz)\
-                + '\t' + str(df_onshore_wind.loc[h,'Onshore_Output_MWh']*owz)\
-                + '\t' + str(df_total_must_run.loc[h,z]) + '\n')
+                f.write(z + '\t' + str(h+1) + '\t' + str(round(df_load.loc[h,z],3))\
+                + '\t' + str(round(df_offshore_wind.loc[h,Hub_height]*wz,3))\
+                + '\t' + str(round(df_solar.loc[h,'Solar_Output_MWh']*sz,3))\
+                + '\t' + str(round(df_onshore_wind.loc[h,'Onshore_Output_MWh']*owz,3))\
+                + '\t' + str(round(df_total_must_run.loc[h,z],3)) + '\n')
         f.write(';\n\n')
         
         # # zonal (daily)
@@ -360,13 +362,13 @@ def setup(year, Hub_height):
         #system wide (daily)
         f.write('param:' + '\t' + 'SimNY_imports_CT' + '\t' + 'SimNY_imports_VT' + '\t' + 'SimNY_imports_WCMA' + '\t' + 'SimNB_imports_ME' + '\t' + 'SimHQ_imports_VT' + '\t' + 'SimCT_hydro' + '\t' + 'SimME_hydro' + '\t' +  'SimNH_hydro' + '\t' +  'SimNEMA_hydro' + '\t' +  'SimRI_hydro' + '\t' +  'SimVT_hydro' + '\t' + 'SimWCMA_hydro:=' + '\n')
         for d in range(0,len(df_imports)):
-                f.write(str(d+1) + '\t' + str(df_imports.loc[d,'NY_imports_CT']) + '\t' + str(df_imports.loc[d,'NY_imports_VT']) + '\t' + str(df_imports.loc[d,'NY_imports_WCMA']) + '\t' + str(df_imports.loc[d,'NB_imports_ME']) + '\t' + str(df_imports.loc[d,'HQ_imports_VT']) + '\t' + str(df_hydro.loc[d,'CT']) + '\t' + str(df_hydro.loc[d,'ME']) + '\t' + str(df_hydro.loc[d,'NH']) + '\t' + str(df_hydro.loc[d,'NEMA']) + '\t' + str(df_hydro.loc[d,'RI']) + '\t' + str(df_hydro.loc[d,'VT']) + '\t' + str(df_hydro.loc[d,'WCMA']) + '\n')
+                f.write(str(d+1) + '\t' + str(round(df_imports.loc[d,'NY_imports_CT'],3)) + '\t' + str(round(df_imports.loc[d,'NY_imports_VT'],3)) + '\t' + str(round(df_imports.loc[d,'NY_imports_WCMA'],3)) + '\t' + str(round(df_imports.loc[d,'NB_imports_ME'],3)) + '\t' + str(round(df_imports.loc[d,'HQ_imports_VT'],3)) + '\t' + str(round(df_hydro.loc[d,'CT'],3)) + '\t' + str(round(df_hydro.loc[d,'ME'],3)) + '\t' + str(round(df_hydro.loc[d,'NH'],3)) + '\t' + str(round(df_hydro.loc[d,'NEMA'],3)) + '\t' + str(round(df_hydro.loc[d,'RI'],3)) + '\t' + str(round(df_hydro.loc[d,'VT'],3)) + '\t' + str(round(df_hydro.loc[d,'WCMA'],3)) + '\n')
         f.write(';\n\n')
             
         #system wide (hourly)
         f.write('param:' + '\t' + 'SimCT_exports_NY' + '\t' + 'SimWCMA_exports_NY' + '\t' + 'SimVT_exports_NY' + '\t' + 'SimVT_exports_HQ' + '\t' + 'SimME_exports_NB' + '\t' + 'SimReserves:=' + '\n')
         for h in range(0,len(df_load)):
-                f.write(str(h+1) + '\t' + str(df_exports.loc[h,'CT_exports_NY']) + '\t' + str(df_exports.loc[h,'WCMA_exports_NY']) + '\t' + str(df_exports.loc[h,'VT_exports_NY']) + '\t' + str(df_exports.loc[h,'VT_exports_HQ']) + '\t' + str(df_exports.loc[h,'ME_exports_NB']) + '\t' + str(df_reserves.loc[h,'reserves'])  + '\n')
+                f.write(str(h+1) + '\t' + str(round(df_exports.loc[h,'CT_exports_NY'],3)) + '\t' + str(round(df_exports.loc[h,'WCMA_exports_NY'],3)) + '\t' + str(round(df_exports.loc[h,'VT_exports_NY'],3)) + '\t' + str(round(df_exports.loc[h,'VT_exports_HQ'],3)) + '\t' + str(round(df_exports.loc[h,'ME_exports_NB'],3)) + '\t' + str(round(df_reserves.loc[h,'reserves'],3))  + '\n')
         f.write(';\n\n')
     
     return None
