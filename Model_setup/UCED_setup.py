@@ -19,14 +19,15 @@ Created on Wed Oct  3 21:29:55 2018
 #                         YEAR SELECTION
 
 import pandas as pd
-import numpy as np
+import NEISO_exchange_time_series
+import NEISO_data_setup
 
 Load_data = pd.read_csv('../Time_series_data/Synthetic_demand_pathflows/Sim_hourly_load.csv',header=0)
 year_length = len(Load_data)
 years = int(year_length/365)
 print('Possible hub heights are 53, 60, 80, 90, 100, 110, 120, 140, 160, 180 and 200 m.')
-Hub_height = input("Enter hub height: ") 
-Hub_height = int(Hub_height)
+Hub_height = int(input("Enter hub height: "))
+Offshore_capacity = int(input("Enter offshore wind power capacity (this is just used to name the folders): "))
 
 for i in range(0,69):
     
@@ -37,9 +38,6 @@ for i in range(0,69):
 ############################################################################
 #                          UC/ED Data File Setup
     
-    import NEISO_exchange_time_series
     NEISO_exchange_time_series.exchange(year)
-
-    import NEISO_data_setup
-    NEISO_data_setup.setup(year, Hub_height)
+    NEISO_data_setup.setup(year, Hub_height, Offshore_capacity)
 

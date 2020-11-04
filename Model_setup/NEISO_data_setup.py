@@ -8,21 +8,68 @@ Created on Wed May 03 15:01:31 2017
 import pandas as pd
 import numpy as np
 
-def setup(year, Hub_height):
+#read generator parameters into DataFrame
+df_gen = pd.read_excel('NEISO_data_file/generators.xlsx',header=0)
+
+#read transmission path parameters into DataFrame
+df_paths = pd.read_csv('NEISO_data_file/paths.csv',header=0)
+
+#list zones
+zones = ['CT', 'ME', 'NH', 'NEMA', 'RI', 'SEMA', 'VT', 'WCMA']
+
+##time series of load for each zone
+df_load_all = pd.read_csv('../Time_series_data/Synthetic_demand_pathflows/Sim_hourly_load.csv',header=0)
+df_load_all = df_load_all[zones]
+
+##daily hydropower availability 
+df_hydro = pd.read_csv('Hydro_setup/NEISO_dispatchable_hydro.csv',header=0)
+
+#must run resources (LFG,ag_waste,nuclear)
+df_must = pd.read_excel('NEISO_data_file/must_run.xlsx',header=0)
+
+# must run generation 
+must_run_CT = []
+must_run_ME = []
+must_run_NEMA = []
+must_run_NH = []   
+must_run_RI = []
+must_run_SEMA = []
+must_run_VT = []
+must_run_WCMA = [] 
+
+must_run_CT = np.ones((8760,1))*df_must.loc[0,'CT']
+must_run_ME = np.ones((8760,1))*df_must.loc[0,'ME']
+must_run_NEMA = np.ones((8760,1))*df_must.loc[0,'NEMA']
+must_run_NH = np.ones((8760,1))*df_must.loc[0,'NH']
+must_run_RI = np.ones((8760,1))*df_must.loc[0,'RI']
+must_run_SEMA = np.ones((8760,1))*df_must.loc[0,'SEMA']
+must_run_VT = np.ones((8760,1))*df_must.loc[0,'VT']
+must_run_WCMA = np.ones((8760,1))*df_must.loc[0,'WCMA']
+must_run = np.column_stack((must_run_CT,must_run_ME,must_run_NEMA,must_run_NH,must_run_RI,must_run_SEMA,must_run_VT,must_run_WCMA))
+df_total_must_run = pd.DataFrame(must_run,columns=('CT','ME','NEMA','NH','RI','SEMA','VT','WCMA'))
+df_total_must_run.to_csv('NEISO_data_file/must_run_hourly.csv')
+
+#natural gas prices
+# df_ng = pd.read_excel('../Time_series_data/Gas_prices/NG.xlsx', header=0)
+# df_ng = df_ng[zones]
+
+# time series of offshore wind generation for each zone
+df_offshore_wind_all = pd.read_excel('../Time_series_data/Synthetic_wind_power/offshore_wind_power_sim.xlsx',header=0)
+
+# time series of solar generation
+df_solar = pd.read_excel('NEISO_data_file/hourly_solar_gen.xlsx',header=0)
+solar_caps = pd.read_excel('NEISO_data_file/solar_caps.xlsx',header=0)
+
+# time series of onshore wind generation
+df_onshore_wind = pd.read_excel('NEISO_data_file/hourly_onshore_wind_gen.xlsx',header=0)
+onshore_wind_caps = pd.read_excel('NEISO_data_file/wind_onshore_caps.xlsx',header=0)
+
+
+def setup(year, Hub_height, Offshore_capacity):
             
-    #read generator parameters into DataFrame
-    df_gen = pd.read_excel('NEISO_data_file/generators.xlsx',header=0)
     
-    #read transmission path parameters into DataFrame
-    df_paths = pd.read_csv('NEISO_data_file/paths.csv',header=0)
-    
-    #list zones
-    zones = ['CT', 'ME', 'NH', 'NEMA', 'RI', 'SEMA', 'VT', 'WCMA']
-       
     ##time series of load for each zone
-    df_load = pd.read_csv('../Time_series_data/Synthetic_demand_pathflows/Sim_hourly_load.csv',header=0)
-    df_load = df_load[zones]
-    df_load = df_load.loc[year*8760:year*8760+8759]
+    df_load = globals()['df_load_all'].loc[year*8760:year*8760+8759].copy()
     df_load = df_load.reset_index(drop=True)
     
     ##time series of operational reserves for each zone
@@ -33,63 +80,21 @@ def setup(year, Hub_height):
     df_reserves = pd.DataFrame(reserves)
     df_reserves.columns = ['reserves']
     
-    ##daily hydropower availability 
-    df_hydro = pd.read_csv('Hydro_setup/NEISO_dispatchable_hydro.csv',header=0)
-          
     ##daily time series of dispatchable imports by path
     df_imports = pd.read_csv('Path_setup/NEISO_dispatchable_imports.csv',header=0)
     
     ##hourly time series of exports by zone
     df_exports = pd.read_csv('Path_setup/NEISO_exports.csv',header=0)
-         
-    #must run resources (LFG,ag_waste,nuclear)
-    df_must = pd.read_excel('NEISO_data_file/must_run.xlsx',header=0)
     
-    # #natural gas prices
-    # df_ng = pd.read_excel('../Time_series_data/Gas_prices/NG.xlsx', header=0)
-    # df_ng = df_ng[zones]
+    # # natural gas prices
     # df_ng = df_ng.loc[year*365:year*365+364,:]
     # df_ng = df_ng.reset_index()
         
     # time series of offshore wind generation for each zone
-    df_offshore_wind = pd.read_excel('../Time_series_data/Synthetic_wind_power/offshore_wind_power_sim.xlsx',header=0)
-    wind_capacity = int(df_offshore_wind.iloc[0, 1])
-    df_offshore_wind = df_offshore_wind.loc[:, Hub_height]
+    df_offshore_wind = globals()['df_offshore_wind_all'].loc[:, Hub_height].copy()
     df_offshore_wind = df_offshore_wind.loc[year*8760:year*8760+8759]
     df_offshore_wind = df_offshore_wind.reset_index()
     offshore_wind_caps = pd.read_excel('NEISO_data_file/wind_offshore_caps.xlsx')
-    
-    # time series of solar generation
-    df_solar = pd.read_excel('NEISO_data_file/hourly_solar_gen.xlsx',header=0)
-    solar_caps = pd.read_excel('NEISO_data_file/solar_caps.xlsx',header=0)
-    
-    # time series of onshore wind generation
-    df_onshore_wind = pd.read_excel('NEISO_data_file/hourly_onshore_wind_gen.xlsx',header=0)
-    onshore_wind_caps = pd.read_excel('NEISO_data_file/wind_onshore_caps.xlsx',header=0)
-            
-    # must run generation 
-    must_run_CT = []
-    must_run_ME = []
-    must_run_NEMA = []
-    must_run_NH = []   
-    must_run_RI = []
-    must_run_SEMA = []
-    must_run_VT = []
-    must_run_WCMA = [] 
-    
-        
-    must_run_CT = np.ones((len(df_load),1))*df_must.loc[0,'CT']
-    must_run_ME = np.ones((len(df_load),1))*df_must.loc[0,'ME']
-    must_run_NEMA = np.ones((len(df_load),1))*df_must.loc[0,'NEMA']
-    must_run_NH = np.ones((len(df_load),1))*df_must.loc[0,'NH']
-    must_run_RI = np.ones((len(df_load),1))*df_must.loc[0,'RI']
-    must_run_SEMA = np.ones((len(df_load),1))*df_must.loc[0,'SEMA']
-    must_run_VT = np.ones((len(df_load),1))*df_must.loc[0,'VT']
-    must_run_WCMA = np.ones((len(df_load),1))*df_must.loc[0,'WCMA']
-    must_run = np.column_stack((must_run_CT,must_run_ME,must_run_NEMA,must_run_NH,must_run_RI,must_run_SEMA,must_run_VT,must_run_WCMA))
-    df_total_must_run =pd.DataFrame(must_run,columns=('CT','ME','NEMA','NH','RI','SEMA','VT','WCMA'))
-    df_total_must_run.to_csv('NEISO_data_file/must_run_hourly.csv')
-        
             
     ############
     #  sets    #
@@ -100,8 +105,7 @@ def setup(year, Hub_height):
     from shutil import copy
     from pathlib import Path
     
-    
-    path = str(Path.cwd().parent) + str(Path('/UCED/LR/NEISO' +'_'+ str(Hub_height) +'_'+ str(wind_capacity) +'_'+ str(year)))
+    path = str(Path.cwd().parent) + str(Path('/UCED/LR/NEISO' +'_'+ str(Hub_height) +'_'+ str(Offshore_capacity) +'_'+ str(year)))
     os.makedirs(path,exist_ok=True)
     
     generators_file='NEISO_data_file/generators.xlsx'
@@ -115,7 +119,6 @@ def setup(year, Hub_height):
     copy(simulation_file,path)
     copy(dispatchLP_file,path)
     copy(generators_file,path)
-    
     
     filename = path + '/data.dat'
     
@@ -296,7 +299,6 @@ def setup(year, Hub_height):
         f.write('param HorizonDays := %d;' % HorizonDays)
         f.write('\n\n')
         
-    
     
         # create parameter matrix for transmission paths (source and sink connections)
         f.write('param:' + '\t' + 'limit' + '\t' +'hurdle :=' + '\n')
