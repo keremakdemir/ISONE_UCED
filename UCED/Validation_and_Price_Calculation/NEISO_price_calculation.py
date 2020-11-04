@@ -27,7 +27,7 @@ num_hours = len(Hourly_sim)
 #creating a linear regression model for hourly simulations
 hourly_x = Hourly_sim.copy()
 hourly_y = Hourly_hist.loc[:,'LMP'].copy()
-hourly_reg = linear_model.ElasticNet(positive=True, max_iter=10000)
+hourly_reg = linear_model.ElasticNet(positive=True, max_iter=100000)
 hourly_reg.fit(hourly_x,hourly_y)
 
 sim_hourly = np.zeros((num_hours,1))
@@ -47,7 +47,7 @@ SH.to_excel('weighted_hourly_prices.xlsx')
 #creating a linear regression model for daily simulations
 daily_x = Daily_sim.copy()
 daily_y = Daily_hist.loc[:,'LMP'].copy()
-daily_reg = linear_model.ElasticNet(positive=True, max_iter=10000)
+daily_reg = linear_model.ElasticNet(positive=True, max_iter=100000)
 daily_reg.fit(daily_x,daily_y)
     
 sim_daily = np.zeros((num_days,1))
