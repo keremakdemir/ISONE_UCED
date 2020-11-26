@@ -17,13 +17,24 @@ import numpy as np
 from datetime import datetime
 import pyomo.environ as pyo
 
+Solvername = 'gurobi'
+Timelimit = 1800 # for the simulation of one day in seconds
+# Threadlimit = 8 # maximum number of threads to use
+
 def sim(days):
 
     instance = m1.create_instance('data.dat')
     instance2 = m2.create_instance('data.dat')
 
     instance2.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT)
-    opt = SolverFactory('gurobi')
+    opt = SolverFactory(Solvername)
+    
+    if Solvername == 'cplex':
+        opt.options['timelimit'] = Timelimit
+    elif Solvername == 'gurobi':           
+        opt.options['TimeLimit'] = Timelimit
+        
+    # opt.options['threads'] = Threadlimit
 
     H = instance.HorizonHours
     D = 2
@@ -466,17 +477,17 @@ def sim(days):
             #             srsv.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0]))
                 
 
-            if a=='nrsv':
+            # if a=='nrsv':
 
-                for index in varobject:
+            #     for index in varobject:
                     
-                    name = index[0]
-                    g = df_generators[df_generators['name']==name]
-                    zone = g['zone']
+            #         name = index[0]
+            #         g = df_generators[df_generators['name']==name]
+            #         zone = g['zone']
                     
-                    if int(index[1]>0 and index[1]<horizon_end):
+            #         if int(index[1]>0 and index[1]<horizon_end):
                         
-                        nrsv.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0]))
+            #             nrsv.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0]))
                 
 
             if a=='offshorewind':
@@ -578,10 +589,10 @@ def sim(days):
     mwh_1_pd=pd.DataFrame(mwh_1,columns=['Generator','Time','Value','Zones','Type','$/MWh'])
     mwh_2_pd=pd.DataFrame(mwh_2,columns=['Generator','Time','Value','Zones','Type','$/MWh'])
     mwh_3_pd=pd.DataFrame(mwh_3,columns=['Generator','Time','Value','Zones','Type','$/MWh'])
-#    on_pd=pd.DataFrame(on,columns=['Generator','Time','Value','Zones'])
-#    switch_pd=pd.DataFrame(switch,columns=['Generator','Time','Value','Zones'])
-#    srsv_pd=pd.DataFrame(srsv,columns=['Generator','Time','Value','Zones'])
-    nrsv_pd=pd.DataFrame(nrsv,columns=['Generator','Time','Value','Zones'])
+    # on_pd=pd.DataFrame(on,columns=['Generator','Time','Value','Zones'])
+    # switch_pd=pd.DataFrame(switch,columns=['Generator','Time','Value','Zones'])
+    # srsv_pd=pd.DataFrame(srsv,columns=['Generator','Time','Value','Zones'])
+    # nrsv_pd=pd.DataFrame(nrsv,columns=['Generator','Time','Value','Zones'])
     solar_pd=pd.DataFrame(solar,columns=['Zone','Time','Value'])
     onshore_wind_pd=pd.DataFrame(onshore_wind,columns=['Zone','Time','Value'])
     offshore_wind_pd=pd.DataFrame(offshore_wind,columns=['Zone','Time','Value'])
@@ -594,10 +605,10 @@ def sim(days):
     mwh_1_pd.to_csv('mwh_1.csv',index=False)
     mwh_2_pd.to_csv('mwh_2.csv',index=False)
     mwh_3_pd.to_csv('mwh_3.csv',index=False)
-#    on_pd.to_csv('on.csv',index=False)
-#    switch_pd.to_csv('switch.csv',index=False)
-#    srsv_pd.to_csv('srsv.csv',index=False)
-    nrsv_pd.to_csv('nrsv.csv',index=False)
+    # on_pd.to_csv('on.csv',index=False)
+    # switch_pd.to_csv('switch.csv',index=False)
+    # srsv_pd.to_csv('srsv.csv',index=False)
+    # nrsv_pd.to_csv('nrsv.csv',index=False)
     solar_pd.to_csv('solar_out.csv',index=False)
     onshore_wind_pd.to_csv('onshore_wind_out.csv',index=False)
     offshore_wind_pd.to_csv('offshore_wind_out.csv',index=False)
