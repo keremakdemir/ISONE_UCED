@@ -105,7 +105,7 @@ def sim(days):
             instance.HorizonVT_exports_HQ[i] = instance.SimVT_exports_HQ[(day-1)*24+i]
             instance.HorizonME_exports_NB[i] = instance.SimME_exports_NB[(day-1)*24+i]
 
-        NEISO_result = opt.solve(instance,tee=True,symbolic_solver_labels=True)
+        NEISO_result = opt.solve(instance, tee=True, symbolic_solver_labels=True, load_solutions=False)
         instance.solutions.load_from(NEISO_result)
 
         # record objective function value
@@ -277,7 +277,7 @@ def sim(days):
                     instance2.switch[j,t] = 0
                     instance2.switch[j,t].fixed = True
                     
-        results = opt.solve(instance2,tee=True,symbolic_solver_labels=True)
+        results = opt.solve(instance2, tee=True, symbolic_solver_labels=True, load_solutions=False)
         instance2.solutions.load_from(results)
 
         print ("Duals")
