@@ -66,10 +66,7 @@ SD.to_excel('weighted_daily_prices.xlsx')
 
 #showing the R^2 value for both linear regressions
 W_daily = pd.read_excel('weighted_daily_prices.xlsx')
-W_hourly = pd.read_excel('weighted_hourly_prices.xlsx')
 W_daily = np.asarray(W_daily['NEISO'])
-W_hourly = np.asarray(W_hourly['NEISO'])
-H_hourly = np.asarray(Hourly_hist['LMP'])
 H_daily = np.asarray(Daily_hist['LMP'])
 print('R-squared value for hourly prices is ', hourly_reg.score(hourly_x, hourly_y))
 print('R-squared value for daily prices is ', daily_reg.score(daily_x, daily_y))
