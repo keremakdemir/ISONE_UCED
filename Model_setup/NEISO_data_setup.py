@@ -50,8 +50,12 @@ df_total_must_run = pd.DataFrame(must_run,columns=('CT','ME','NEMA','NH','RI','S
 df_total_must_run.to_csv('NEISO_data_file/must_run_hourly.csv')
 
 #natural gas prices
-# df_ng = pd.read_excel('../Time_series_data/Gas_prices/NG.xlsx', header=0)
-# df_ng = df_ng[zones]
+df_ng_all = pd.read_excel('../Time_series_data/Gas_prices/NG.xlsx', header=0)
+df_ng_all = df_ng_all[zones]
+
+#oil prices
+df_oil_all = pd.read_excel('../Time_series_data/Oil_prices/Oil_prices.xlsx', header=0)
+df_oil_all = df_oil_all[zones]
 
 # time series of offshore wind generation for each zone
 df_offshore_wind_all = pd.read_excel('../Time_series_data/Synthetic_wind_power/offshore_wind_power_sim.xlsx',header=0)
@@ -66,7 +70,14 @@ onshore_wind_caps = pd.read_excel('NEISO_data_file/wind_onshore_caps.xlsx',heade
 
 
 def setup(year, Hub_height, Offshore_capacity):
-            
+    
+    ##time series of natural gas prices for each zone
+    df_ng = globals()['df_ng_all'].copy()
+    df_ng = df_ng.reset_index()
+    
+    ##time series of oil prices for each zone
+    df_oil = globals()['df_oil_all'].copy()
+    df_oil = df_oil.reset_index()
     
     ##time series of load for each zone
     df_load = globals()['df_load_all'].loc[year*8760:year*8760+8759].copy()
@@ -85,10 +96,6 @@ def setup(year, Hub_height, Offshore_capacity):
     
     ##hourly time series of exports by zone
     df_exports = pd.read_csv('Path_setup/NEISO_exports.csv',header=0)
-    
-    # # natural gas prices
-    # df_ng = df_ng.loc[year*365:year*365+364,:]
-    # df_ng = df_ng.reset_index()
         
     # time series of offshore wind generation for each zone
     df_offshore_wind = globals()['df_offshore_wind_all'].loc[:, Hub_height].copy()
@@ -200,15 +207,15 @@ def setup(year, Hub_height, Offshore_capacity):
                 f.write(unit_name + ' ')
         f.write(';\n\n')    
        
-        # oil
-        f.write('set Oil :=\n')
-        # pull relevant generators
-        for gen in range(0,len(df_gen)):
-            if df_gen.loc[gen,'typ'] == 'oil':
-                unit_name = df_gen.loc[gen,'name']
-                unit_name = unit_name.replace(' ','_')
-                f.write(unit_name + ' ')
-        f.write(';\n\n')        
+        # # oil
+        # f.write('set Oil :=\n')
+        # # pull relevant generators
+        # for gen in range(0,len(df_gen)):
+        #     if df_gen.loc[gen,'typ'] == 'oil':
+        #         unit_name = df_gen.loc[gen,'name']
+        #         unit_name = unit_name.replace(' ','_')
+        #         f.write(unit_name + ' ')
+        # f.write(';\n\n')        
      
         
         # Slack
@@ -258,6 +265,27 @@ def setup(year, Hub_height, Offshore_capacity):
                 f.write('set Zone%dGas :=\n' % (z_int+1))      
                 for gen in range(0,len(df_gen)):
                     if df_gen.loc[gen,'zone'] == z and (df_gen.loc[gen,'typ'] == 'ngcc' or df_gen.loc[gen,'typ'] == 'ngct' or df_gen.loc[gen,'typ'] == 'ngst'):
+                        unit_name = df_gen.loc[gen,'name']
+                        unit_name = unit_name.replace(' ','_')
+                        f.write(unit_name + ' ')
+                f.write(';\n\n')
+                
+        
+        # oil generator sets by zone and type
+        for z in zones:
+            # zone string
+            z_int = zones.index(z)
+            
+            # find relevant generators
+            trigger = 0
+            for gen in range(0,len(df_gen)):
+                if (df_gen.loc[gen,'zone'] == z) and (df_gen.loc[gen,'typ'] == 'oil'):
+                    trigger = 1
+            if trigger > 0:
+                # pull relevant generators
+                f.write('set Zone%dOil :=\n' % (z_int+1))      
+                for gen in range(0,len(df_gen)):
+                    if (df_gen.loc[gen,'zone'] == z) and (df_gen.loc[gen,'typ'] == 'oil'):
                         unit_name = df_gen.loc[gen,'name']
                         unit_name = unit_name.replace(' ','_')
                         f.write(unit_name + ' ')
@@ -354,12 +382,12 @@ def setup(year, Hub_height, Offshore_capacity):
                 + '\t' + str(round(df_total_must_run.loc[h,z],3)) + '\n')
         f.write(';\n\n')
         
-        # # zonal (daily)
-        # f.write('param:' + '\t' + 'SimGasPrice:=' + '\n')      
-        # for z in zones:
-        #     for d in range(0,int(SimHours/24)): 
-        #         f.write(z + '\t' + str(d+1) + '\t' + str(df_ng.loc[d,z]) + '\n')
-        # f.write(';\n\n')
+        # zonal (daily)
+        f.write('param:' + '\t' + 'SimGasPrice' + '\t' + 'SimOilPrice:=' + '\n')      
+        for z in zones:
+            for d in range(0,int(SimHours/24)): 
+                f.write(z + '\t' + str(d+1) + '\t' + str(round(df_ng.loc[d,z], 3)) + '\t' + str(round(df_oil.loc[d,z], 3)) + '\n')
+        f.write(';\n\n')
     
         #system wide (daily)
         f.write('param:' + '\t' + 'SimNY_imports_CT' + '\t' + 'SimNY_imports_VT' + '\t' + 'SimNY_imports_WCMA' + '\t' + 'SimNB_imports_ME' + '\t' + 'SimHQ_imports_VT' + '\t' + 'SimCT_hydro' + '\t' + 'SimME_hydro' + '\t' +  'SimNH_hydro' + '\t' +  'SimNEMA_hydro' + '\t' +  'SimRI_hydro' + '\t' +  'SimVT_hydro' + '\t' + 'SimWCMA_hydro:=' + '\n')

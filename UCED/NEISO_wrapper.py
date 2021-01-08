@@ -69,7 +69,8 @@ def sim(days):
         #load time series data
         for z in instance.zones:
 
-            instance.GasPrice[z] = 3.6
+            instance.GasPrice[z] = instance.SimGasPrice[z,day]
+            instance.OilPrice[z] = instance.SimOilPrice[z,day]
 
             for i in K:
                 
@@ -134,7 +135,30 @@ def sim(days):
         gas1_8 = 0
         gas2_8 = 0
         gas3_8 = 0
-        oil = 0
+        Oil1_1 = 0
+        Oil2_1 = 0
+        Oil3_1 = 0
+        Oil1_2 = 0
+        Oil2_2 = 0
+        Oil3_2 = 0
+        Oil1_3 = 0
+        Oil2_3 = 0
+        Oil3_3 = 0
+        Oil1_4 = 0
+        Oil2_4 = 0
+        Oil3_4 = 0
+        Oil1_5 = 0
+        Oil2_5 = 0
+        Oil3_5 = 0
+        Oil1_6 = 0
+        Oil2_6 = 0
+        Oil3_6 = 0
+        Oil1_7 = 0
+        Oil2_7 = 0
+        Oil3_7 = 0
+        Oil1_8 = 0
+        Oil2_8 = 0
+        Oil3_8 = 0
         NY_Imports_CT_all = 0
         NY_Imports_WCMA_all = 0
         NY_Imports_VT_all = 0
@@ -185,8 +209,38 @@ def sim(days):
                 gas1_8 = gas1_8 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.GasPrice['WCMA'].value + instance.var_om[j]) 
                 gas2_8 = gas2_8 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.GasPrice['WCMA'].value + instance.var_om[j]) 
                 gas3_8 = gas3_8 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.GasPrice['WCMA'].value + instance.var_om[j])   
-            for j in instance.Oil:
-                oil = oil + instance.mwh_1[j,i].value*(instance.seg1[j]*8 + instance.var_om[j]) + instance.mwh_2[j,i].value*(instance.seg2[j]*8 + instance.var_om[j]) + instance.mwh_3[j,i].value*(instance.seg3[j]*8 + instance.var_om[j])
+            for j in instance.Zone1Oil:
+                Oil1_1 = Oil1_1 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['CT'].value + instance.var_om[j]) 
+                Oil2_1 = Oil2_1 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['CT'].value + instance.var_om[j]) 
+                Oil3_1 = Oil3_1 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['CT'].value + instance.var_om[j]) 
+            for j in instance.Zone2Oil:
+                Oil1_2 = Oil1_2 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['ME'].value + instance.var_om[j]) 
+                Oil2_2 = Oil2_2 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['ME'].value + instance.var_om[j]) 
+                Oil3_2 = Oil3_2 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['ME'].value + instance.var_om[j]) 
+            for j in instance.Zone3Oil:
+                Oil1_3 = Oil1_3 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['NH'].value + instance.var_om[j]) 
+                Oil2_3 = Oil2_3 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['NH'].value + instance.var_om[j]) 
+                Oil3_3 = Oil3_3 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['NH'].value + instance.var_om[j]) 
+            for j in instance.Zone4Oil:
+                Oil1_4 = Oil1_4 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['NEMA'].value + instance.var_om[j]) 
+                Oil2_4 = Oil2_4 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['NEMA'].value + instance.var_om[j]) 
+                Oil3_4 = Oil3_4 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['NEMA'].value + instance.var_om[j])    
+            for j in instance.Zone5Oil:
+                Oil1_5 = Oil1_5 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['RI'].value + instance.var_om[j]) 
+                Oil2_5 = Oil2_5 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['RI'].value + instance.var_om[j]) 
+                Oil3_5 = Oil3_5 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['RI'].value + instance.var_om[j])   
+            for j in instance.Zone6Oil:
+                Oil1_6 = Oil1_6 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['SEMA'].value + instance.var_om[j]) 
+                Oil2_6 = Oil2_6 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['SEMA'].value + instance.var_om[j]) 
+                Oil3_6 = Oil3_6 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['SEMA'].value + instance.var_om[j])                
+            for j in instance.Zone7Oil:
+                Oil1_7 = Oil1_7 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['VT'].value + instance.var_om[j]) 
+                Oil2_7 = Oil2_7 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['VT'].value + instance.var_om[j]) 
+                Oil3_7 = Oil3_7 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['VT'].value + instance.var_om[j])   
+            for j in instance.Zone8Oil:
+                Oil1_8 = Oil1_8 + instance.mwh_1[j,i].value*(instance.seg1[j]*instance.OilPrice['WCMA'].value + instance.var_om[j]) 
+                Oil2_8 = Oil2_8 + instance.mwh_2[j,i].value*(instance.seg2[j]*instance.OilPrice['WCMA'].value + instance.var_om[j]) 
+                Oil3_8 = Oil3_8 + instance.mwh_3[j,i].value*(instance.seg3[j]*instance.OilPrice['WCMA'].value + instance.var_om[j])
             for j in instance.NY_Imports_CT:
                 NY_Imports_CT_all = NY_Imports_CT_all + instance.mwh_1[j,i].value*4.3 + instance.mwh_2[j,i].value*4.3 + instance.mwh_3[j,i].value*4.3
             for j in instance.NY_Imports_WCMA:
@@ -217,13 +271,14 @@ def sim(days):
             for j in instance.zones:
                 mustrun_all = mustrun_all + instance.mustrun[j,i].value*0.01 + instance.mustrun[j,i].value*0.01 + instance.mustrun[j,i].value*0.01
 
-            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + oil + slack + fix_cost + st + exchn + NY_Imports_CT_all + NY_Imports_WCMA_all + NY_Imports_VT_all + HQ_Imports_VT_all + NB_Imports_ME_all + hydro + onshore_all + offshore_all + solar_all + mustrun_all
+            S = coal + gas1_1 + gas2_1 + gas3_1 + gas1_2 + gas2_2 + gas3_2 + gas1_3 + gas2_3 + gas3_3 + gas1_4 + gas2_4 + gas3_4 + gas1_5 + gas2_5 + gas3_5 + gas1_6 + gas2_6 + gas3_6 + gas1_7 + gas2_7 + gas3_7 + gas1_8 + gas2_8 + gas3_8 + Oil1_1 + Oil2_1 + Oil3_1 + Oil1_2 + Oil2_2 + Oil3_2 + Oil1_3 + Oil2_3 + Oil3_3 + Oil1_4 + Oil2_4 + Oil3_4 + Oil1_5 + Oil2_5 + Oil3_5 + Oil1_6 + Oil2_6 + Oil3_6 + Oil1_7 + Oil2_7 + Oil3_7 + Oil1_8 + Oil2_8 + Oil3_8 + slack + fix_cost + st + exchn + NY_Imports_CT_all + NY_Imports_WCMA_all + NY_Imports_VT_all + HQ_Imports_VT_all + NB_Imports_ME_all + hydro + onshore_all + offshore_all + solar_all + mustrun_all
             System_cost.append(round(S, 3))
 
 
         for z in instance2.zones:
 
-            instance2.GasPrice[z] = 3.6
+            instance2.GasPrice[z] = instance2.SimGasPrice[z,day]
+            instance2.OilPrice[z] = instance2.SimOilPrice[z,day]
 
             for i in K:
                 
@@ -311,7 +366,8 @@ def sim(days):
                     
                     if int(index[1]>0 and index[1]<horizon_end):
                         
-                        gas_price = 3.6
+                        gas_price = instance.GasPrice[z].value
+                        oil_price = instance.OilPrice[z].value
                         
                         if index[0] in instance.Gas:
                             marginal_cost = seg1*gas_price
@@ -320,7 +376,7 @@ def sim(days):
                             marginal_cost = seg1*2.2
                             mwh_1.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0],'Coal',round(marginal_cost, 3)))
                         elif index[0] in instance.Oil:
-                            marginal_cost = seg1*8
+                            marginal_cost = seg1*oil_price
                             mwh_1.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0],'Oil',round(marginal_cost, 3)))
                         elif index[0] in instance.Slack:
                             marginal_cost = 700
@@ -357,7 +413,8 @@ def sim(days):
                     
                     if int(index[1]>0 and index[1]<horizon_end):
 
-                        gas_price = 3.6
+                        gas_price = instance.GasPrice[z].value
+                        oil_price = instance.OilPrice[z].value
                         
                         if index[0] in instance.Gas:
                             marginal_cost = seg2*gas_price
@@ -366,7 +423,7 @@ def sim(days):
                             marginal_cost = seg2*2.2
                             mwh_2.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0],'Coal',round(marginal_cost, 3)))
                         elif index[0] in instance.Oil:
-                            marginal_cost = seg2*8
+                            marginal_cost = seg2*oil_price
                             mwh_2.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0],'Oil',round(marginal_cost, 3)))
                         elif index[0] in instance.Slack:
                             marginal_cost = 700
@@ -403,7 +460,8 @@ def sim(days):
                     
                     if int(index[1]>0 and index[1]<horizon_end):
 
-                        gas_price = 3.6
+                        gas_price = instance.GasPrice[z].value
+                        oil_price = instance.OilPrice[z].value
     
                         if index[0] in instance.Gas:
                             marginal_cost = seg3*gas_price
@@ -412,7 +470,7 @@ def sim(days):
                             marginal_cost = seg3*2.2
                             mwh_3.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0],'Coal',round(marginal_cost, 3)))
                         elif index[0] in instance.Oil:
-                            marginal_cost = seg3*8
+                            marginal_cost = seg3*oil_price
                             mwh_3.append((index[0],index[1]+((day-1)*24),round(varobject[index].value, 3),zone.values[0],'Oil',round(marginal_cost, 3)))
                         elif index[0] in instance.Slack:
                             marginal_cost = 700

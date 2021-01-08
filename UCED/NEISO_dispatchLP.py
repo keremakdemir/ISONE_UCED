@@ -28,40 +28,48 @@ model = AbstractModel()
 #
 
 model.Zone1Gas = Set()
+model.Zone1Oil = Set()
 model.Zone1Generators =  Set()
 # Connecticut (CT) 
 
 model.Zone2Gas = Set()
+model.Zone2Oil = Set()
 model.Zone2Generators = Set()
 # Maine (ME)
 
 model.Zone3Gas = Set()
+model.Zone3Oil = Set()
 model.Zone3Generators = Set()
 # New Hampshire (NH)
 
 model.Zone4Gas = Set()
+model.Zone4Oil = Set()
 model.Zone4Generators = Set()
 # Northeast Massachusetts (NEMA)
 
 model.Zone5Gas = Set()
+model.Zone5Oil = Set()
 model.Zone5Generators =  Set()
 # Rhode Island (RI)
 
 model.Zone6Gas = Set()
+model.Zone6Oil = Set()
 model.Zone6Generators = Set()
 # Southeast Massachusetts (SEMA)
 
 model.Zone7Gas = Set()
+model.Zone7Oil = Set()
 model.Zone7Generators = Set()
 # Vermont (VT)
 
 model.Zone8Gas = Set()
+model.Zone8Oil = Set()
 model.Zone8Generators = Set()
 #Western and Central Massachusetts (WCMA)
 
 model.Coal = Set()
 model.Gas = model.Zone1Gas | model.Zone2Gas | model.Zone3Gas | model.Zone4Gas | model.Zone5Gas | model.Zone6Gas | model.Zone7Gas | model.Zone8Gas 
-model.Oil = Set()
+model.Oil = model.Zone1Oil | model.Zone2Oil | model.Zone3Oil | model.Zone4Oil | model.Zone5Oil | model.Zone6Oil | model.Zone7Oil | model.Zone8Oil
 model.Slack = Set()
 model.Hydro = Set()
 model.NY_Imports_CT = Set()
@@ -180,6 +188,10 @@ model.HorizonME_exports_NB = Param(model.hh_periods, within=NonNegativeReals,mut
 #Natural gas prices over simulation period
 model.SimGasPrice = Param(model.zones,model.SD_periods, within=NonNegativeReals)
 model.GasPrice = Param(model.zones,within = NonNegativeReals, mutable=True,initialize=0)
+
+#Oil prices over simulation period
+model.SimOilPrice = Param(model.zones,model.SD_periods, within=NonNegativeReals)
+model.OilPrice = Param(model.zones,within = NonNegativeReals, mutable=True,initialize=0)
 
 #Daily path and hydro parameters
 model.SimNY_imports_CT = Param(model.SD_periods, within=NonNegativeReals)
@@ -306,9 +318,30 @@ def SysCost(model):
     NB_Imports_ME1 = sum(model.mwh_1[j,i]*4.3 for i in model.hh_periods for j in model.NB_Imports_ME)
     NB_Imports_ME2 = sum(model.mwh_2[j,i]*4.3 for i in model.hh_periods for j in model.NB_Imports_ME)
     NB_Imports_ME3 = sum(model.mwh_3[j,i]*4.3 for i in model.hh_periods for j in model.NB_Imports_ME)
-    oil1 = sum(model.mwh_1[j,i]*(model.seg1[j]*8 + model.var_om[j]) for i in model.hh_periods for j in model.Oil) 
-    oil2 = sum(model.mwh_2[j,i]*(model.seg2[j]*8 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)  
-    oil3 = sum(model.mwh_3[j,i]*(model.seg3[j]*8 + model.var_om[j]) for i in model.hh_periods for j in model.Oil)  
+    Oil1_1 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['CT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone1Oil) 
+    Oil2_1 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['CT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone1Oil)  
+    Oil3_1 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['CT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone1Oil)  
+    Oil1_2 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['ME'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone2Oil) 
+    Oil2_2 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['ME'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone2Oil)  
+    Oil3_2 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['ME'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone2Oil)  
+    Oil1_3 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['NH'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone3Oil) 
+    Oil2_3 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['NH'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone3Oil)  
+    Oil3_3 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['NH'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone3Oil)  
+    Oil1_4 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['NEMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone4Oil) 
+    Oil2_4 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['NEMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone4Oil)  
+    Oil3_4 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['NEMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone4Oil)    
+    Oil1_5 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['RI'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone5Oil) 
+    Oil2_5 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['RI'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone5Oil)  
+    Oil3_5 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['RI'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone5Oil)  
+    Oil1_6 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['SEMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone6Oil) 
+    Oil2_6 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['SEMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone6Oil)  
+    Oil3_6 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['SEMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone6Oil)  
+    Oil1_7 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['VT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone7Oil) 
+    Oil2_7 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['VT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone7Oil)  
+    Oil3_7 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['VT'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone7Oil)  
+    Oil1_8 = sum(model.mwh_1[j,i]*(model.seg1[j]*model.OilPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Oil) 
+    Oil2_8 = sum(model.mwh_2[j,i]*(model.seg2[j]*model.OilPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Oil)  
+    Oil3_8 = sum(model.mwh_3[j,i]*(model.seg3[j]*model.OilPrice['WCMA'] + model.var_om[j]) for i in model.hh_periods for j in model.Zone8Oil)  
     slack1 = sum(model.mwh_1[j,i]*model.seg1[j]*10000 for i in model.hh_periods for j in model.Slack)
     slack2 = sum(model.mwh_2[j,i]*model.seg2[j]*10000 for i in model.hh_periods for j in model.Slack)
     slack3 = sum(model.mwh_3[j,i]*model.seg3[j]*10000 for i in model.hh_periods for j in model.Slack)
@@ -321,7 +354,7 @@ def SysCost(model):
     offshore_wind_cost = sum(model.offshorewind[j,i]*0.01 for i in model.hh_periods for j in model.zones)
     solar_cost = sum(model.solar[j,i]*0.01 for i in model.hh_periods for j in model.zones)
     mustrun_cost = sum(model.mustrun[j,i]*0.01 for i in model.hh_periods for j in model.zones)
-    return fixed + coal1 + coal2 + coal3 + gas1_1 + gas1_2 + gas1_3 + gas1_4 + gas1_5 + gas1_6 + gas1_7 + gas1_8 + gas2_1 + gas2_2 + gas2_3 + gas2_4 + gas2_5 + gas2_6 + gas2_7 + gas2_8 + gas3_1 + gas3_2 + gas3_3 + gas3_4 + gas3_5 + gas3_6 + gas3_7 + gas3_8 + oil1 + oil2 + oil3 + slack1 + slack2 + slack3 + starts + exchange + NY_Imports_CT1 + NY_Imports_CT2 + NY_Imports_CT3 + NY_Imports_WCMA1 + NY_Imports_WCMA2 + NY_Imports_WCMA3 + NY_Imports_VT1 + NY_Imports_VT2 + NY_Imports_VT3 + HQ_Imports_VT1 + HQ_Imports_VT2 + HQ_Imports_VT3 + NB_Imports_ME1 + NB_Imports_ME2 + NB_Imports_ME3 + hydro1 + hydro2 + hydro3 + onshore_wind_cost + offshore_wind_cost + solar_cost + mustrun_cost
+    return fixed + coal1 + coal2 + coal3 + gas1_1 + gas1_2 + gas1_3 + gas1_4 + gas1_5 + gas1_6 + gas1_7 + gas1_8 + gas2_1 + gas2_2 + gas2_3 + gas2_4 + gas2_5 + gas2_6 + gas2_7 + gas2_8 + gas3_1 + gas3_2 + gas3_3 + gas3_4 + gas3_5 + gas3_6 + gas3_7 + gas3_8 + Oil1_1 + Oil1_2 + Oil1_3 + Oil1_4 + Oil1_5 + Oil1_6 + Oil1_7 + Oil1_8 + Oil2_1 + Oil2_2 + Oil2_3 + Oil2_4 + Oil2_5 + Oil2_6 + Oil2_7 + Oil2_8 + Oil3_1 + Oil3_2 + Oil3_3 + Oil3_4 + Oil3_5 + Oil3_6 + Oil3_7 + Oil3_8 + slack1 + slack2 + slack3 + starts + exchange + NY_Imports_CT1 + NY_Imports_CT2 + NY_Imports_CT3 + NY_Imports_WCMA1 + NY_Imports_WCMA2 + NY_Imports_WCMA3 + NY_Imports_VT1 + NY_Imports_VT2 + NY_Imports_VT3 + HQ_Imports_VT1 + HQ_Imports_VT2 + HQ_Imports_VT3 + NB_Imports_ME1 + NB_Imports_ME2 + NB_Imports_ME3 + hydro1 + hydro2 + hydro3 + onshore_wind_cost + offshore_wind_cost + solar_cost + mustrun_cost
 model.SystemCost = Objective(rule=SysCost, sense=minimize)
     
    
