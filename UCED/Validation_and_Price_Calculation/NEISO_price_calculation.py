@@ -9,6 +9,7 @@ from sklearn import linear_model
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 #########################################################
 #                    Weight by zone
@@ -73,40 +74,60 @@ print('R-squared value for daily prices is ', daily_reg.score(daily_x, daily_y))
 
 #Creating a figure showing both simulated and historical daily LMPs
 plt.style.use('seaborn-whitegrid')
-plt.figure(figsize=(25,10))
-plt.rcParams.update({'axes.linewidth': 2})
-plt.rcParams.update({'axes.titlepad': 15})
-plt.rcParams.update({'font.size': 30})
-
-plt.plot(W_daily, label='Simulated Daily LMP', linewidth=2)
-plt.plot(H_daily, label='Historical Daily LMP', linewidth=2)
-plt.legend(loc='upper right')
-plt.ylabel('Day-Ahead LMP ($/MWh)')
-plt.xlim([0,1092])
-plt.xticks([0,95,190,285,380,475,570,665,760,855,950,1045], ['Jan 2015','Apr 2015','Jul 2015','Oct 2015','Jan 2016','Apr 2016','Jul 2016','Oct 2016','Jan 2017','Apr 2017','Jul 2017','Oct 2017'])
-plt.text(891, 155, "Daily $\mathregular{R^{2}}$"+'='+str(round(daily_reg.score(daily_x, daily_y),2)), color='black')
-plt.title('Locational Marginal Price (LMP) Validation')
+plt.rcParams.update({'font.size': 30}) 
+plt.rcParams['font.sans-serif'] = "Arial"
+axis_fontsize=45
+axis_label_pad = 10
+tick_pad = 5
+fig, ax = plt.subplots(figsize=(25,10))
+ax.plot(W_daily, label='Simulated Daily LMP', linewidth=2)
+ax.plot(H_daily, label='Historical Daily LMP', linewidth=2)
+ax.legend(loc='best')
+ax.set_ylabel('Day-Ahead Price ($/MWh)', labelpad=axis_label_pad, weight = 'bold', fontsize=axis_fontsize)
+ax.set_xlabel('Date', labelpad=axis_label_pad, weight = 'bold', fontsize=axis_fontsize)
+# ax.set_xlim([0,1092])
+ax.set_xticks([0,91,182,273,364,455,546,637,728,819,910,1000,1095])
+ax.set_xticklabels(['Jan \n2015','Apr \n2015','Jul \n2015','Oct \n2015','Jan \n2016','Apr \n2016','Jul \n2016','Oct \n2016','Jan \n2017','Apr \n2017','Jul \n2017','Oct \n2017','Jan \n2018'])
+ax.text(476, 150, "Daily $\mathregular{R^{2}}$"+'='+str(round(daily_reg.score(daily_x, daily_y),2)), color='black')
+# ax.title('Locational Marginal Price (LMP) Validation')
+ax.tick_params(axis='both', which='both', pad=tick_pad)
 plt.tight_layout()
 plt.savefig('Validation.png', bbox_inches='tight', dpi=200)
 plt.show()
 plt.clf()
 
+#Creating figures for the daily and hourly errors
 Daily_Error = Daily_hist['LMP'] - SD['NEISO']
 Hourly_Error = Hourly_hist['LMP'] - SH['NEISO']
 
-plt.style.use('default')
 plt.style.use('seaborn-whitegrid')
-plt.hist(Daily_Error, bins=40)
-plt.title('Daily Errors')
-plt.xlabel('Difference between Historical and Simulated Daily LMP ($/MWh)')
-plt.ylabel('Frequency')
+plt.rcParams.update({'font.size': 14}) 
+plt.rcParams['font.sans-serif'] = "Arial"
+axis_fontsize=16
+axis_label_pad = 10
+tick_pad = 5
+fig, ax = plt.subplots(figsize=(10,6))
+sns.histplot(Daily_Error, bins=40,ax=ax)
+# ax.set_title('Daily Errors')
+ax.set_xlabel('Difference between Historical and Simulated Daily Price ($/MWh)', labelpad=axis_label_pad, weight = 'bold', fontsize=axis_fontsize)
+ax.set_ylabel('Frequency', labelpad=axis_label_pad, weight = 'bold', fontsize=axis_fontsize)
+ax.tick_params(axis='both', which='both', pad=tick_pad)
 plt.savefig('Daily_Error.png', bbox_inches='tight', dpi=200)
 plt.show()
 plt.clf()
-plt.hist(Hourly_Error, bins=40)
-plt.title('Hourly Errors')
-plt.xlabel('Difference between Historical and Simulated Hourly LMP ($/MWh)')
-plt.ylabel('Frequency')
+
+plt.style.use('seaborn-whitegrid')
+plt.rcParams.update({'font.size': 14}) 
+plt.rcParams['font.sans-serif'] = "Arial"
+axis_fontsize=16
+axis_label_pad = 10
+tick_pad = 5
+fig, ax = plt.subplots(figsize=(10,6))
+sns.histplot(Hourly_Error, bins=40, ax=ax)
+# plt.title('Hourly Errors')
+ax.set_xlabel('Difference between Historical and Simulated Hourly Price ($/MWh)', labelpad=axis_label_pad, weight = 'bold', fontsize=axis_fontsize)
+ax.set_ylabel('Frequency', labelpad=axis_label_pad, weight = 'bold', fontsize=axis_fontsize)
+ax.tick_params(axis='both', which='both', pad=tick_pad)
 plt.savefig('Hourly_Error.png', bbox_inches='tight', dpi=200)
 plt.show()
 plt.clf()
